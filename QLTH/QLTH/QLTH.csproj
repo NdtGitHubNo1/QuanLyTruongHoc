@@ -65,9 +65,18 @@
     <Compile Include="ThongTinGiangDay_Admin.Designer.cs">
       <DependentUpon>ThongTinGiangDay_Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongTinGiangDay_GiaoVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThongTinGiangDay_GiaoVien.Designer.cs">
+      <DependentUpon>ThongTinGiangDay_GiaoVien.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="ThongTinGiangDay_Admin.resx">
       <DependentUpon>ThongTinGiangDay_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinGiangDay_GiaoVien.resx">
+      <DependentUpon>ThongTinGiangDay_GiaoVien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DATA\linq.dbml.layout">
       <DependentUpon>linq.dbml</DependentUpon>

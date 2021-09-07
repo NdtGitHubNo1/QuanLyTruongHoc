@@ -29,7 +29,12 @@ namespace QLTH
           /// </summary>
           private void InitializeComponent()
           {
-               this.dataGridView1 = new System.Windows.Forms.DataGridView();
+               this.dgvTTGD = new System.Windows.Forms.DataGridView();
+               this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+               this.MaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+               this.NgayDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+               this.SoTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+               this.SoTienMotTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
                this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
                this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
                this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -41,38 +46,87 @@ namespace QLTH
                this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
                this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
                this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
-               this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-               this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-               this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-               this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-               this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-               this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-               ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-               ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-               ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-               ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-               ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-               ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-               ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+               this.txtMaLop = new DevExpress.XtraEditors.TextEdit();
+               this.txtMaGV = new DevExpress.XtraEditors.TextEdit();
+               this.txtSoTien1Tiet = new DevExpress.XtraEditors.TextEdit();
+               this.txtSoTiet = new DevExpress.XtraEditors.TextEdit();
+               this.txtNgayDay = new DevExpress.XtraEditors.TextEdit();
+               this.txtTimKiem = new DevExpress.XtraEditors.TextEdit();
+               this.panel1 = new System.Windows.Forms.Panel();
+               ((System.ComponentModel.ISupportInitialize)(this.dgvTTGD)).BeginInit();
+               ((System.ComponentModel.ISupportInitialize)(this.txtMaLop.Properties)).BeginInit();
+               ((System.ComponentModel.ISupportInitialize)(this.txtMaGV.Properties)).BeginInit();
+               ((System.ComponentModel.ISupportInitialize)(this.txtSoTien1Tiet.Properties)).BeginInit();
+               ((System.ComponentModel.ISupportInitialize)(this.txtSoTiet.Properties)).BeginInit();
+               ((System.ComponentModel.ISupportInitialize)(this.txtNgayDay.Properties)).BeginInit();
+               ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).BeginInit();
+               this.panel1.SuspendLayout();
                this.SuspendLayout();
                // 
-               // dataGridView1
+               // dgvTTGD
                // 
-               this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-               this.dataGridView1.Location = new System.Drawing.Point(24, 54);
-               this.dataGridView1.Name = "dataGridView1";
-               this.dataGridView1.RowHeadersWidth = 51;
-               this.dataGridView1.RowTemplate.Height = 24;
-               this.dataGridView1.Size = new System.Drawing.Size(805, 612);
-               this.dataGridView1.TabIndex = 0;
+               this.dgvTTGD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+               this.dgvTTGD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaLop,
+            this.MaGV,
+            this.NgayDay,
+            this.SoTiet,
+            this.SoTienMotTiet});
+               this.dgvTTGD.Location = new System.Drawing.Point(24, 77);
+               this.dgvTTGD.Name = "dgvTTGD";
+               this.dgvTTGD.RowHeadersWidth = 51;
+               this.dgvTTGD.RowTemplate.Height = 24;
+               this.dgvTTGD.Size = new System.Drawing.Size(904, 589);
+               this.dgvTTGD.TabIndex = 0;
+               this.dgvTTGD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTTGD_CellClick);
+               // 
+               // MaLop
+               // 
+               this.MaLop.DataPropertyName = "MaLop";
+               this.MaLop.HeaderText = "Mã lớp";
+               this.MaLop.MinimumWidth = 6;
+               this.MaLop.Name = "MaLop";
+               this.MaLop.Width = 125;
+               // 
+               // MaGV
+               // 
+               this.MaGV.DataPropertyName = "MaGV";
+               this.MaGV.HeaderText = "Mã giáo viên";
+               this.MaGV.MinimumWidth = 6;
+               this.MaGV.Name = "MaGV";
+               this.MaGV.Width = 125;
+               // 
+               // NgayDay
+               // 
+               this.NgayDay.DataPropertyName = "NgayDay";
+               this.NgayDay.HeaderText = "Ngày dạy";
+               this.NgayDay.MinimumWidth = 6;
+               this.NgayDay.Name = "NgayDay";
+               this.NgayDay.Width = 125;
+               // 
+               // SoTiet
+               // 
+               this.SoTiet.DataPropertyName = "SoTiet";
+               this.SoTiet.HeaderText = "Số tiết";
+               this.SoTiet.MinimumWidth = 6;
+               this.SoTiet.Name = "SoTiet";
+               this.SoTiet.Width = 125;
+               // 
+               // SoTienMotTiet
+               // 
+               this.SoTienMotTiet.DataPropertyName = "SoTienMotTiet";
+               this.SoTienMotTiet.HeaderText = "Số tiền một tiết";
+               this.SoTienMotTiet.MinimumWidth = 6;
+               this.SoTienMotTiet.Name = "SoTienMotTiet";
+               this.SoTienMotTiet.Width = 125;
                // 
                // labelControl1
                // 
                this.labelControl1.Appearance.Font = new System.Drawing.Font("Sitka Text", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-               this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Brown;
+               this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Linen;
                this.labelControl1.Appearance.Options.UseFont = true;
                this.labelControl1.Appearance.Options.UseForeColor = true;
-               this.labelControl1.Location = new System.Drawing.Point(722, 0);
+               this.labelControl1.Location = new System.Drawing.Point(652, 3);
                this.labelControl1.Name = "labelControl1";
                this.labelControl1.Size = new System.Drawing.Size(324, 48);
                this.labelControl1.TabIndex = 1;
@@ -80,7 +134,7 @@ namespace QLTH
                // 
                // labelControl2
                // 
-               this.labelControl2.Location = new System.Drawing.Point(962, 130);
+               this.labelControl2.Location = new System.Drawing.Point(1007, 130);
                this.labelControl2.Name = "labelControl2";
                this.labelControl2.Size = new System.Drawing.Size(39, 17);
                this.labelControl2.TabIndex = 2;
@@ -88,7 +142,7 @@ namespace QLTH
                // 
                // labelControl3
                // 
-               this.labelControl3.Location = new System.Drawing.Point(962, 197);
+               this.labelControl3.Location = new System.Drawing.Point(1007, 200);
                this.labelControl3.Name = "labelControl3";
                this.labelControl3.Size = new System.Drawing.Size(72, 16);
                this.labelControl3.TabIndex = 3;
@@ -96,7 +150,7 @@ namespace QLTH
                // 
                // labelControl4
                // 
-               this.labelControl4.Location = new System.Drawing.Point(962, 268);
+               this.labelControl4.Location = new System.Drawing.Point(1007, 268);
                this.labelControl4.Name = "labelControl4";
                this.labelControl4.Size = new System.Drawing.Size(59, 17);
                this.labelControl4.TabIndex = 4;
@@ -104,7 +158,7 @@ namespace QLTH
                // 
                // labelControl5
                // 
-               this.labelControl5.Location = new System.Drawing.Point(962, 338);
+               this.labelControl5.Location = new System.Drawing.Point(1007, 338);
                this.labelControl5.Name = "labelControl5";
                this.labelControl5.Size = new System.Drawing.Size(39, 17);
                this.labelControl5.TabIndex = 5;
@@ -112,7 +166,7 @@ namespace QLTH
                // 
                // labelControl6
                // 
-               this.labelControl6.Location = new System.Drawing.Point(962, 416);
+               this.labelControl6.Location = new System.Drawing.Point(1007, 416);
                this.labelControl6.Name = "labelControl6";
                this.labelControl6.Size = new System.Drawing.Size(94, 17);
                this.labelControl6.TabIndex = 6;
@@ -127,6 +181,7 @@ namespace QLTH
                this.btnThem.Size = new System.Drawing.Size(94, 29);
                this.btnThem.TabIndex = 7;
                this.btnThem.Text = "Thêm";
+               this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
                // 
                // btnSua
                // 
@@ -135,6 +190,7 @@ namespace QLTH
                this.btnSua.Size = new System.Drawing.Size(94, 29);
                this.btnSua.TabIndex = 8;
                this.btnSua.Text = "Sửa";
+               this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
                // 
                // btnXoa
                // 
@@ -143,6 +199,7 @@ namespace QLTH
                this.btnXoa.Size = new System.Drawing.Size(94, 29);
                this.btnXoa.TabIndex = 9;
                this.btnXoa.Text = "Xóa";
+               this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
                // 
                // btnLuu
                // 
@@ -151,6 +208,7 @@ namespace QLTH
                this.btnLuu.Size = new System.Drawing.Size(94, 29);
                this.btnLuu.TabIndex = 10;
                this.btnLuu.Text = "Lưu";
+               this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
                // 
                // btnTimKiem
                // 
@@ -159,59 +217,69 @@ namespace QLTH
                this.btnTimKiem.Size = new System.Drawing.Size(94, 29);
                this.btnTimKiem.TabIndex = 11;
                this.btnTimKiem.Text = "Tìm kiếm";
+               this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
                // 
-               // textEdit1
+               // txtMaLop
                // 
-               this.textEdit1.Location = new System.Drawing.Point(1063, 124);
-               this.textEdit1.Name = "textEdit1";
-               this.textEdit1.Size = new System.Drawing.Size(293, 22);
-               this.textEdit1.TabIndex = 12;
+               this.txtMaLop.Location = new System.Drawing.Point(1125, 125);
+               this.txtMaLop.Name = "txtMaLop";
+               this.txtMaLop.Size = new System.Drawing.Size(293, 22);
+               this.txtMaLop.TabIndex = 12;
                // 
-               // textEdit2
+               // txtMaGV
                // 
-               this.textEdit2.Location = new System.Drawing.Point(1063, 194);
-               this.textEdit2.Name = "textEdit2";
-               this.textEdit2.Size = new System.Drawing.Size(293, 22);
-               this.textEdit2.TabIndex = 13;
+               this.txtMaGV.Location = new System.Drawing.Point(1125, 194);
+               this.txtMaGV.Name = "txtMaGV";
+               this.txtMaGV.Size = new System.Drawing.Size(293, 22);
+               this.txtMaGV.TabIndex = 13;
                // 
-               // textEdit3
+               // txtSoTien1Tiet
                // 
-               this.textEdit3.Location = new System.Drawing.Point(1063, 410);
-               this.textEdit3.Name = "textEdit3";
-               this.textEdit3.Size = new System.Drawing.Size(293, 22);
-               this.textEdit3.TabIndex = 14;
+               this.txtSoTien1Tiet.Location = new System.Drawing.Point(1125, 411);
+               this.txtSoTien1Tiet.Name = "txtSoTien1Tiet";
+               this.txtSoTien1Tiet.Size = new System.Drawing.Size(293, 22);
+               this.txtSoTien1Tiet.TabIndex = 14;
                // 
-               // textEdit4
+               // txtSoTiet
                // 
-               this.textEdit4.Location = new System.Drawing.Point(1063, 335);
-               this.textEdit4.Name = "textEdit4";
-               this.textEdit4.Size = new System.Drawing.Size(293, 22);
-               this.textEdit4.TabIndex = 15;
+               this.txtSoTiet.Location = new System.Drawing.Point(1125, 335);
+               this.txtSoTiet.Name = "txtSoTiet";
+               this.txtSoTiet.Size = new System.Drawing.Size(293, 22);
+               this.txtSoTiet.TabIndex = 15;
                // 
-               // textEdit5
+               // txtNgayDay
                // 
-               this.textEdit5.Location = new System.Drawing.Point(1063, 265);
-               this.textEdit5.Name = "textEdit5";
-               this.textEdit5.Size = new System.Drawing.Size(293, 22);
-               this.textEdit5.TabIndex = 16;
+               this.txtNgayDay.Location = new System.Drawing.Point(1125, 263);
+               this.txtNgayDay.Name = "txtNgayDay";
+               this.txtNgayDay.Size = new System.Drawing.Size(293, 22);
+               this.txtNgayDay.TabIndex = 16;
                // 
-               // textEdit6
+               // txtTimKiem
                // 
-               this.textEdit6.Location = new System.Drawing.Point(1007, 622);
-               this.textEdit6.Name = "textEdit6";
-               this.textEdit6.Size = new System.Drawing.Size(335, 22);
-               this.textEdit6.TabIndex = 17;
+               this.txtTimKiem.Location = new System.Drawing.Point(1007, 622);
+               this.txtTimKiem.Name = "txtTimKiem";
+               this.txtTimKiem.Size = new System.Drawing.Size(335, 22);
+               this.txtTimKiem.TabIndex = 17;
+               // 
+               // panel1
+               // 
+               this.panel1.BackColor = System.Drawing.Color.Teal;
+               this.panel1.Controls.Add(this.labelControl1);
+               this.panel1.Location = new System.Drawing.Point(3, 0);
+               this.panel1.Name = "panel1";
+               this.panel1.Size = new System.Drawing.Size(1546, 60);
+               this.panel1.TabIndex = 18;
                // 
                // ThongTinGiangDay_Admin
                // 
                this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-               this.Controls.Add(this.textEdit6);
-               this.Controls.Add(this.textEdit5);
-               this.Controls.Add(this.textEdit4);
-               this.Controls.Add(this.textEdit3);
-               this.Controls.Add(this.textEdit2);
-               this.Controls.Add(this.textEdit1);
+               this.Controls.Add(this.txtTimKiem);
+               this.Controls.Add(this.txtNgayDay);
+               this.Controls.Add(this.txtSoTiet);
+               this.Controls.Add(this.txtSoTien1Tiet);
+               this.Controls.Add(this.txtMaGV);
+               this.Controls.Add(this.txtMaLop);
                this.Controls.Add(this.btnTimKiem);
                this.Controls.Add(this.btnLuu);
                this.Controls.Add(this.btnXoa);
@@ -222,17 +290,20 @@ namespace QLTH
                this.Controls.Add(this.labelControl4);
                this.Controls.Add(this.labelControl3);
                this.Controls.Add(this.labelControl2);
-               this.Controls.Add(this.labelControl1);
-               this.Controls.Add(this.dataGridView1);
+               this.Controls.Add(this.dgvTTGD);
+               this.Controls.Add(this.panel1);
                this.Name = "ThongTinGiangDay_Admin";
                this.Size = new System.Drawing.Size(1549, 681);
-               ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-               ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-               ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-               ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-               ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-               ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-               ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+               this.Load += new System.EventHandler(this.ThongTinGiangDay_Admin_Load);
+               ((System.ComponentModel.ISupportInitialize)(this.dgvTTGD)).EndInit();
+               ((System.ComponentModel.ISupportInitialize)(this.txtMaLop.Properties)).EndInit();
+               ((System.ComponentModel.ISupportInitialize)(this.txtMaGV.Properties)).EndInit();
+               ((System.ComponentModel.ISupportInitialize)(this.txtSoTien1Tiet.Properties)).EndInit();
+               ((System.ComponentModel.ISupportInitialize)(this.txtSoTiet.Properties)).EndInit();
+               ((System.ComponentModel.ISupportInitialize)(this.txtNgayDay.Properties)).EndInit();
+               ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).EndInit();
+               this.panel1.ResumeLayout(false);
+               this.panel1.PerformLayout();
                this.ResumeLayout(false);
                this.PerformLayout();
 
@@ -240,7 +311,7 @@ namespace QLTH
 
           #endregion
 
-          private System.Windows.Forms.DataGridView dataGridView1;
+          private System.Windows.Forms.DataGridView dgvTTGD;
           private DevExpress.XtraEditors.LabelControl labelControl1;
           private DevExpress.XtraEditors.LabelControl labelControl2;
           private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -252,11 +323,17 @@ namespace QLTH
           private DevExpress.XtraEditors.SimpleButton btnXoa;
           private DevExpress.XtraEditors.SimpleButton btnLuu;
           private DevExpress.XtraEditors.SimpleButton btnTimKiem;
-          private DevExpress.XtraEditors.TextEdit textEdit1;
-          private DevExpress.XtraEditors.TextEdit textEdit2;
-          private DevExpress.XtraEditors.TextEdit textEdit3;
-          private DevExpress.XtraEditors.TextEdit textEdit4;
-          private DevExpress.XtraEditors.TextEdit textEdit5;
-          private DevExpress.XtraEditors.TextEdit textEdit6;
+          private DevExpress.XtraEditors.TextEdit txtMaLop;
+          private DevExpress.XtraEditors.TextEdit txtMaGV;
+          private DevExpress.XtraEditors.TextEdit txtSoTien1Tiet;
+          private DevExpress.XtraEditors.TextEdit txtSoTiet;
+          private DevExpress.XtraEditors.TextEdit txtNgayDay;
+          private DevExpress.XtraEditors.TextEdit txtTimKiem;
+          private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
+          private System.Windows.Forms.DataGridViewTextBoxColumn MaGV;
+          private System.Windows.Forms.DataGridViewTextBoxColumn NgayDay;
+          private System.Windows.Forms.DataGridViewTextBoxColumn SoTiet;
+          private System.Windows.Forms.DataGridViewTextBoxColumn SoTienMotTiet;
+          private System.Windows.Forms.Panel panel1;
      }
 }

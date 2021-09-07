@@ -1,0 +1,7 @@
+C:\Users\ASUS\Source\Repos\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.csprojAssemblyReference.cache
+C:\Users\ASUS\Source\Repos\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.ThongTinGiangDay_Admin.resources
+C:\Users\ASUS\Source\Repos\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.ThongTinGiangDay_GiaoVien.resources
+C:\Users\ASUS\Source\Repos\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.Properties.Resources.resources
+C:\Users\ASUS\Source\Repos\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.csproj.GenerateResource.cache
+C:\Users\ASUS\Source\Repos\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.exe.licenses
+C:\Users\ASUS\Source\Repos\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.csproj.CoreCompileInputs.cache

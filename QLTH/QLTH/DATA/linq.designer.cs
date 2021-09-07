@@ -22,6 +22,7 @@ namespace QLTH.DATA
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QUANLYTRUONGHOC")]
 	public partial class linqDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -29,7 +30,16 @@ namespace QLTH.DATA
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InserttblCTGD(tblCTGD instance);
+    partial void UpdatetblCTGD(tblCTGD instance);
+    partial void DeletetblCTGD(tblCTGD instance);
     #endregion
+		
+		public linqDataContext() : 
+				base(global::QLTH.Properties.Settings.Default.QUANLYTRUONGHOCConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public linqDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +63,508 @@ namespace QLTH.DATA
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<tblCTGD> tblCTGDs
+		{
+			get
+			{
+				return this.GetTable<tblCTGD>();
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XoaTTGD_Admin")]
+		public int XoaTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XemTTGD_GiaoVien")]
+		public ISingleResult<XemTTGD_GiaoVienResult> XemTTGD_GiaoVien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maGV);
+			return ((ISingleResult<XemTTGD_GiaoVienResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XemTTGD_Admin")]
+		public ISingleResult<XemTTGD_AdminResult> XemTTGD_Admin()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<XemTTGD_AdminResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ThemTTGD_Admin")]
+		public int ThemTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay", DbType="Date")] System.Nullable<System.DateTime> ngayDay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet", DbType="Int")] System.Nullable<int> soTiet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet", DbType="Int")] System.Nullable<int> soTienMotTiet)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV, ngayDay, soTiet, soTienMotTiet);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SuaTTGD_Admin")]
+		public int SuaTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay", DbType="Date")] System.Nullable<System.DateTime> ngayDay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet", DbType="Int")] System.Nullable<int> soTiet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet", DbType="Int")] System.Nullable<int> soTienMotTiet)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV, ngayDay, soTiet, soTienMotTiet);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimTTGD_Admin")]
+		public ISingleResult<TimTTGD_AdminResult> TimTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string text)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), text);
+			return ((ISingleResult<TimTTGD_AdminResult>)(result.ReturnValue));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblCTGD")]
+	public partial class tblCTGD : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaLop;
+		
+		private string _MaGV;
+		
+		private System.DateTime _NgayDay;
+		
+		private int _SoTiet;
+		
+		private int _SoTienMotTiet;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaLopChanging(string value);
+    partial void OnMaLopChanged();
+    partial void OnMaGVChanging(string value);
+    partial void OnMaGVChanged();
+    partial void OnNgayDayChanging(System.DateTime value);
+    partial void OnNgayDayChanged();
+    partial void OnSoTietChanging(int value);
+    partial void OnSoTietChanged();
+    partial void OnSoTienMotTietChanging(int value);
+    partial void OnSoTienMotTietChanged();
+    #endregion
+		
+		public tblCTGD()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaLop
+		{
+			get
+			{
+				return this._MaLop;
+			}
+			set
+			{
+				if ((this._MaLop != value))
+				{
+					this.OnMaLopChanging(value);
+					this.SendPropertyChanging();
+					this._MaLop = value;
+					this.SendPropertyChanged("MaLop");
+					this.OnMaLopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGV", DbType="NChar(10)")]
+		public string MaGV
+		{
+			get
+			{
+				return this._MaGV;
+			}
+			set
+			{
+				if ((this._MaGV != value))
+				{
+					this.OnMaGVChanging(value);
+					this.SendPropertyChanging();
+					this._MaGV = value;
+					this.SendPropertyChanged("MaGV");
+					this.OnMaGVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDay", DbType="Date NOT NULL", IsPrimaryKey=true)]
+		public System.DateTime NgayDay
+		{
+			get
+			{
+				return this._NgayDay;
+			}
+			set
+			{
+				if ((this._NgayDay != value))
+				{
+					this.OnNgayDayChanging(value);
+					this.SendPropertyChanging();
+					this._NgayDay = value;
+					this.SendPropertyChanged("NgayDay");
+					this.OnNgayDayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTiet", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int SoTiet
+		{
+			get
+			{
+				return this._SoTiet;
+			}
+			set
+			{
+				if ((this._SoTiet != value))
+				{
+					this.OnSoTietChanging(value);
+					this.SendPropertyChanging();
+					this._SoTiet = value;
+					this.SendPropertyChanged("SoTiet");
+					this.OnSoTietChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienMotTiet", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int SoTienMotTiet
+		{
+			get
+			{
+				return this._SoTienMotTiet;
+			}
+			set
+			{
+				if ((this._SoTienMotTiet != value))
+				{
+					this.OnSoTienMotTietChanging(value);
+					this.SendPropertyChanging();
+					this._SoTienMotTiet = value;
+					this.SendPropertyChanged("SoTienMotTiet");
+					this.OnSoTienMotTietChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class XemTTGD_GiaoVienResult
+	{
+		
+		private string _MaLop;
+		
+		private string _MaGV;
+		
+		private System.DateTime _NgayDay;
+		
+		private int _SoTiet;
+		
+		private int _SoTienMotTiet;
+		
+		public XemTTGD_GiaoVienResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string MaLop
+		{
+			get
+			{
+				return this._MaLop;
+			}
+			set
+			{
+				if ((this._MaLop != value))
+				{
+					this._MaLop = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGV", DbType="NChar(10)")]
+		public string MaGV
+		{
+			get
+			{
+				return this._MaGV;
+			}
+			set
+			{
+				if ((this._MaGV != value))
+				{
+					this._MaGV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDay", DbType="Date NOT NULL")]
+		public System.DateTime NgayDay
+		{
+			get
+			{
+				return this._NgayDay;
+			}
+			set
+			{
+				if ((this._NgayDay != value))
+				{
+					this._NgayDay = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTiet", DbType="Int NOT NULL")]
+		public int SoTiet
+		{
+			get
+			{
+				return this._SoTiet;
+			}
+			set
+			{
+				if ((this._SoTiet != value))
+				{
+					this._SoTiet = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienMotTiet", DbType="Int NOT NULL")]
+		public int SoTienMotTiet
+		{
+			get
+			{
+				return this._SoTienMotTiet;
+			}
+			set
+			{
+				if ((this._SoTienMotTiet != value))
+				{
+					this._SoTienMotTiet = value;
+				}
+			}
+		}
+	}
+	
+	public partial class XemTTGD_AdminResult
+	{
+		
+		private string _MaLop;
+		
+		private string _MaGV;
+		
+		private System.DateTime _NgayDay;
+		
+		private int _SoTiet;
+		
+		private int _SoTienMotTiet;
+		
+		public XemTTGD_AdminResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string MaLop
+		{
+			get
+			{
+				return this._MaLop;
+			}
+			set
+			{
+				if ((this._MaLop != value))
+				{
+					this._MaLop = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGV", DbType="NChar(10)")]
+		public string MaGV
+		{
+			get
+			{
+				return this._MaGV;
+			}
+			set
+			{
+				if ((this._MaGV != value))
+				{
+					this._MaGV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDay", DbType="Date NOT NULL")]
+		public System.DateTime NgayDay
+		{
+			get
+			{
+				return this._NgayDay;
+			}
+			set
+			{
+				if ((this._NgayDay != value))
+				{
+					this._NgayDay = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTiet", DbType="Int NOT NULL")]
+		public int SoTiet
+		{
+			get
+			{
+				return this._SoTiet;
+			}
+			set
+			{
+				if ((this._SoTiet != value))
+				{
+					this._SoTiet = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienMotTiet", DbType="Int NOT NULL")]
+		public int SoTienMotTiet
+		{
+			get
+			{
+				return this._SoTienMotTiet;
+			}
+			set
+			{
+				if ((this._SoTienMotTiet != value))
+				{
+					this._SoTienMotTiet = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TimTTGD_AdminResult
+	{
+		
+		private string _MaLop;
+		
+		private string _MaGV;
+		
+		private System.DateTime _NgayDay;
+		
+		private int _SoTiet;
+		
+		private int _SoTienMotTiet;
+		
+		public TimTTGD_AdminResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string MaLop
+		{
+			get
+			{
+				return this._MaLop;
+			}
+			set
+			{
+				if ((this._MaLop != value))
+				{
+					this._MaLop = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGV", DbType="NChar(10)")]
+		public string MaGV
+		{
+			get
+			{
+				return this._MaGV;
+			}
+			set
+			{
+				if ((this._MaGV != value))
+				{
+					this._MaGV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDay", DbType="Date NOT NULL")]
+		public System.DateTime NgayDay
+		{
+			get
+			{
+				return this._NgayDay;
+			}
+			set
+			{
+				if ((this._NgayDay != value))
+				{
+					this._NgayDay = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTiet", DbType="Int NOT NULL")]
+		public int SoTiet
+		{
+			get
+			{
+				return this._SoTiet;
+			}
+			set
+			{
+				if ((this._SoTiet != value))
+				{
+					this._SoTiet = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienMotTiet", DbType="Int NOT NULL")]
+		public int SoTienMotTiet
+		{
+			get
+			{
+				return this._SoTienMotTiet;
+			}
+			set
+			{
+				if ((this._SoTienMotTiet != value))
+				{
+					this._SoTienMotTiet = value;
+				}
+			}
 		}
 	}
 }
