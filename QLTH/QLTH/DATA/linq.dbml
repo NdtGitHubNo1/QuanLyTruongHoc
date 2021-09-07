@@ -1,1 +1,183 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYTRUONGHOC2" Class="linqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-DN7MI1FU\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC2;Integrated Security=True" SettingsObjectName="QLTH.Properties.Settings" SettingsPropertyName="QUANLYTRUONGHOC2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HOCPHI" Member="HOCPHIs">
+    <Type Name="HOCPHI">
+      <Column Name="MAHS" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MAHOCPHI" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOTIEN" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="THANGNOP" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="tblHocSinh_HOCPHI" Member="tblHocSinh" ThisKey="MAHS" OtherKey="MaHS" Type="tblHocSinh" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LUONG" Member="LUONGs">
+    <Type Name="LUONG">
+      <Column Name="MAGV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MALUONG" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOTIEN" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="THANGNHAN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="tblGiaoVien_LUONG" Member="tblGiaoVien" ThisKey="MAGV" OtherKey="MaGV" Type="tblGiaoVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGiaoVien" Member="tblGiaoViens">
+    <Type Name="tblGiaoVien">
+      <Column Name="MaGV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GT" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LuongCung" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MaTrinhDo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaMon" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="tblGiaoVien_LUONG" Member="LUONGs" ThisKey="MaGV" OtherKey="MAGV" Type="LUONG" />
+      <Association Name="tblGiaoVien_tblCTGD" Member="tblCTGDs" ThisKey="MaGV" OtherKey="MaGV" Type="tblCTGD" />
+      <Association Name="tblGiaoVien_tblLop" Member="tblLops" ThisKey="MaGV" OtherKey="GVCN" Type="tblLop" />
+      <Association Name="tblMonHoc_tblGiaoVien" Member="tblMonHoc" ThisKey="MaMon" OtherKey="MaMon" Type="tblMonHoc" IsForeignKey="true" />
+      <Association Name="tblTrinhDo_tblGiaoVien" Member="tblTrinhDo" ThisKey="MaTrinhDo" OtherKey="MaTrinhDo" Type="tblTrinhDo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCTGD" Member="tblCTGDs">
+    <Type Name="tblCTGD">
+      <Column Name="MaLop" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaGV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="NgayDay" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoTiet" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoTienMotTiet" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tblGiaoVien_tblCTGD" Member="tblGiaoVien" ThisKey="MaGV" OtherKey="MaGV" Type="tblGiaoVien" IsForeignKey="true" />
+      <Association Name="tblLop_tblCTGD" Member="tblLop" ThisKey="MaLop" OtherKey="MaLop" Type="tblLop" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLop" Member="tblLops">
+    <Type Name="tblLop">
+      <Column Name="MaLop" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLop" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GVCN" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="tblLop_tblCTGD" Member="tblCTGDs" ThisKey="MaLop" OtherKey="MaLop" Type="tblCTGD" />
+      <Association Name="tblLop_tblHocSinh" Member="tblHocSinhs" ThisKey="MaLop" OtherKey="MaLop" Type="tblHocSinh" />
+      <Association Name="tblGiaoVien_tblLop" Member="tblGiaoVien" ThisKey="GVCN" OtherKey="MaGV" Type="tblGiaoVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblHocSinh" Member="tblHocSinhs">
+    <Type Name="tblHocSinh">
+      <Column Name="MaHS" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GT" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhuHuynh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DinhMucHocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="tblHocSinh_HOCPHI" Member="HOCPHIs" ThisKey="MaHS" OtherKey="MAHS" Type="HOCPHI" />
+      <Association Name="tblLop_tblHocSinh" Member="tblLop" ThisKey="MaLop" OtherKey="MaLop" Type="tblLop" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMonHoc" Member="tblMonHocs">
+    <Type Name="tblMonHoc">
+      <Column Name="MaMon" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMon" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblMonHoc_tblGiaoVien" Member="tblGiaoViens" ThisKey="MaMon" OtherKey="MaMon" Type="tblGiaoVien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTrinhDo" Member="tblTrinhDos">
+    <Type Name="tblTrinhDo">
+      <Column Name="MaTrinhDo" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DinhMuc" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="tblTrinhDo_tblGiaoVien" Member="tblGiaoViens" ThisKey="MaTrinhDo" OtherKey="MaTrinhDo" Type="tblGiaoVien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUser" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.TK_TIEN" Method="TK_TIEN">
+    <ElementType Name="TK_TIENResult">
+      <Column Name="HocPhi" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Luong" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UPDATEHOCPHI" Method="UPDATEHOCPHI">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TK_TIEN_THEOTHANG" Method="TK_TIEN_THEOTHANG">
+    <ElementType Name="TK_TIEN_THEOTHANGResult">
+      <Column Name="THANG" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="THU" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CHI" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UPDATELUONG" Method="UPDATELUONG">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.XEM_GIAOVIEN_THEOMONHOC_BIEUDO" Method="XEM_GIAOVIEN_THEOMONHOC_BIEUDO">
+    <ElementType Name="XEM_GIAOVIEN_THEOMONHOC_BIEUDOResult">
+      <Column Name="TONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenMon" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.XEM_GIAOVIEN_THEOMONHOC" Method="XEM_GIAOVIEN_THEOMONHOC">
+    <ElementType Name="XEM_GIAOVIEN_THEOMONHOCResult">
+      <Column Name="MaGV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TenMon" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.XEM_HOCSINH_DINHMUC_BIEUDO" Method="XEM_HOCSINH_DINHMUC_BIEUDO">
+    <ElementType Name="XEM_HOCSINH_DINHMUC_BIEUDOResult">
+      <Column Name="TONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DinhMucHocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.XEM_TRINHDO" Method="XEM_TRINHDO">
+    <ElementType Name="XEM_TRINHDOResult">
+      <Column Name="MaGV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.XEM_TRINHDO_BieuDo" Method="XEM_TRINHDO_BieuDo">
+    <ElementType Name="XEM_TRINHDO_BieuDoResult">
+      <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.XEM_HOCSINH_DINHMUC" Method="XEM_HOCSINH_DINHMUC">
+    <ElementType Name="XEM_HOCSINH_DINHMUCResult">
+      <Column Name="MaHS" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DinhMucHocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.XEMMALOP" Method="XEMMALOP">
+    <ElementType Name="XEMMALOPResult">
+      <Column Name="MALOP" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.XEM_HOCSINH_BAOCAO" Method="XEM_HOCSINH_BAOCAO">
+    <Parameter Name="MALOP" Parameter="mALOP" Type="System.String" DbType="NChar(10)" />
+    <ElementType Name="XEM_HOCSINH_BAOCAOResult">
+      <Column Name="MaHS" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GT" Type="System.String" DbType="NChar(3)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhuHuynh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DinhMucHocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.XEM_LICHDAY_BAOCAO" Method="XEM_LICHDAY_BAOCAO">
+    <Parameter Name="MAGV" Parameter="mAGV" Type="System.String" DbType="NChar(10)" />
+    <ElementType Name="XEM_LICHDAY_BAOCAOResult">
+      <Column Name="NGAYDAY" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TENLOP" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaGV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
