@@ -1,0 +1,6 @@
+D:\code git\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.csprojAssemblyReference.cache
+D:\code git\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.QLTH_Admin.resources
+D:\code git\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.Properties.Resources.resources
+D:\code git\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.csproj.GenerateResource.cache
+D:\code git\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.exe.licenses
+D:\code git\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.csproj.CoreCompileInputs.cache
