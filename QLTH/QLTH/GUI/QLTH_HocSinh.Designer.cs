@@ -39,7 +39,9 @@ namespace QLTH.GUI
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.viewSitePanel = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewSitePanel)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -56,7 +58,7 @@ namespace QLTH.GUI
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(1547, 193);
+            this.ribbon.Size = new System.Drawing.Size(1547, 198);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // ribbonPage1
@@ -119,18 +121,30 @@ namespace QLTH.GUI
             this.barButtonItem3.LargeWidth = 80;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
+            // viewSitePanel
+            // 
+            this.viewSitePanel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.viewSitePanel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.viewSitePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewSitePanel.Location = new System.Drawing.Point(0, 198);
+            this.viewSitePanel.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
+            this.viewSitePanel.Name = "viewSitePanel";
+            this.viewSitePanel.Size = new System.Drawing.Size(1547, 681);
+            this.viewSitePanel.TabIndex = 4;
+            // 
             // QLTH_HocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1547, 909);
+            this.Controls.Add(this.viewSitePanel);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Name = "QLTH_HocSinh";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "QLTH_HocSinh";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewSitePanel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,5 +161,6 @@ namespace QLTH.GUI
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraEditors.PanelControl viewSitePanel;
     }
 }
