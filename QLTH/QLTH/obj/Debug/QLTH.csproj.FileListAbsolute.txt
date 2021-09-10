@@ -58,3 +58,6 @@ D:\code git\QuanLyTruongHoc\QLTH\QLTH\bin\Debug\ru\DevExpress.Sparkline.v20.1.Co
 D:\code git\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.csproj.CopyComplete
 D:\code git\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.exe
 D:\code git\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.pdb
+D:\code git\QuanLyTruongHoc\QLTH\QLTH\bin\Debug\DevComponents.DotNetBar2.dll
+D:\code git\QuanLyTruongHoc\QLTH\QLTH\bin\Debug\DevComponents.DotNetBar2.xml
+D:\code git\QuanLyTruongHoc\QLTH\QLTH\obj\Debug\QLTH.GUI.FormDangNhap.resources
