@@ -33,5 +33,6 @@ namespace QLTH.GUI
                 txtMK.UseSystemPasswordChar = true;
             }
         }
-    }
+
+     }
 }

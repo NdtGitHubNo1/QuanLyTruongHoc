@@ -73,36 +73,15 @@ namespace QLTH.DATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XoaTTGD_Admin")]
-		public int XoaTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XemTTGD_GiaoVien")]
-		public ISingleResult<XemTTGD_GiaoVienResult> XemTTGD_GiaoVien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maGV);
-			return ((ISingleResult<XemTTGD_GiaoVienResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XemTTGD_Admin")]
-		public ISingleResult<XemTTGD_AdminResult> XemTTGD_Admin()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<XemTTGD_AdminResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ThemTTGD_Admin")]
-		public int ThemTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay", DbType="Date")] System.Nullable<System.DateTime> ngayDay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet", DbType="Int")] System.Nullable<int> soTiet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet", DbType="Int")] System.Nullable<int> soTienMotTiet)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SuaTTGD_Admin")]
+		public int SuaTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay", DbType="Date")] System.Nullable<System.DateTime> ngayDay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet", DbType="Int")] System.Nullable<int> soTiet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet", DbType="Int")] System.Nullable<int> soTienMotTiet)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV, ngayDay, soTiet, soTienMotTiet);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SuaTTGD_Admin")]
-		public int SuaTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay", DbType="Date")] System.Nullable<System.DateTime> ngayDay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet", DbType="Int")] System.Nullable<int> soTiet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet", DbType="Int")] System.Nullable<int> soTienMotTiet)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ThemTTGD_Admin")]
+		public int ThemTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay", DbType="Date")] System.Nullable<System.DateTime> ngayDay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet", DbType="Int")] System.Nullable<int> soTiet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet", DbType="Int")] System.Nullable<int> soTienMotTiet)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV, ngayDay, soTiet, soTienMotTiet);
 			return ((int)(result.ReturnValue));
@@ -113,6 +92,27 @@ namespace QLTH.DATA
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), text);
 			return ((ISingleResult<TimTTGD_AdminResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XemTTGD_Admin")]
+		public ISingleResult<XemTTGD_AdminResult> XemTTGD_Admin()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<XemTTGD_AdminResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XemTTGD_GiaoVien")]
+		public ISingleResult<XemTTGD_GiaoVienResult> XemTTGD_GiaoVien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maGV);
+			return ((ISingleResult<XemTTGD_GiaoVienResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XoaTTGD_Admin")]
+		public int XoaTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -274,7 +274,7 @@ namespace QLTH.DATA
 		}
 	}
 	
-	public partial class XemTTGD_GiaoVienResult
+	public partial class TimTTGD_AdminResult
 	{
 		
 		private string _MaLop;
@@ -287,7 +287,7 @@ namespace QLTH.DATA
 		
 		private int _SoTienMotTiet;
 		
-		public XemTTGD_GiaoVienResult()
+		public TimTTGD_AdminResult()
 		{
 		}
 		
@@ -470,7 +470,7 @@ namespace QLTH.DATA
 		}
 	}
 	
-	public partial class TimTTGD_AdminResult
+	public partial class XemTTGD_GiaoVienResult
 	{
 		
 		private string _MaLop;
@@ -483,7 +483,7 @@ namespace QLTH.DATA
 		
 		private int _SoTienMotTiet;
 		
-		public TimTTGD_AdminResult()
+		public XemTTGD_GiaoVienResult()
 		{
 		}
 		

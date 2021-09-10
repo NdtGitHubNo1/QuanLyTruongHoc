@@ -9,31 +9,7 @@
       <Column Name="SoTienMotTiet" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
-  <Function Name="dbo.XoaTTGD_Admin" Method="XoaTTGD_Admin">
-    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
-    <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.XemTTGD_GiaoVien" Method="XemTTGD_GiaoVien">
-    <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
-    <ElementType Name="XemTTGD_GiaoVienResult">
-      <Column Name="MaLop" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="MaGV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="NgayDay" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="SoTiet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SoTienMotTiet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.XemTTGD_Admin" Method="XemTTGD_Admin">
-    <ElementType Name="XemTTGD_AdminResult">
-      <Column Name="MaLop" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="MaGV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="NgayDay" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="SoTiet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SoTienMotTiet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.ThemTTGD_Admin" Method="ThemTTGD_Admin">
+  <Function Name="dbo.SuaTTGD_Admin" Method="SuaTTGD_Admin">
     <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="NgayDay" Parameter="ngayDay" Type="System.DateTime" DbType="Date" />
@@ -41,7 +17,7 @@
     <Parameter Name="SoTienMotTiet" Parameter="soTienMotTiet" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SuaTTGD_Admin" Method="SuaTTGD_Admin">
+  <Function Name="dbo.ThemTTGD_Admin" Method="ThemTTGD_Admin">
     <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="NgayDay" Parameter="ngayDay" Type="System.DateTime" DbType="Date" />
@@ -58,5 +34,29 @@
       <Column Name="SoTiet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="SoTienMotTiet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.XemTTGD_Admin" Method="XemTTGD_Admin">
+    <ElementType Name="XemTTGD_AdminResult">
+      <Column Name="MaLop" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaGV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="NgayDay" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="SoTiet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoTienMotTiet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.XemTTGD_GiaoVien" Method="XemTTGD_GiaoVien">
+    <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
+    <ElementType Name="XemTTGD_GiaoVienResult">
+      <Column Name="MaLop" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaGV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="NgayDay" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="SoTiet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoTienMotTiet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.XoaTTGD_Admin" Method="XoaTTGD_Admin">
+    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

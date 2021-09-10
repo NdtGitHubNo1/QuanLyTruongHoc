@@ -257,7 +257,6 @@ namespace QLTH
                this.Controls.Add(this.panel1);
                this.Name = "ThongTinGiangDay_GiaoVien";
                this.Size = new System.Drawing.Size(1549, 681);
-               this.Load += new System.EventHandler(this.ThongTinGiangDay_GiaoVien_Load);
                ((System.ComponentModel.ISupportInitialize)(this.dgvTTGD)).EndInit();
                ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
                ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
