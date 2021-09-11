@@ -17,5 +17,11 @@ namespace QLTH
         {
             InitializeComponent();
         }
-    }
+
+          private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+          {
+               viewSitePanel.Controls.Clear();
+               viewSitePanel.Controls.Add(ThongTinGiangDay_Admin.Instance);
+          }
+     }
 }

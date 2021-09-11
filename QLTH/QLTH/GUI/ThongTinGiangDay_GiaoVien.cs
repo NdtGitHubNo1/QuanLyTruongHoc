@@ -31,7 +31,7 @@ namespace QLTH
 
           private void ThongTinGiangDay_GiaoVien_Load(object sender, EventArgs e)
           {
-               dgvTTGD.DataSource = linq.XemTTGD_GiaoVien();
+               dgvTTGD.DataSource = linq.XemTTGD_GiaoVien("GV00000001");
           }
      }
 }

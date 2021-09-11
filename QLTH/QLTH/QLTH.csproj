@@ -71,6 +71,12 @@
     <Compile Include="GUI\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\QLTH_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QLTH_Admin.Designer.cs">
+      <DependentUpon>QLTH_Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QLTH_GiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </None>
     <EmbeddedResource Include="GUI\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLTH_Admin.resx">
+      <DependentUpon>QLTH_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QLTH_GiaoVien.resx">
       <DependentUpon>QLTH_GiaoVien.cs</DependentUpon>

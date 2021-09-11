@@ -1,7 +1,7 @@
 ﻿
 namespace QLTH.GUI
 {
-    partial class FormDangNhap
+    partial class QLTH_Admin
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace QLTH.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDangNhap));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLTH_Admin));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);

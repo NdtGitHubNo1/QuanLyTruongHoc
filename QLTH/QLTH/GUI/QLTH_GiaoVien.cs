@@ -17,5 +17,11 @@ namespace QLTH.GUI
         {
             InitializeComponent();
         }
-    }
+
+          private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+          {
+               viewSitePanel.Controls.Clear();
+               viewSitePanel.Controls.Add(ThongTinGiangDay_GiaoVien.Instance);
+          }
+     }
 }
