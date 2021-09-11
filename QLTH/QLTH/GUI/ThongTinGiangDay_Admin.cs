@@ -33,7 +33,6 @@ namespace QLTH
           {
                txtMaLop.Text = "";
                txtMaGV.Text = "";
-               txtNgayDay.Text = "";
                txtSoTiet.Text = "";
                txtSoTien1Tiet.Text = "";
           }
@@ -51,12 +50,7 @@ namespace QLTH
                     txtMaGV.Focus();
                     return false;
                }
-               if (string.IsNullOrWhiteSpace(txtNgayDay.Text))
-               {
-                    MessageBox.Show("Bạn chưa nhập ngày dạy.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtNgayDay.Focus();
-                    return false;
-               }
+               
                if (string.IsNullOrWhiteSpace(txtSoTiet.Text))
                {
                     MessageBox.Show("Bạn chưa nhập số tiết dạy.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,7 +103,7 @@ namespace QLTH
                {
                     txtMaLop.Text = dgvTTGD.Rows[index].Cells["MaLop"].Value.ToString();
                     txtMaGV.Text = dgvTTGD.Rows[index].Cells["MaGV"].Value.ToString();
-                    txtNgayDay.Text = dgvTTGD.Rows[index].Cells["NgayDay"].Value.ToString();
+                    dtNgayDay.Value = Convert.ToDateTime(dgvTTGD.Rows[index].Cells["NgayDay"].Value.ToString());
                     txtSoTiet.Text = dgvTTGD.Rows[index].Cells["SoTiet"].Value.ToString();
                     txtSoTien1Tiet.Text = dgvTTGD.Rows[index].Cells["SoTienMotTiet"].Value.ToString();
                }
@@ -123,7 +117,7 @@ namespace QLTH
                     {
                          try
                          {
-                              linq.ThemTTGD_Admin(txtMaLop.Text, txtMaGV.Text, DateTime.Parse(txtNgayDay.Text), Int32.Parse(txtSoTiet.Text), Int32.Parse(txtSoTien1Tiet.Text));
+                              linq.ThemTTGD_Admin(txtMaLop.Text, txtMaGV.Text, dtNgayDay.Value, Int32.Parse(txtSoTiet.Text), Int32.Parse(txtSoTien1Tiet.Text));
                          }
                          catch (Exception ex)
                          {
@@ -134,7 +128,7 @@ namespace QLTH
                     {
                          try
                          {
-                              linq.SuaTTGD_Admin(txtMaLop.Text, txtMaGV.Text, DateTime.Parse(txtNgayDay.Text), Int32.Parse(txtSoTiet.Text), Int32.Parse(txtSoTien1Tiet.Text));
+                              linq.SuaTTGD_Admin(txtMaLop.Text, txtMaGV.Text, dtNgayDay.Value, Int32.Parse(txtSoTiet.Text), Int32.Parse(txtSoTien1Tiet.Text));
                          }
                          catch (Exception ex)
                          {

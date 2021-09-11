@@ -202,6 +202,13 @@ namespace QLTH.DATA
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimTTGD_GiaoVien")]
+		public ISingleResult<TimTTGD_GiaoVienResult> TimTTGD_GiaoVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string text)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), text);
+			return ((ISingleResult<TimTTGD_GiaoVienResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HOCPHI")]
@@ -2268,6 +2275,104 @@ namespace QLTH.DATA
 		private int _SoTienMotTiet;
 		
 		public XemTTGD_GiaoVienResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string MaLop
+		{
+			get
+			{
+				return this._MaLop;
+			}
+			set
+			{
+				if ((this._MaLop != value))
+				{
+					this._MaLop = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGV", DbType="NChar(10)")]
+		public string MaGV
+		{
+			get
+			{
+				return this._MaGV;
+			}
+			set
+			{
+				if ((this._MaGV != value))
+				{
+					this._MaGV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDay", DbType="Date NOT NULL")]
+		public System.DateTime NgayDay
+		{
+			get
+			{
+				return this._NgayDay;
+			}
+			set
+			{
+				if ((this._NgayDay != value))
+				{
+					this._NgayDay = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTiet", DbType="Int NOT NULL")]
+		public int SoTiet
+		{
+			get
+			{
+				return this._SoTiet;
+			}
+			set
+			{
+				if ((this._SoTiet != value))
+				{
+					this._SoTiet = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienMotTiet", DbType="Int NOT NULL")]
+		public int SoTienMotTiet
+		{
+			get
+			{
+				return this._SoTienMotTiet;
+			}
+			set
+			{
+				if ((this._SoTienMotTiet != value))
+				{
+					this._SoTienMotTiet = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TimTTGD_GiaoVienResult
+	{
+		
+		private string _MaLop;
+		
+		private string _MaGV;
+		
+		private System.DateTime _NgayDay;
+		
+		private int _SoTiet;
+		
+		private int _SoTienMotTiet;
+		
+		public TimTTGD_GiaoVienResult()
 		{
 		}
 		

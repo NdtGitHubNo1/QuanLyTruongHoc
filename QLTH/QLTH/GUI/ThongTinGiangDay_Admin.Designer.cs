@@ -50,17 +50,17 @@ namespace QLTH
                this.txtMaGV = new DevExpress.XtraEditors.TextEdit();
                this.txtSoTien1Tiet = new DevExpress.XtraEditors.TextEdit();
                this.txtSoTiet = new DevExpress.XtraEditors.TextEdit();
-               this.txtNgayDay = new DevExpress.XtraEditors.TextEdit();
                this.txtTimKiem = new DevExpress.XtraEditors.TextEdit();
                this.panel1 = new System.Windows.Forms.Panel();
+               this.dtNgayDay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
                ((System.ComponentModel.ISupportInitialize)(this.dgvTTGD)).BeginInit();
                ((System.ComponentModel.ISupportInitialize)(this.txtMaLop.Properties)).BeginInit();
                ((System.ComponentModel.ISupportInitialize)(this.txtMaGV.Properties)).BeginInit();
                ((System.ComponentModel.ISupportInitialize)(this.txtSoTien1Tiet.Properties)).BeginInit();
                ((System.ComponentModel.ISupportInitialize)(this.txtSoTiet.Properties)).BeginInit();
-               ((System.ComponentModel.ISupportInitialize)(this.txtNgayDay.Properties)).BeginInit();
                ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).BeginInit();
                this.panel1.SuspendLayout();
+               ((System.ComponentModel.ISupportInitialize)(this.dtNgayDay)).BeginInit();
                this.SuspendLayout();
                // 
                // dgvTTGD
@@ -247,13 +247,6 @@ namespace QLTH
                this.txtSoTiet.Size = new System.Drawing.Size(293, 22);
                this.txtSoTiet.TabIndex = 15;
                // 
-               // txtNgayDay
-               // 
-               this.txtNgayDay.Location = new System.Drawing.Point(1125, 263);
-               this.txtNgayDay.Name = "txtNgayDay";
-               this.txtNgayDay.Size = new System.Drawing.Size(293, 22);
-               this.txtNgayDay.TabIndex = 16;
-               // 
                // txtTimKiem
                // 
                this.txtTimKiem.Location = new System.Drawing.Point(1007, 622);
@@ -270,12 +263,56 @@ namespace QLTH
                this.panel1.Size = new System.Drawing.Size(1546, 60);
                this.panel1.TabIndex = 18;
                // 
+               // dtNgayDay
+               // 
+               // 
+               // 
+               // 
+               this.dtNgayDay.BackgroundStyle.Class = "DateTimeInputBackground";
+               this.dtNgayDay.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+               this.dtNgayDay.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+               this.dtNgayDay.ButtonDropDown.Visible = true;
+               this.dtNgayDay.IsPopupCalendarOpen = false;
+               this.dtNgayDay.Location = new System.Drawing.Point(1125, 268);
+               // 
+               // 
+               // 
+               // 
+               // 
+               // 
+               this.dtNgayDay.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+               this.dtNgayDay.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+               this.dtNgayDay.MonthCalendar.ClearButtonVisible = true;
+               // 
+               // 
+               // 
+               this.dtNgayDay.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+               this.dtNgayDay.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+               this.dtNgayDay.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+               this.dtNgayDay.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+               this.dtNgayDay.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+               this.dtNgayDay.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+               this.dtNgayDay.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+               this.dtNgayDay.MonthCalendar.DisplayMonth = new System.DateTime(2021, 9, 1, 0, 0, 0, 0);
+               // 
+               // 
+               // 
+               this.dtNgayDay.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+               this.dtNgayDay.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+               this.dtNgayDay.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+               this.dtNgayDay.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+               this.dtNgayDay.MonthCalendar.TodayButtonVisible = true;
+               this.dtNgayDay.Name = "dtNgayDay";
+               this.dtNgayDay.Size = new System.Drawing.Size(293, 23);
+               this.dtNgayDay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+               this.dtNgayDay.TabIndex = 19;
+               // 
                // ThongTinGiangDay_Admin
                // 
                this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+               this.Controls.Add(this.dtNgayDay);
                this.Controls.Add(this.txtTimKiem);
-               this.Controls.Add(this.txtNgayDay);
                this.Controls.Add(this.txtSoTiet);
                this.Controls.Add(this.txtSoTien1Tiet);
                this.Controls.Add(this.txtMaGV);
@@ -300,10 +337,10 @@ namespace QLTH
                ((System.ComponentModel.ISupportInitialize)(this.txtMaGV.Properties)).EndInit();
                ((System.ComponentModel.ISupportInitialize)(this.txtSoTien1Tiet.Properties)).EndInit();
                ((System.ComponentModel.ISupportInitialize)(this.txtSoTiet.Properties)).EndInit();
-               ((System.ComponentModel.ISupportInitialize)(this.txtNgayDay.Properties)).EndInit();
                ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).EndInit();
                this.panel1.ResumeLayout(false);
                this.panel1.PerformLayout();
+               ((System.ComponentModel.ISupportInitialize)(this.dtNgayDay)).EndInit();
                this.ResumeLayout(false);
                this.PerformLayout();
 
@@ -327,7 +364,6 @@ namespace QLTH
           private DevExpress.XtraEditors.TextEdit txtMaGV;
           private DevExpress.XtraEditors.TextEdit txtSoTien1Tiet;
           private DevExpress.XtraEditors.TextEdit txtSoTiet;
-          private DevExpress.XtraEditors.TextEdit txtNgayDay;
           private DevExpress.XtraEditors.TextEdit txtTimKiem;
           private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
           private System.Windows.Forms.DataGridViewTextBoxColumn MaGV;
@@ -335,5 +371,6 @@ namespace QLTH
           private System.Windows.Forms.DataGridViewTextBoxColumn SoTiet;
           private System.Windows.Forms.DataGridViewTextBoxColumn SoTienMotTiet;
           private System.Windows.Forms.Panel panel1;
+          private DevComponents.Editors.DateTimeAdv.DateTimeInput dtNgayDay;
      }
 }

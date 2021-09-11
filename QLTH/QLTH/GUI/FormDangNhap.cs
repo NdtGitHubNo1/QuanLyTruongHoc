@@ -12,11 +12,11 @@ using System;
 
 namespace QLTH.GUI
 {
-     public partial class QLTH_Admin : Form
+     public partial class FormDangNhap : Form
      {
           linqDataContext linq = new linqDataContext();
           DataTable dt = new DataTable();
-          public QLTH_Admin()
+          public FormDangNhap()
           {
                InitializeComponent();
                dt = Bang();

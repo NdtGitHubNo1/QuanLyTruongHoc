@@ -56,56 +56,56 @@
         <elementListCompartment Id="df4de5ad-ee6b-4916-a2ea-3c34a1fe0e27" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 5.77005126953125); (6.25 : 5.77005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.77005126953125); (6.25 : 5.77005126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/linqDataContext/tblGiaoVien/tblGiaoVien_LUONG" />
       <nodes>
         <classShapeMoniker Id="5bafa364-0419-41f9-b600-c57e084e0ee4" />
         <classShapeMoniker Id="b2f8f687-2942-4131-b89f-f09370a72a0e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 6.0401025390625); (4.5 : 7.26849609375); (9 : 7.26849609375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 6.0401025390625); (4.5 : 7.26849609375); (9 : 7.26849609375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/linqDataContext/tblGiaoVien/tblGiaoVien_tblCTGD" />
       <nodes>
         <classShapeMoniker Id="5bafa364-0419-41f9-b600-c57e084e0ee4" />
         <classShapeMoniker Id="d29e8414-898d-4d09-956c-b438c52577da" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11 : 3.66429768880208); (11.75 : 3.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11 : 3.66429768880208); (11.75 : 3.66429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/linqDataContext/tblHocSinh/tblHocSinh_HOCPHI" />
       <nodes>
         <classShapeMoniker Id="a4821f30-ed7c-4c80-9ff9-5d8cddaf6f65" />
         <classShapeMoniker Id="520b28e9-5428-45d9-ab31-94ffffe11e06" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 4.2612939453125); (8.625 : 4.6362939453125); (8.625 : 6.415496046875); (9 : 6.415496046875)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 4.2612939453125); (8.625 : 4.6362939453125); (8.625 : 6.415496046875); (9 : 6.415496046875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/linqDataContext/tblLop/tblLop_tblCTGD" />
       <nodes>
         <classShapeMoniker Id="56192ee2-f53e-478f-a1df-ed910bfd8ac1" />
         <classShapeMoniker Id="d29e8414-898d-4d09-956c-b438c52577da" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 3.53689447265625); (9 : 3.53689447265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 3.53689447265625); (9 : 3.53689447265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/linqDataContext/tblLop/tblLop_tblHocSinh" />
       <nodes>
         <classShapeMoniker Id="56192ee2-f53e-478f-a1df-ed910bfd8ac1" />
         <classShapeMoniker Id="a4821f30-ed7c-4c80-9ff9-5d8cddaf6f65" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 3.88064697265625); (6.25 : 3.88064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 3.88064697265625); (6.25 : 3.88064697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/linqDataContext/tblGiaoVien/tblGiaoVien_tblLop" />
       <nodes>
         <classShapeMoniker Id="5bafa364-0419-41f9-b600-c57e084e0ee4" />
         <classShapeMoniker Id="56192ee2-f53e-478f-a1df-ed910bfd8ac1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.72199625651042); (3.5 : 4.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.72199625651042); (3.5 : 4.72199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/linqDataContext/tblMonHoc/tblMonHoc_tblGiaoVien" />
       <nodes>
         <classShapeMoniker Id="f8d578b9-0ff5-4aff-bc35-812f9ccfe05a" />
         <classShapeMoniker Id="5bafa364-0419-41f9-b600-c57e084e0ee4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.25889322916667); (3.59375 : 2.25889322916667); (3.59375 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.25889322916667); (3.59375 : 2.25889322916667); (3.59375 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/linqDataContext/tblTrinhDo/tblTrinhDo_tblGiaoVien" />
       <nodes>
         <classShapeMoniker Id="7b1bd5d9-d149-46af-9ffd-457652f21d9b" />
