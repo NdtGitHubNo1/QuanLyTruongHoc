@@ -71,6 +71,18 @@
     <Compile Include="GUI\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GIAOVIEN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GIAOVIEN.Designer.cs">
+      <DependentUpon>GIAOVIEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GIAOVIEN_ADMIN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GIAOVIEN_ADMIN.Designer.cs">
+      <DependentUpon>GIAOVIEN_ADMIN.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QLTH_GiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +105,12 @@
     </Compile>
     <EmbeddedResource Include="GUI\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GIAOVIEN.resx">
+      <DependentUpon>GIAOVIEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GIAOVIEN_ADMIN.resx">
+      <DependentUpon>GIAOVIEN_ADMIN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLTH_Admin.resx">
       <DependentUpon>QLTH_Admin.cs</DependentUpon>

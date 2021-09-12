@@ -110,21 +110,28 @@ namespace QLTH.GUI
             }
             if (quyen == "admin")
             {
-                MessageBox.Show("đăng nhập với quyền admin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                QLTH_Admin admin = new QLTH_Admin();
+                admin.ShowDialog();
                 this.Close();
             }
             if (quyen == "GiaoVien")
             {
-                MessageBox.Show("đăng nhập với quyền GiaoVien", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GUI.QLTH_GiaoVien giaovien = new GUI.QLTH_GiaoVien();
+                GUI.QLTH_GiaoVien.magv = txtTK.Text;
+                giaovien.ShowDialog();
                 this.Close();
             }
             if (quyen == "HocSinh")
             {
-                MessageBox.Show("đăng nhập với quyền học sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GUI.QLTH_HocSinh hocsinh = new GUI.QLTH_HocSinh();
+                GUI.QLTH_HocSinh.mahs = txtTK.Text;
+                hocsinh.ShowDialog();
                 this.Close();
             }
         }
-        private void btnLogin_Click(object sender, EventArgs e)
+ 
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             login();
         }

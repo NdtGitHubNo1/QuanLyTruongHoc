@@ -17,5 +17,6 @@ namespace QLTH.GUI
         {
             InitializeComponent();
         }
+        public static string mahs;
     }
 }

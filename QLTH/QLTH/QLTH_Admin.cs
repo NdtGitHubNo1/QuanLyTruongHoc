@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLTH.GUI;
 
 namespace QLTH
 {
@@ -16,6 +17,22 @@ namespace QLTH
         public QLTH_Admin()
         {
             InitializeComponent();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!viewSitePanel.Controls.Contains(GIAOVIEN_ADMIN.Instance))
+            {
+                viewSitePanel.Controls.Add(GIAOVIEN_ADMIN.Instance);
+                GIAOVIEN_ADMIN.Instance.Dock = DockStyle.Fill;
+                GIAOVIEN_ADMIN.Instance.BringToFront();
+            }
+            else
+            {
+                GIAOVIEN_ADMIN.Instance.BringToFront();
+                GIAOVIEN_ADMIN.Instance.Dock = DockStyle.Fill;
+
+            }
         }
     }
 }
