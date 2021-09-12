@@ -6,7 +6,6 @@
       <Column Name="MAHOCPHI" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SOTIEN" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="THANGNOP" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Association Name="tblHocSinh_HOCPHI" Member="tblHocSinh" ThisKey="MAHS" OtherKey="MaHS" Type="tblHocSinh" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LUONG" Member="LUONGs">
@@ -15,7 +14,6 @@
       <Column Name="MALUONG" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SOTIEN" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="THANGNHAN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Association Name="tblGiaoVien_LUONG" Member="tblGiaoVien" ThisKey="MAGV" OtherKey="MaGV" Type="tblGiaoVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblCTGD" Member="tblCTGDs">
@@ -25,8 +23,6 @@
       <Column Name="NgayDay" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SoTiet" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SoTienMotTiet" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="tblGiaoVien_tblCTGD" Member="tblGiaoVien" ThisKey="MaGV" OtherKey="MaGV" Type="tblGiaoVien" IsForeignKey="true" />
-      <Association Name="tblLop_tblCTGD" Member="tblLop" ThisKey="MaLop" OtherKey="MaLop" Type="tblLop" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblGiaoVien" Member="tblGiaoViens">
@@ -40,11 +36,9 @@
       <Column Name="LuongCung" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="MaTrinhDo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="MaMon" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="tblGiaoVien_LUONG" Member="LUONGs" ThisKey="MaGV" OtherKey="MAGV" Type="LUONG" />
-      <Association Name="tblGiaoVien_tblCTGD" Member="tblCTGDs" ThisKey="MaGV" OtherKey="MaGV" Type="tblCTGD" />
       <Association Name="tblGiaoVien_tblLop" Member="tblLops" ThisKey="MaGV" OtherKey="GVCN" Type="tblLop" />
-      <Association Name="tblMonHoc_tblGiaoVien" Member="tblMonHoc" ThisKey="MaMon" OtherKey="MaMon" Type="tblMonHoc" IsForeignKey="true" />
-      <Association Name="tblTrinhDo_tblGiaoVien" Member="tblTrinhDo" ThisKey="MaTrinhDo" OtherKey="MaTrinhDo" Type="tblTrinhDo" IsForeignKey="true" />
+      <Association Name="tblMonHoc_tblGiaoVien" Member="tblMonHoc" ThisKey="MaMon" OtherKey="MaMon" Type="tblMonHoc" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="tblTrinhDo_tblGiaoVien" Member="tblTrinhDo" ThisKey="MaTrinhDo" OtherKey="MaTrinhDo" Type="tblTrinhDo" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.tblHocSinh" Member="tblHocSinhs">
@@ -57,8 +51,7 @@
       <Column Name="PhuHuynh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DinhMucHocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MaLop" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="tblHocSinh_HOCPHI" Member="HOCPHIs" ThisKey="MaHS" OtherKey="MAHS" Type="HOCPHI" />
-      <Association Name="tblLop_tblHocSinh" Member="tblLop" ThisKey="MaLop" OtherKey="MaLop" Type="tblLop" IsForeignKey="true" />
+      <Association Name="tblLop_tblHocSinh" Member="tblLop" ThisKey="MaLop" OtherKey="MaLop" Type="tblLop" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.tblLop" Member="tblLops">
@@ -66,9 +59,8 @@
       <Column Name="MaLop" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenLop" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="GVCN" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="tblLop_tblCTGD" Member="tblCTGDs" ThisKey="MaLop" OtherKey="MaLop" Type="tblCTGD" />
       <Association Name="tblLop_tblHocSinh" Member="tblHocSinhs" ThisKey="MaLop" OtherKey="MaLop" Type="tblHocSinh" />
-      <Association Name="tblGiaoVien_tblLop" Member="tblGiaoVien" ThisKey="GVCN" OtherKey="MaGV" Type="tblGiaoVien" IsForeignKey="true" />
+      <Association Name="tblGiaoVien_tblLop" Member="tblGiaoVien" ThisKey="GVCN" OtherKey="MaGV" Type="tblGiaoVien" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.tblMonHoc" Member="tblMonHocs">
@@ -149,6 +141,17 @@
     <Parameter Name="Luong" Parameter="luong" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="TrinhDo" Parameter="trinhDo" Type="System.String" DbType="NVarChar(10)" />
     <Parameter Name="MaMon" Parameter="maMon" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SuaTTGD_Admin" Method="SuaTTGD_Admin">
+    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="NgayDay1" Parameter="ngayDay1" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoTiet1" Parameter="soTiet1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoTienMotTiet1" Parameter="soTienMotTiet1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NgayDay2" Parameter="ngayDay2" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoTiet2" Parameter="soTiet2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoTienMotTiet2" Parameter="soTienMotTiet2" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.THEM_HS_ADMIN" Method="THEM_HS_ADMIN">
@@ -284,11 +287,6 @@
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.XoaTTGD_Admin" Method="XoaTTGD_Admin">
-    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
-    <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.SuaTTGD_Admin" Method="SuaTTGD_Admin">
     <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="NgayDay" Parameter="ngayDay" Type="System.DateTime" DbType="Date" />

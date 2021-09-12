@@ -102,7 +102,7 @@ namespace QLTH.GUI
           {
                if (MessageBox.Show("Bạn có chắc chắn muốn xóa không ?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                {
-                    linq.XoaTTGD_Admin(txtMaLop.Text, txtMaGV.Text);
+                    linq.XoaTTGD_Admin(txtMaLop.Text, txtMaGV.Text, dtNgayDay.Value, Int32.Parse(txtSoTiet.Text), Int32.Parse(txtSoTien1Tiet.Text));
                     refresh();
                     ThongTinGiangDay_Admin_Load(sender, e);
                }
@@ -127,7 +127,9 @@ namespace QLTH.GUI
                     {
                          try
                          {
-                              linq.SuaTTGD_Admin(txtMaLop.Text, txtMaGV.Text, dtNgayDay.Value, Int32.Parse(txtSoTiet.Text), Int32.Parse(txtSoTien1Tiet.Text));
+                              int index = dgvTTGD.CurrentRow.Index;
+
+                              linq.SuaTTGD_Admin(txtMaLop.Text, txtMaGV.Text, Convert.ToDateTime(dgvTTGD.Rows[index].Cells["NgayDay"].Value.ToString()), Int32.Parse(dgvTTGD.Rows[index].Cells["SoTiet"].Value.ToString()), Int32.Parse(dgvTTGD.Rows[index].Cells["SoTienMotTiet"].Value.ToString()), dtNgayDay.Value, Int32.Parse(txtSoTiet.Text), Int32.Parse(txtSoTien1Tiet.Text));
                          }
                          catch (Exception ex)
                          {

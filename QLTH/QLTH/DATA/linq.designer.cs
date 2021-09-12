@@ -203,6 +203,13 @@ namespace QLTH.DATA
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SuaTTGD_Admin")]
+		public int SuaTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay1", DbType="Date")] System.Nullable<System.DateTime> ngayDay1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet1", DbType="Int")] System.Nullable<int> soTiet1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet1", DbType="Int")] System.Nullable<int> soTienMotTiet1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay2", DbType="Date")] System.Nullable<System.DateTime> ngayDay2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet2", DbType="Int")] System.Nullable<int> soTiet2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet2", DbType="Int")] System.Nullable<int> soTienMotTiet2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV, ngayDay1, soTiet1, soTienMotTiet1, ngayDay2, soTiet2, soTienMotTiet2);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.THEM_HS_ADMIN")]
 		public int THEM_HS_ADMIN([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHS", DbType="NChar(10)")] string maHS, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="HoTen", DbType="NVarChar(50)")] string hoTen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GT", DbType="NChar(3)")] string gT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgaySinh", DbType="Date")] System.Nullable<System.DateTime> ngaySinh, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaChi", DbType="NVarChar(50)")] string diaChi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhuHuynh", DbType="NVarChar(50)")] string phuHuynh, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DinhMucHocPhi", DbType="Float")] System.Nullable<double> dinhMucHocPhi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop)
 		{
@@ -295,14 +302,7 @@ namespace QLTH.DATA
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XoaTTGD_Admin")]
-		public int XoaTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SuaTTGD_Admin")]
-		public int SuaTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay", DbType="Date")] System.Nullable<System.DateTime> ngayDay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet", DbType="Int")] System.Nullable<int> soTiet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet", DbType="Int")] System.Nullable<int> soTienMotTiet)
+		public int XoaTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay", DbType="Date")] System.Nullable<System.DateTime> ngayDay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet", DbType="Int")] System.Nullable<int> soTiet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet", DbType="Int")] System.Nullable<int> soTienMotTiet)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV, ngayDay, soTiet, soTienMotTiet);
 			return ((int)(result.ReturnValue));
@@ -323,8 +323,6 @@ namespace QLTH.DATA
 		
 		private string _THANGNOP;
 		
-		private EntityRef<tblHocSinh> _tblHocSinh;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -341,7 +339,6 @@ namespace QLTH.DATA
 		
 		public HOCPHI()
 		{
-			this._tblHocSinh = default(EntityRef<tblHocSinh>);
 			OnCreated();
 		}
 		
@@ -356,10 +353,6 @@ namespace QLTH.DATA
 			{
 				if ((this._MAHS != value))
 				{
-					if (this._tblHocSinh.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMAHSChanging(value);
 					this.SendPropertyChanging();
 					this._MAHS = value;
@@ -429,40 +422,6 @@ namespace QLTH.DATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblHocSinh_HOCPHI", Storage="_tblHocSinh", ThisKey="MAHS", OtherKey="MaHS", IsForeignKey=true)]
-		public tblHocSinh tblHocSinh
-		{
-			get
-			{
-				return this._tblHocSinh.Entity;
-			}
-			set
-			{
-				tblHocSinh previousValue = this._tblHocSinh.Entity;
-				if (((previousValue != value) 
-							|| (this._tblHocSinh.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblHocSinh.Entity = null;
-						previousValue.HOCPHIs.Remove(this);
-					}
-					this._tblHocSinh.Entity = value;
-					if ((value != null))
-					{
-						value.HOCPHIs.Add(this);
-						this._MAHS = value.MaHS;
-					}
-					else
-					{
-						this._MAHS = default(string);
-					}
-					this.SendPropertyChanged("tblHocSinh");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -498,8 +457,6 @@ namespace QLTH.DATA
 		
 		private string _THANGNHAN;
 		
-		private EntityRef<tblGiaoVien> _tblGiaoVien;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -516,7 +473,6 @@ namespace QLTH.DATA
 		
 		public LUONG()
 		{
-			this._tblGiaoVien = default(EntityRef<tblGiaoVien>);
 			OnCreated();
 		}
 		
@@ -531,10 +487,6 @@ namespace QLTH.DATA
 			{
 				if ((this._MAGV != value))
 				{
-					if (this._tblGiaoVien.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMAGVChanging(value);
 					this.SendPropertyChanging();
 					this._MAGV = value;
@@ -604,40 +556,6 @@ namespace QLTH.DATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblGiaoVien_LUONG", Storage="_tblGiaoVien", ThisKey="MAGV", OtherKey="MaGV", IsForeignKey=true)]
-		public tblGiaoVien tblGiaoVien
-		{
-			get
-			{
-				return this._tblGiaoVien.Entity;
-			}
-			set
-			{
-				tblGiaoVien previousValue = this._tblGiaoVien.Entity;
-				if (((previousValue != value) 
-							|| (this._tblGiaoVien.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblGiaoVien.Entity = null;
-						previousValue.LUONGs.Remove(this);
-					}
-					this._tblGiaoVien.Entity = value;
-					if ((value != null))
-					{
-						value.LUONGs.Add(this);
-						this._MAGV = value.MaGV;
-					}
-					else
-					{
-						this._MAGV = default(string);
-					}
-					this.SendPropertyChanged("tblGiaoVien");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -675,10 +593,6 @@ namespace QLTH.DATA
 		
 		private int _SoTienMotTiet;
 		
-		private EntityRef<tblGiaoVien> _tblGiaoVien;
-		
-		private EntityRef<tblLop> _tblLop;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -697,8 +611,6 @@ namespace QLTH.DATA
 		
 		public tblCTGD()
 		{
-			this._tblGiaoVien = default(EntityRef<tblGiaoVien>);
-			this._tblLop = default(EntityRef<tblLop>);
 			OnCreated();
 		}
 		
@@ -713,10 +625,6 @@ namespace QLTH.DATA
 			{
 				if ((this._MaLop != value))
 				{
-					if (this._tblLop.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMaLopChanging(value);
 					this.SendPropertyChanging();
 					this._MaLop = value;
@@ -737,10 +645,6 @@ namespace QLTH.DATA
 			{
 				if ((this._MaGV != value))
 				{
-					if (this._tblGiaoVien.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMaGVChanging(value);
 					this.SendPropertyChanging();
 					this._MaGV = value;
@@ -810,74 +714,6 @@ namespace QLTH.DATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblGiaoVien_tblCTGD", Storage="_tblGiaoVien", ThisKey="MaGV", OtherKey="MaGV", IsForeignKey=true)]
-		public tblGiaoVien tblGiaoVien
-		{
-			get
-			{
-				return this._tblGiaoVien.Entity;
-			}
-			set
-			{
-				tblGiaoVien previousValue = this._tblGiaoVien.Entity;
-				if (((previousValue != value) 
-							|| (this._tblGiaoVien.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblGiaoVien.Entity = null;
-						previousValue.tblCTGDs.Remove(this);
-					}
-					this._tblGiaoVien.Entity = value;
-					if ((value != null))
-					{
-						value.tblCTGDs.Add(this);
-						this._MaGV = value.MaGV;
-					}
-					else
-					{
-						this._MaGV = default(string);
-					}
-					this.SendPropertyChanged("tblGiaoVien");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLop_tblCTGD", Storage="_tblLop", ThisKey="MaLop", OtherKey="MaLop", IsForeignKey=true)]
-		public tblLop tblLop
-		{
-			get
-			{
-				return this._tblLop.Entity;
-			}
-			set
-			{
-				tblLop previousValue = this._tblLop.Entity;
-				if (((previousValue != value) 
-							|| (this._tblLop.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblLop.Entity = null;
-						previousValue.tblCTGDs.Remove(this);
-					}
-					this._tblLop.Entity = value;
-					if ((value != null))
-					{
-						value.tblCTGDs.Add(this);
-						this._MaLop = value.MaLop;
-					}
-					else
-					{
-						this._MaLop = default(string);
-					}
-					this.SendPropertyChanged("tblLop");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -923,10 +759,6 @@ namespace QLTH.DATA
 		
 		private string _MaMon;
 		
-		private EntitySet<LUONG> _LUONGs;
-		
-		private EntitySet<tblCTGD> _tblCTGDs;
-		
 		private EntitySet<tblLop> _tblLops;
 		
 		private EntityRef<tblMonHoc> _tblMonHoc;
@@ -959,8 +791,6 @@ namespace QLTH.DATA
 		
 		public tblGiaoVien()
 		{
-			this._LUONGs = new EntitySet<LUONG>(new Action<LUONG>(this.attach_LUONGs), new Action<LUONG>(this.detach_LUONGs));
-			this._tblCTGDs = new EntitySet<tblCTGD>(new Action<tblCTGD>(this.attach_tblCTGDs), new Action<tblCTGD>(this.detach_tblCTGDs));
 			this._tblLops = new EntitySet<tblLop>(new Action<tblLop>(this.attach_tblLops), new Action<tblLop>(this.detach_tblLops));
 			this._tblMonHoc = default(EntityRef<tblMonHoc>);
 			this._tblTrinhDo = default(EntityRef<tblTrinhDo>);
@@ -1155,32 +985,6 @@ namespace QLTH.DATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblGiaoVien_LUONG", Storage="_LUONGs", ThisKey="MaGV", OtherKey="MAGV")]
-		public EntitySet<LUONG> LUONGs
-		{
-			get
-			{
-				return this._LUONGs;
-			}
-			set
-			{
-				this._LUONGs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblGiaoVien_tblCTGD", Storage="_tblCTGDs", ThisKey="MaGV", OtherKey="MaGV")]
-		public EntitySet<tblCTGD> tblCTGDs
-		{
-			get
-			{
-				return this._tblCTGDs;
-			}
-			set
-			{
-				this._tblCTGDs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblGiaoVien_tblLop", Storage="_tblLops", ThisKey="MaGV", OtherKey="GVCN")]
 		public EntitySet<tblLop> tblLops
 		{
@@ -1194,7 +998,7 @@ namespace QLTH.DATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblMonHoc_tblGiaoVien", Storage="_tblMonHoc", ThisKey="MaMon", OtherKey="MaMon", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblMonHoc_tblGiaoVien", Storage="_tblMonHoc", ThisKey="MaMon", OtherKey="MaMon", IsForeignKey=true, DeleteRule="CASCADE")]
 		public tblMonHoc tblMonHoc
 		{
 			get
@@ -1228,7 +1032,7 @@ namespace QLTH.DATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblTrinhDo_tblGiaoVien", Storage="_tblTrinhDo", ThisKey="MaTrinhDo", OtherKey="MaTrinhDo", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblTrinhDo_tblGiaoVien", Storage="_tblTrinhDo", ThisKey="MaTrinhDo", OtherKey="MaTrinhDo", IsForeignKey=true, DeleteRule="CASCADE")]
 		public tblTrinhDo tblTrinhDo
 		{
 			get
@@ -1282,30 +1086,6 @@ namespace QLTH.DATA
 			}
 		}
 		
-		private void attach_LUONGs(LUONG entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblGiaoVien = this;
-		}
-		
-		private void detach_LUONGs(LUONG entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblGiaoVien = null;
-		}
-		
-		private void attach_tblCTGDs(tblCTGD entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblGiaoVien = this;
-		}
-		
-		private void detach_tblCTGDs(tblCTGD entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblGiaoVien = null;
-		}
-		
 		private void attach_tblLops(tblLop entity)
 		{
 			this.SendPropertyChanging();
@@ -1341,8 +1121,6 @@ namespace QLTH.DATA
 		
 		private string _MaLop;
 		
-		private EntitySet<HOCPHI> _HOCPHIs;
-		
 		private EntityRef<tblLop> _tblLop;
 		
     #region Extensibility Method Definitions
@@ -1369,7 +1147,6 @@ namespace QLTH.DATA
 		
 		public tblHocSinh()
 		{
-			this._HOCPHIs = new EntitySet<HOCPHI>(new Action<HOCPHI>(this.attach_HOCPHIs), new Action<HOCPHI>(this.detach_HOCPHIs));
 			this._tblLop = default(EntityRef<tblLop>);
 			OnCreated();
 		}
@@ -1538,20 +1315,7 @@ namespace QLTH.DATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblHocSinh_HOCPHI", Storage="_HOCPHIs", ThisKey="MaHS", OtherKey="MAHS")]
-		public EntitySet<HOCPHI> HOCPHIs
-		{
-			get
-			{
-				return this._HOCPHIs;
-			}
-			set
-			{
-				this._HOCPHIs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLop_tblHocSinh", Storage="_tblLop", ThisKey="MaLop", OtherKey="MaLop", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLop_tblHocSinh", Storage="_tblLop", ThisKey="MaLop", OtherKey="MaLop", IsForeignKey=true, DeleteRule="CASCADE")]
 		public tblLop tblLop
 		{
 			get
@@ -1604,18 +1368,6 @@ namespace QLTH.DATA
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_HOCPHIs(HOCPHI entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblHocSinh = this;
-		}
-		
-		private void detach_HOCPHIs(HOCPHI entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblHocSinh = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblLop")]
@@ -1629,8 +1381,6 @@ namespace QLTH.DATA
 		private string _TenLop;
 		
 		private string _GVCN;
-		
-		private EntitySet<tblCTGD> _tblCTGDs;
 		
 		private EntitySet<tblHocSinh> _tblHocSinhs;
 		
@@ -1650,7 +1400,6 @@ namespace QLTH.DATA
 		
 		public tblLop()
 		{
-			this._tblCTGDs = new EntitySet<tblCTGD>(new Action<tblCTGD>(this.attach_tblCTGDs), new Action<tblCTGD>(this.detach_tblCTGDs));
 			this._tblHocSinhs = new EntitySet<tblHocSinh>(new Action<tblHocSinh>(this.attach_tblHocSinhs), new Action<tblHocSinh>(this.detach_tblHocSinhs));
 			this._tblGiaoVien = default(EntityRef<tblGiaoVien>);
 			OnCreated();
@@ -1720,19 +1469,6 @@ namespace QLTH.DATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLop_tblCTGD", Storage="_tblCTGDs", ThisKey="MaLop", OtherKey="MaLop")]
-		public EntitySet<tblCTGD> tblCTGDs
-		{
-			get
-			{
-				return this._tblCTGDs;
-			}
-			set
-			{
-				this._tblCTGDs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblLop_tblHocSinh", Storage="_tblHocSinhs", ThisKey="MaLop", OtherKey="MaLop")]
 		public EntitySet<tblHocSinh> tblHocSinhs
 		{
@@ -1746,7 +1482,7 @@ namespace QLTH.DATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblGiaoVien_tblLop", Storage="_tblGiaoVien", ThisKey="GVCN", OtherKey="MaGV", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblGiaoVien_tblLop", Storage="_tblGiaoVien", ThisKey="GVCN", OtherKey="MaGV", IsForeignKey=true, DeleteRule="CASCADE")]
 		public tblGiaoVien tblGiaoVien
 		{
 			get
@@ -1798,18 +1534,6 @@ namespace QLTH.DATA
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_tblCTGDs(tblCTGD entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblLop = this;
-		}
-		
-		private void detach_tblCTGDs(tblCTGD entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblLop = null;
 		}
 		
 		private void attach_tblHocSinhs(tblHocSinh entity)
