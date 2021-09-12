@@ -1,0 +1,11 @@
+D:\TTNhom_QLTH\QLTH\QLTH\bin\Debug\QLTH.exe.config
+D:\TTNhom_QLTH\QLTH\QLTH\bin\Debug\QLTH.exe
+D:\TTNhom_QLTH\QLTH\QLTH\bin\Debug\QLTH.pdb
+D:\TTNhom_QLTH\QLTH\QLTH\obj\Debug\QLTH.csproj.AssemblyReference.cache
+D:\TTNhom_QLTH\QLTH\QLTH\obj\Debug\QLTH.QLHocSinh_ADMIN.resources
+D:\TTNhom_QLTH\QLTH\QLTH\obj\Debug\QLTH.QLHocSinh_HOCSINH.resources
+D:\TTNhom_QLTH\QLTH\QLTH\obj\Debug\QLTH.Properties.Resources.resources
+D:\TTNhom_QLTH\QLTH\QLTH\obj\Debug\QLTH.csproj.GenerateResource.cache
+D:\TTNhom_QLTH\QLTH\QLTH\obj\Debug\QLTH.csproj.CoreCompileInputs.cache
+D:\TTNhom_QLTH\QLTH\QLTH\obj\Debug\QLTH.exe
+D:\TTNhom_QLTH\QLTH\QLTH\obj\Debug\QLTH.pdb
