@@ -33,12 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -61,24 +62,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLHocSinh_ADMIN.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QLHocSinh_ADMIN.designer.cs">
-      <DependentUpon>QLHocSinh_ADMIN.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QLHocSinh_HOCSINH.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QLHocSinh_HOCSINH.designer.cs">
-      <DependentUpon>QLHocSinh_HOCSINH.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="QLHocSinh_ADMIN.resx">
-      <DependentUpon>QLHocSinh_ADMIN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QLHocSinh_HOCSINH.resx">
-      <DependentUpon>QLHocSinh_HOCSINH.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="DATA\linq.dbml.layout">
       <DependentUpon>linq.dbml</DependentUpon>
     </None>
