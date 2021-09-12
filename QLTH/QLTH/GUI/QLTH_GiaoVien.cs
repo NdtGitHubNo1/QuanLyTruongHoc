@@ -17,7 +17,23 @@ namespace QLTH.GUI
         {
             InitializeComponent();
         }
+          public static string magv;
 
+          private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+          {
+               if (!viewSitePanel.Controls.Contains(GIAOVIEN.Instance))
+               {
+                    viewSitePanel.Controls.Add(GIAOVIEN.Instance);
+                    GIAOVIEN.Instance.Dock = DockStyle.Fill;
+                    GIAOVIEN.Instance.BringToFront();
+               }
+               else
+               {
+                    GIAOVIEN.Instance.BringToFront();
+                    GIAOVIEN.Instance.Dock = DockStyle.Fill;
+
+               }
+          }
           private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
           {
                viewSitePanel.Controls.Clear();

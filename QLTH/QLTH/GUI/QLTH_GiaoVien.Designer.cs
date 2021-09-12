@@ -59,42 +59,41 @@ namespace QLTH.GUI
                this.ribbon.Name = "ribbon";
                this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-               this.ribbon.Size = new System.Drawing.Size(1547, 198);
-               this.ribbon.StatusBar = this.ribbonStatusBar;
-               // 
-               // barButtonItem1
-               // 
-               this.barButtonItem1.Caption = "Thông Tin";
-               this.barButtonItem1.Id = 1;
-               this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-               this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-               this.barButtonItem1.LargeWidth = 80;
-               this.barButtonItem1.Name = "barButtonItem1";
-               // 
-               // barButtonItem2
-               // 
-               this.barButtonItem2.Caption = "Lịch Dạy";
-               this.barButtonItem2.Id = 2;
-               this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-               this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-               this.barButtonItem2.LargeWidth = 80;
-               this.barButtonItem2.Name = "barButtonItem2";
-               this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
-               // 
-               // barButtonItem3
-               // 
-               this.barButtonItem3.Caption = "Thoát";
-               this.barButtonItem3.Id = 3;
-               this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-               this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-               this.barButtonItem3.LargeWidth = 80;
-               this.barButtonItem3.Name = "barButtonItem3";
-               // 
-               // ribbonPage1
-               // 
-               this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-               this.ribbonPage1.Appearance.Options.UseFont = true;
-               this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbon.Size = new System.Drawing.Size(1547, 198);
+            this.ribbon.StatusBar = this.ribbonStatusBar;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Thông Tin";
+            this.barButtonItem1.Id = 1;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.LargeWidth = 80;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Lịch Dạy";
+            this.barButtonItem2.Id = 2;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.LargeWidth = 80;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Thoát";
+            this.barButtonItem3.Id = 3;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonItem3.LargeWidth = 80;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonPage1.Appearance.Options.UseFont = true;
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
             this.ribbonPageGroup3});

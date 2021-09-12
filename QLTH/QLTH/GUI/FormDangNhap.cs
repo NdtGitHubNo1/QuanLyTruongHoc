@@ -107,26 +107,31 @@ namespace QLTH.GUI
                          }
                     }
 
-               }
-               if (quyen == "admin")
-               {
-                    MessageBox.Show("đăng nhập với quyền admin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (quyen == "admin")
+            {
+                MessageBox.Show("đăng nhập với quyền admin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    QLTH_Admin admin = new QLTH_Admin();
+                    admin.ShowDialog();
                     this.Close();
-               }
-               if (quyen == "GiaoVien")
-               {
-                    MessageBox.Show("đăng nhập với quyền GiaoVien", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (quyen == "GiaoVien")
+            {
+                MessageBox.Show("đăng nhập với quyền GiaoVien", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            if (quyen == "HocSinh")
+            {
+                MessageBox.Show("đăng nhập với quyền học sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GUI.QLTH_HocSinh hocsinh = new GUI.QLTH_HocSinh();
+                    GUI.QLTH_HocSinh.mahs = txtTK.Text;
+                    hocsinh.ShowDialog();
                     this.Close();
-               }
-               if (quyen == "HocSinh")
-               {
-                    MessageBox.Show("đăng nhập với quyền học sinh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-               }
-          }
-          private void btnLogin_Click(object sender, EventArgs e)
-          {
-               login();
-          }
-     }
+            }
+        }
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            login();
+        }
+    }
 }

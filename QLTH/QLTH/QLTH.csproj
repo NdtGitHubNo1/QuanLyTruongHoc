@@ -71,12 +71,18 @@
     <Compile Include="GUI\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QLTH_Admin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\QLTH_Admin.Designer.cs">
-      <DependentUpon>QLTH_Admin.cs</DependentUpon>
-    </Compile>
+       <Compile Include="GUI\GIAOVIEN.cs">
+            <SubType>UserControl</SubType>
+       </Compile>
+       <Compile Include="GUI\GIAOVIEN.Designer.cs">
+            <DependentUpon>GIAOVIEN.cs</DependentUpon>
+       </Compile>
+       <Compile Include="GUI\GIAOVIEN_ADMIN.cs">
+            <SubType>UserControl</SubType>
+       </Compile>
+       <Compile Include="GUI\GIAOVIEN_ADMIN.Designer.cs">
+            <DependentUpon>GIAOVIEN_ADMIN.cs</DependentUpon>
+       </Compile>
     <Compile Include="GUI\QLTH_GiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,15 +109,31 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+       <Compile Include="QLTH_Admin.cs">
+            <SubType>Form</SubType>
+       </Compile>
+       <Compile Include="QLTH_Admin.Designer.cs">
+            <DependentUpon>QLTH_Admin.cs</DependentUpon>
+       </Compile>
     <None Include="DATA\linq.dbml.layout">
       <DependentUpon>linq.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="GUI\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QLTH_Admin.resx">
+       <EmbeddedResource Include="GUI\GIAOVIEN.resx">
+            <DependentUpon>GIAOVIEN.cs</DependentUpon>
+       </EmbeddedResource>
+       <EmbeddedResource Include="GUI\GIAOVIEN_ADMIN.resx">
+            <DependentUpon>GIAOVIEN_ADMIN.cs</DependentUpon>
+       </EmbeddedResource>
+       <EmbeddedResource Include="QLTH_Admin.resx">
+    <EmbeddedResource Include="QLTH_Admin.resx">
       <DependentUpon>QLTH_Admin.cs</DependentUpon>
     </EmbeddedResource>
+            <None Include="DATA\linq.dbml.layout">
+                 <DependentUpon>linq.dbml</DependentUpon>
+            </None>
     <EmbeddedResource Include="GUI\QLTH_GiaoVien.resx">
       <DependentUpon>QLTH_GiaoVien.cs</DependentUpon>
     </EmbeddedResource>
