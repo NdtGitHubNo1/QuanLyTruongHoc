@@ -33,5 +33,16 @@ namespace QLTH.Properties {
                 return ((string)(this["QUANLYTRUONGHOCConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-3PM2V18\\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC;Integrated" +
+            " Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        public string QUANLYTRUONGHOCConnectionString1 {
+            get {
+                return ((string)(this["QUANLYTRUONGHOCConnectionString1"]));
+            }
+        }
     }
 }

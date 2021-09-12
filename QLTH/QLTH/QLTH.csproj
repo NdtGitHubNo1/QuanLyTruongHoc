@@ -95,6 +95,18 @@
     <Compile Include="GUI\QLTH_HocSinh.Designer.cs">
       <DependentUpon>QLTH_HocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ThongTinGiangDay_Admin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ThongTinGiangDay_Admin.Designer.cs">
+      <DependentUpon>ThongTinGiangDay_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ThongTinGiangDay_GiaoVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ThongTinGiangDay_GiaoVien.Designer.cs">
+      <DependentUpon>ThongTinGiangDay_GiaoVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLTH_Admin.cs">
@@ -111,6 +123,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GIAOVIEN_ADMIN.resx">
       <DependentUpon>GIAOVIEN_ADMIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThongTinGiangDay_Admin.resx">
+      <DependentUpon>ThongTinGiangDay_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ThongTinGiangDay_GiaoVien.resx">
+      <DependentUpon>ThongTinGiangDay_GiaoVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLTH_Admin.resx">
       <DependentUpon>QLTH_Admin.cs</DependentUpon>
