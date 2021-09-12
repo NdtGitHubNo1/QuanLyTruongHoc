@@ -128,7 +128,6 @@ namespace QLTH.GUI
                          try
                          {
                               int index = dgvTTGD.CurrentRow.Index;
-
                               linq.SuaTTGD_Admin(txtMaLop.Text, txtMaGV.Text, Convert.ToDateTime(dgvTTGD.Rows[index].Cells["NgayDay"].Value.ToString()), Int32.Parse(dgvTTGD.Rows[index].Cells["SoTiet"].Value.ToString()), Int32.Parse(dgvTTGD.Rows[index].Cells["SoTienMotTiet"].Value.ToString()), dtNgayDay.Value, Int32.Parse(txtSoTiet.Text), Int32.Parse(txtSoTien1Tiet.Text));
                          }
                          catch (Exception ex)
