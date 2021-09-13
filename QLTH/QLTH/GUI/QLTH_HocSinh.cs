@@ -17,5 +17,18 @@ namespace QLTH.GUI
         {
             InitializeComponent();
         }
+        public static string mahs;
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            viewSitePanel.Controls.Clear();
+            viewSitePanel.Controls.Add(QLHocSinh_HOCSINH.Instance);
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            viewSitePanel.Controls.Clear();
+            viewSitePanel.Controls.Add(LichHoc_HocSinh.Instance);
+        }
     }
 }

@@ -71,6 +71,36 @@
     <Compile Include="GUI\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GIAOVIEN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GIAOVIEN.designer.cs">
+      <DependentUpon>GIAOVIEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GIAOVIEN_ADMIN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GIAOVIEN_ADMIN.designer.cs">
+      <DependentUpon>GIAOVIEN_ADMIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LichHoc_HocSinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\LichHoc_HocSinh.Designer.cs">
+      <DependentUpon>LichHoc_HocSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLHocSinh_ADMIN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\QLHocSinh_ADMIN.designer.cs">
+      <DependentUpon>QLHocSinh_ADMIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QLHocSinh_HOCSINH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\QLHocSinh_HOCSINH.designer.cs">
+      <DependentUpon>QLHocSinh_HOCSINH.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QLTH_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +138,21 @@
     </None>
     <EmbeddedResource Include="GUI\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GIAOVIEN.resx">
+      <DependentUpon>GIAOVIEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GIAOVIEN_ADMIN.resx">
+      <DependentUpon>GIAOVIEN_ADMIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LichHoc_HocSinh.resx">
+      <DependentUpon>LichHoc_HocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLHocSinh_ADMIN.resx">
+      <DependentUpon>QLHocSinh_ADMIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QLHocSinh_HOCSINH.resx">
+      <DependentUpon>QLHocSinh_HOCSINH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QLTH_Admin.resx">
       <DependentUpon>QLTH_Admin.cs</DependentUpon>

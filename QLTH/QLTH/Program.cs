@@ -16,7 +16,8 @@ namespace QLTH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QLTH_Admin());
+            Application.Run(new GUI.FormDangNhap());
+           // Application.Run(new GUI.QLTH_HocSinh());
         }
     }
 }

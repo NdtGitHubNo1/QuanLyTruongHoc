@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\QLTH",
+    "\\QLTH\\QLTH",
+    "\\QLTH\\QLTH\\GUI"
   ],
+  "SelectedNode": "\\QLTH\\QLTH\\GUI\\QLTH_HocSinh.cs",
   "PreviewInSolutionExplorer": false
 }
