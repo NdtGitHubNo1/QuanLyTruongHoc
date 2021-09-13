@@ -64,6 +64,7 @@ namespace QLTH.GUI
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimkiem = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGiaoVien)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -358,6 +359,7 @@ namespace QLTH.GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cbbGioiTinh);
             this.groupBox1.Controls.Add(this.cbbMamon);
             this.groupBox1.Controls.Add(this.cbbTrinhdo);
@@ -382,7 +384,7 @@ namespace QLTH.GUI
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(1193, 86);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(356, 535);
+            this.groupBox1.Size = new System.Drawing.Size(356, 592);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin giáo viên";
@@ -414,6 +416,16 @@ namespace QLTH.GUI
             this.btnTimkiem.Text = "Tìm kiếm";
             this.btnTimkiem.UseVisualStyleBackColor = true;
             this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(86, 553);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(230, 33);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Báo cáo giáo viên theo trình độ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GIAOVIEN_ADMIN
             // 
@@ -471,5 +483,6 @@ namespace QLTH.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTrinhDo;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaMon;
         private System.Windows.Forms.ComboBox cbbGioiTinh;
+        private System.Windows.Forms.Button button1;
     }
 }
