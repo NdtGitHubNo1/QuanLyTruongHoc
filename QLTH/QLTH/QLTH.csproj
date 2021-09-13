@@ -118,7 +118,9 @@
     <Compile Include="GUI\QLTH_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QLTH_Admin.Designer.cs" />
+    <Compile Include="GUI\QLTH_Admin.Designer.cs">
+      <DependentUpon>QLTH_Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -160,7 +162,9 @@
     <EmbeddedResource Include="GUI\Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QLTH_Admin.resx" />
+    <EmbeddedResource Include="GUI\QLTH_Admin.resx">
+      <DependentUpon>QLTH_Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
