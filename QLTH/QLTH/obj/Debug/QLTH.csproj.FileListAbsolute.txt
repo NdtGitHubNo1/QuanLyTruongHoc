@@ -408,3 +408,6 @@ C:\Users\quang\Source\Repos\QuanLyTruongHoc2\QLTH\QLTH\obj\Debug\QLTH.exe
 C:\Users\quang\Source\Repos\QuanLyTruongHoc2\QLTH\QLTH\obj\Debug\QLTH.pdb
 C:\Users\quang\Source\Repos\QuanLyTruongHoc2\QLTH\QLTH\obj\Debug\QLTH.GUI.XtraReport2.resources
 C:\Users\quang\Source\Repos\QuanLyTruongHoc2\QLTH\QLTH\obj\Debug\QLTH.csproj.AssemblyReference.cache
+C:\Users\quang\source\repos\QuanLyTruongHoc2\QLTH\QLTH\bin\Debug\DevExpress.XtraCharts.v20.1.UI.dll
+C:\Users\quang\source\repos\QuanLyTruongHoc2\QLTH\QLTH\bin\Debug\DevExpress.XtraCharts.v20.1.UI.xml
+C:\Users\quang\source\repos\QuanLyTruongHoc2\QLTH\QLTH\obj\Debug\QLTH.GUI.ThongKe.resources

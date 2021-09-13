@@ -40,5 +40,11 @@ namespace QLTH
                viewSitePanel.Controls.Clear();
                viewSitePanel.Controls.Add(ThongTinGiangDay_Admin.Instance);
           }
-     }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            viewSitePanel.Controls.Clear();
+            viewSitePanel.Controls.Add(ThongKe.Instance);
+        }
+    }
 }
