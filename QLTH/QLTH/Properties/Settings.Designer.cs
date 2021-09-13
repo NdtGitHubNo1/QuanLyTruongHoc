@@ -44,5 +44,16 @@ namespace QLTH.Properties {
                 return ((string)(this["QUANLYTRUONGHOCConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-FI1VAB7\\DT;Initial Catalog=QUANLYTRUONGHOC;Integrated Securit" +
+            "y=True")]
+        public string QUANLYTRUONGHOCConnectionString2 {
+            get {
+                return ((string)(this["QUANLYTRUONGHOCConnectionString2"]));
+            }
+        }
     }
 }
