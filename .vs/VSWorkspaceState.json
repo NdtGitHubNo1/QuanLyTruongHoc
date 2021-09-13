@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\QLTH",
+    "\\QLTH\\QLTH",
+    "\\QLTH\\QLTH\\GUI"
   ],
+  "SelectedNode": "\\QLTH\\QLTH\\GUI\\Form4.resx",
   "PreviewInSolutionExplorer": false
 }
