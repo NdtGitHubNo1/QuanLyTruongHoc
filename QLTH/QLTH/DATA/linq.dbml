@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYTRUONGHOC" Class="linqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-FI1VAB7\DT;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True" SettingsObjectName="QLTH.Properties.Settings" SettingsPropertyName="QUANLYTRUONGHOCConnectionString2" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYTRUONGHOC3" Class="linqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-DN7MI1FU\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC3;Integrated Security=True" SettingsObjectName="QLTH.Properties.Settings" SettingsPropertyName="QUANLYTRUONGHOCConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.HOCPHI" Member="HOCPHIs">
     <Type Name="HOCPHI">
       <Column Name="MAHS" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
@@ -386,5 +386,13 @@
     <Parameter Name="SoTiet" Parameter="soTiet" Type="System.Int32" DbType="Int" />
     <Parameter Name="SoTienMotTiet" Parameter="soTienMotTiet" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.XEM_TRINHDO" Method="XEM_TRINHDO">
+    <ElementType Name="XEM_TRINHDOResult">
+      <Column Name="MaGV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

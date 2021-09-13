@@ -428,3 +428,7 @@ C:\Users\ducto\Source\Repos\QuanLyTruongHoc1\QLTH\QLTH\obj\Debug\QLTH.exe.licens
 C:\Users\ducto\Source\Repos\QuanLyTruongHoc1\QLTH\QLTH\obj\Debug\QLTH.csproj.CoreCompileInputs.cache
 C:\Users\ducto\Source\Repos\QuanLyTruongHoc1\QLTH\QLTH\obj\Debug\QLTH.exe
 C:\Users\ducto\Source\Repos\QuanLyTruongHoc1\QLTH\QLTH\obj\Debug\QLTH.pdb
+C:\Users\quang\source\repos\QuanLyTruongHoc2\QLTH\QLTH\obj\Debug\QLTH.GUI.LichHoc_HocSinh.resources
+C:\Users\quang\source\repos\QuanLyTruongHoc2\QLTH\QLTH\obj\Debug\QLTH.QLHocSinh_ADMIN.resources
+C:\Users\quang\source\repos\QuanLyTruongHoc2\QLTH\QLTH\obj\Debug\QLTH.QLHocSinh_HOCSINH.resources
+C:\Users\quang\source\repos\QuanLyTruongHoc2\QLTH\QLTH\obj\Debug\QLTH.GUI.XtraReport1.resources

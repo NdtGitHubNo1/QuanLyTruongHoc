@@ -128,6 +128,12 @@
     <Compile Include="GUI\QLTH_HocSinh.Designer.cs">
       <DependentUpon>QLTH_HocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ThongTinGiangDay_Admin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QLHocSinh_HOCSINH.resx">
       <DependentUpon>QLHocSinh_HOCSINH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThongTinGiangDay_Admin.resx">
       <DependentUpon>ThongTinGiangDay_Admin.cs</DependentUpon>

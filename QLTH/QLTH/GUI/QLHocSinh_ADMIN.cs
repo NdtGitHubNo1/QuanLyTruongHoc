@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DevExpress.XtraReports.UI;
 namespace QLTH
 {
     public partial class QLHocSinh_ADMIN : UserControl
@@ -37,6 +37,11 @@ namespace QLTH
         private void QLHocSinh_ADMIN_Load(object sender, EventArgs e)
         {
             dataGridViewQLHS_ADMIN.DataSource = linq.QLHS_ADMIN();
+            var dt = from p in linq.XEMMALOP() select p;
+            foreach (var item in dt)
+            {
+                comboBox1.Items.Add(item.MALOP.ToString());
+            }
         }
 
         void ReLoad()
@@ -187,6 +192,49 @@ namespace QLTH
                 txtMaLop.Text = dataGridViewQLHS_ADMIN.Rows[index].Cells["MaLop"].Value.ToString();
 
             }
+        }
+
+        private void BaoCaoButton_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "")
+            {
+                MessageBox.Show("Hẫy chọn mã lớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                var dt = from p in linq.XEM_HOCSINH_BAOCAO(comboBox1.Text) select p;
+                List<HocSinh> list = new List<HocSinh>();
+                foreach (var item in dt)
+                {
+                    HocSinh hs = new HocSinh
+                    {
+                        MaHS = item.MaHS.ToString(),
+                        HoTen = item.HoTen.ToString(),
+                        GioiTinh = item.GT.ToString(),
+                        DiaChi = item.DiaChi.ToString(),
+                        NgaySinh = item.NgaySinh.ToString(),
+                        PhuHuynh = item.PhuHuynh.ToString(),
+                        DinhMuc = Convert.ToDouble(item.DinhMucHocPhi.ToString()),
+                        MaLop = item.MaLop.ToString()
+                    };
+                    list.Add(hs);
+                }
+                GUI.XtraReport1 xr1 = new GUI.XtraReport1();
+                xr1.DataSource = list;
+                xr1.ShowPreviewDialog();
+                //frm3.ShowDialog();
+            }
+        }
+        public class HocSinh
+        {
+            public string MaHS { set; get; }
+            public string HoTen { set; get; }
+            public string GioiTinh { set; get; }
+            public string NgaySinh { set; get; }
+            public string DiaChi { set; get; }
+            public string PhuHuynh { set; get; }
+            public double DinhMuc { set; get; }
+            public string MaLop { set; get; }
         }
     }
 }
