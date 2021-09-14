@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYTRUONGHOC3" Class="linqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-DN7MI1FU\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC3;Integrated Security=True" SettingsObjectName="QLTH.Properties.Settings" SettingsPropertyName="QUANLYTRUONGHOCConnectionString1" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYTRUONGHOC" Class="linqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-3PM2V18\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="QLTH.Properties.Settings" SettingsPropertyName="QUANLYTRUONGHOCConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.HOCPHI" Member="HOCPHIs">
     <Type Name="HOCPHI">
       <Column Name="MAHS" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
@@ -154,6 +154,17 @@
     <Parameter Name="SoTienMotTiet2" Parameter="soTienMotTiet2" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.THEM_HS_ADMIN" Method="THEM_HS_ADMIN">
+    <Parameter Name="MaHS" Parameter="maHS" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="HoTen" Parameter="hoTen" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GT" Parameter="gT" Type="System.String" DbType="NChar(3)" />
+    <Parameter Name="NgaySinh" Parameter="ngaySinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DiaChi" Parameter="diaChi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PhuHuynh" Parameter="phuHuynh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DinhMucHocPhi" Parameter="dinhMucHocPhi" Type="System.Double" DbType="Float" />
+    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.THEMGIAOVIEN_ADMIN" Method="THEMGIAOVIEN_ADMIN">
     <Parameter Name="MAGV" Parameter="mAGV" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="Hoten" Parameter="hoten" Type="System.String" DbType="NVarChar(50)" />
@@ -164,17 +175,6 @@
     <Parameter Name="Luong" Parameter="luong" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="TrinhDo" Parameter="trinhDo" Type="System.String" DbType="NVarChar(10)" />
     <Parameter Name="MaMon" Parameter="maMon" Type="System.String" DbType="NChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.THEM_HS_ADMIN" Method="THEM_HS_ADMIN">
-    <Parameter Name="MaHS" Parameter="maHS" Type="System.String" DbType="NChar(10)" />
-    <Parameter Name="HoTen" Parameter="hoTen" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="GT" Parameter="gT" Type="System.String" DbType="NChar(3)" />
-    <Parameter Name="NgaySinh" Parameter="ngaySinh" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="DiaChi" Parameter="diaChi" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="PhuHuynh" Parameter="phuHuynh" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="DinhMucHocPhi" Parameter="dinhMucHocPhi" Type="System.Double" DbType="Float" />
-    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.ThemTTGD_Admin" Method="ThemTTGD_Admin">
@@ -315,6 +315,14 @@
       <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.XEM_TRINHDO" Method="XEM_TRINHDO">
+    <ElementType Name="XEM_TRINHDOResult">
+      <Column Name="MaGV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.XEM_TRINHDO_BieuDo" Method="XEM_TRINHDO_BieuDo">
     <ElementType Name="XEM_TRINHDO_BieuDoResult">
       <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
@@ -386,13 +394,5 @@
     <Parameter Name="SoTiet" Parameter="soTiet" Type="System.Int32" DbType="Int" />
     <Parameter Name="SoTienMotTiet" Parameter="soTienMotTiet" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.XEM_TRINHDO" Method="XEM_TRINHDO">
-    <ElementType Name="XEM_TRINHDOResult">
-      <Column Name="MaGV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-    </ElementType>
   </Function>
 </Database>

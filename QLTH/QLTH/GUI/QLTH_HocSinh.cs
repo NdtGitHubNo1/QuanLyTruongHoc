@@ -16,7 +16,11 @@ namespace QLTH.GUI
         public QLTH_HocSinh()
         {
             InitializeComponent();
-        }
+               ribbon.Manager.ForceLinkCreate();
+               DevExpress.UserSkins.BonusSkins.Register();
+               DevExpress.Skins.SkinManager.EnableFormSkins();
+               DevExpress.XtraBars.Helpers.SkinHelper.InitSkinGallery(skinRibbon, true, true);
+          }
         public static string mahs;
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)

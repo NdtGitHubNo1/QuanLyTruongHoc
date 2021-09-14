@@ -40,6 +40,7 @@ namespace QLTH.GUI
                this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
                this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
                this.viewSitePanel = new DevExpress.XtraEditors.PanelControl();
+               this.skinRibbon = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
                ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
                ((System.ComponentModel.ISupportInitialize)(this.viewSitePanel)).BeginInit();
                this.SuspendLayout();
@@ -52,9 +53,10 @@ namespace QLTH.GUI
             this.ribbon.SearchEditItem,
             this.barButtonItem1,
             this.barButtonItem2,
-            this.barButtonItem3});
+            this.barButtonItem3,
+            this.skinRibbon});
                this.ribbon.Location = new System.Drawing.Point(0, 0);
-               this.ribbon.MaxItemId = 4;
+               this.ribbon.MaxItemId = 5;
                this.ribbon.Name = "ribbon";
                this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -118,7 +120,8 @@ namespace QLTH.GUI
                // 
                // ribbonStatusBar
                // 
-               this.ribbonStatusBar.Location = new System.Drawing.Point(0, 879);
+               this.ribbonStatusBar.ItemLinks.Add(this.skinRibbon);
+               this.ribbonStatusBar.Location = new System.Drawing.Point(0, 874);
                this.ribbonStatusBar.Name = "ribbonStatusBar";
                this.ribbonStatusBar.Ribbon = this.ribbon;
                this.ribbonStatusBar.Size = new System.Drawing.Size(1547, 30);
@@ -131,14 +134,20 @@ namespace QLTH.GUI
                this.viewSitePanel.Location = new System.Drawing.Point(0, 198);
                this.viewSitePanel.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
                this.viewSitePanel.Name = "viewSitePanel";
-               this.viewSitePanel.Size = new System.Drawing.Size(1547, 681);
+               this.viewSitePanel.Size = new System.Drawing.Size(1547, 676);
                this.viewSitePanel.TabIndex = 3;
+               // 
+               // skinRibbon
+               // 
+               this.skinRibbon.Caption = "Giao diện";
+               this.skinRibbon.Id = 4;
+               this.skinRibbon.Name = "skinRibbon";
                // 
                // QLTH_GiaoVien
                // 
                this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-               this.ClientSize = new System.Drawing.Size(1547, 909);
+               this.ClientSize = new System.Drawing.Size(1547, 904);
                this.Controls.Add(this.viewSitePanel);
                this.Controls.Add(this.ribbonStatusBar);
                this.Controls.Add(this.ribbon);
@@ -164,5 +173,6 @@ namespace QLTH.GUI
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraEditors.PanelControl viewSitePanel;
-    }
+          private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbon;
+     }
 }
