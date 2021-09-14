@@ -56,5 +56,10 @@ namespace QLTH
                viewSitePanel.Controls.Clear();
                viewSitePanel.Controls.Add(ThongKe.Instance);
           }
-     }
+
+        private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            viewSitePanel.Controls.Clear();
+        }
+    }
 }

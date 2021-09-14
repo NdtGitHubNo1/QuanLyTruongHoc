@@ -44,5 +44,10 @@ namespace QLTH.GUI
                viewSitePanel.Controls.Clear();
                viewSitePanel.Controls.Add(ThongTinGiangDay_GiaoVien.Instance);
           }
-     }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            viewSitePanel.Controls.Clear();
+        }
+    }
 }
