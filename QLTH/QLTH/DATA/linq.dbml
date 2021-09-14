@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYTRUONGHOC" Class="linqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-KPC8BMG\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True" SettingsObjectName="QLTH.Properties.Settings" SettingsPropertyName="QUANLYTRUONGHOCConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-3PM2V18\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="QLTH.Properties.Settings" SettingsPropertyName="QUANLYTRUONGHOCConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.HOCPHI" Member="HOCPHIs">
     <Type Name="HOCPHI">
       <Column Name="MAHS" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
@@ -37,8 +37,8 @@
       <Column Name="MaTrinhDo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="MaMon" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Association Name="tblGiaoVien_tblLop" Member="tblLops" ThisKey="MaGV" OtherKey="GVCN" Type="tblLop" />
-      <Association Name="tblTrinhDo_tblGiaoVien" Member="tblTrinhDo" ThisKey="MaTrinhDo" OtherKey="MaTrinhDo" Type="tblTrinhDo" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="tblMonHoc_tblGiaoVien" Member="tblMonHoc" ThisKey="MaMon" OtherKey="MaMon" Type="tblMonHoc" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="tblTrinhDo_tblGiaoVien" Member="tblTrinhDo" ThisKey="MaTrinhDo" OtherKey="MaTrinhDo" Type="tblTrinhDo" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.tblHocSinh" Member="tblHocSinhs">
@@ -63,25 +63,19 @@
       <Association Name="tblGiaoVien_tblLop" Member="tblGiaoVien" ThisKey="GVCN" OtherKey="MaGV" Type="tblGiaoVien" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
+  <Table Name="dbo.tblMonHoc" Member="tblMonHocs">
+    <Type Name="tblMonHoc">
+      <Column Name="MaMon" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMon" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblMonHoc_tblGiaoVien" Member="tblGiaoViens" ThisKey="MaMon" OtherKey="MaMon" Type="tblGiaoVien" />
+    </Type>
+  </Table>
   <Table Name="dbo.tblTrinhDo" Member="tblTrinhDos">
     <Type Name="tblTrinhDo">
       <Column Name="MaTrinhDo" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DinhMuc" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Association Name="tblTrinhDo_tblGiaoVien" Member="tblGiaoViens" ThisKey="MaTrinhDo" OtherKey="MaTrinhDo" Type="tblGiaoVien" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblUser" Member="tblUsers">
-    <Type Name="tblUser">
-      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblMonHoc" Member="tblMonHocs">
-    <Type Name="tblMonHoc">
-      <Column Name="MaMon" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenMon" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="tblMonHoc_tblGiaoVien" Member="tblGiaoViens" ThisKey="MaMon" OtherKey="MaMon" Type="tblGiaoVien" />
     </Type>
   </Table>
   <Function Name="dbo.DANGNHAP1" Method="DANGNHAP1">
@@ -300,6 +294,12 @@
       <Column Name="DinhMucHocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.XEM_HOCSINH_DINHMUC_BIEUDO" Method="XEM_HOCSINH_DINHMUC_BIEUDO">
+    <ElementType Name="XEM_HOCSINH_DINHMUC_BIEUDOResult">
+      <Column Name="TONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DinhMucHocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.XEM_LICHDAY_BAOCAO" Method="XEM_LICHDAY_BAOCAO">
     <Parameter Name="MAGV" Parameter="mAGV" Type="System.String" DbType="NChar(10)" />
     <ElementType Name="XEM_LICHDAY_BAOCAOResult">
@@ -309,24 +309,18 @@
       <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.XEM_HOCSINH_DINHMUC_BIEUDO" Method="XEM_HOCSINH_DINHMUC_BIEUDO">
-    <ElementType Name="XEM_HOCSINH_DINHMUC_BIEUDOResult">
-      <Column Name="TONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DinhMucHocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.XEM_TRINHDO_BieuDo" Method="XEM_TRINHDO_BieuDo">
-    <ElementType Name="XEM_TRINHDO_BieuDoResult">
-      <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Tong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.XEM_TRINHDO" Method="XEM_TRINHDO">
     <ElementType Name="XEM_TRINHDOResult">
       <Column Name="MaGV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.XEM_TRINHDO_BieuDo" Method="XEM_TRINHDO_BieuDo">
+    <ElementType Name="XEM_TRINHDO_BieuDoResult">
+      <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tong" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.XEMGIAOVIEN_ADMIN" Method="XEMGIAOVIEN_ADMIN">

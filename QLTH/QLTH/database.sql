@@ -1,8 +1,6 @@
-CREATE DATABASE QUANLYTRUONGHOC
-GO
 USE [QUANLYTRUONGHOC]
 GO
-/****** Object:  Table [dbo].[tblCTGD]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  Table [dbo].[tblCTGD]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -22,7 +20,7 @@ CREATE TABLE [dbo].[tblCTGD](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblGiaoVien]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  Table [dbo].[tblGiaoVien]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -43,7 +41,7 @@ CREATE TABLE [dbo].[tblGiaoVien](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblTrinhDo]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  Table [dbo].[tblTrinhDo]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -58,7 +56,7 @@ CREATE TABLE [dbo].[tblTrinhDo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[XEM_TIEN_THANG]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  View [dbo].[XEM_TIEN_THANG]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -72,7 +70,7 @@ INNER JOIN tblTrinhDo
 ON tblGiaoVien.MaTrinhDo = tblTrinhDo.MaTrinhDo
 GROUP BY CONVERT(VARCHAR,(MONTH(NgayDay))) + '/' + CONVERT(VARCHAR,(YEAR(NgayDay))), LuongCung,tblgiaovien.MAGV
 GO
-/****** Object:  Table [dbo].[tblHocSinh]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  Table [dbo].[tblHocSinh]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -92,7 +90,7 @@ CREATE TABLE [dbo].[tblHocSinh](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblLop]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  Table [dbo].[tblLop]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -107,7 +105,7 @@ CREATE TABLE [dbo].[tblLop](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[XEM_HOCPHI_THANG]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  View [dbo].[XEM_HOCPHI_THANG]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -121,7 +119,7 @@ INNER JOIN tblHocSinh
 ON tblLop.MaLop = tblHocSinh.MaLop
 GROUP BY CONVERT(VARCHAR,(MONTH(NgayDay))) + '/' + CONVERT(VARCHAR,(YEAR(NgayDay))),tblHocSinh.MaHS
 GO
-/****** Object:  Table [dbo].[HOCPHI]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  Table [dbo].[HOCPHI]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -137,7 +135,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[LUONG]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  Table [dbo].[LUONG]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -153,7 +151,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblMonHoc]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  Table [dbo].[tblMonHoc]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -167,7 +165,7 @@ CREATE TABLE [dbo].[tblMonHoc](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblUser]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  Table [dbo].[tblUser]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1651,6 +1649,10 @@ INSERT [dbo].[tblTrinhDo] ([MaTrinhDo], [TrinhDo], [DinhMuc]) VALUES (N'Ths', N'
 GO
 INSERT [dbo].[tblTrinhDo] ([MaTrinhDo], [TrinhDo], [DinhMuc]) VALUES (N'TS', N'Tiến sĩ', 0.45)
 GO
+INSERT [dbo].[tblUser] ([Username], [Password]) VALUES (N'[MaGV]', N'SDT')
+GO
+INSERT [dbo].[tblUser] ([Username], [Password]) VALUES (N'[MaHS]', N'[MaHS]')
+GO
 INSERT [dbo].[tblUser] ([Username], [Password]) VALUES (N'admin', N'admin')
 GO
 ALTER TABLE [dbo].[tblGiaoVien]  WITH CHECK ADD  CONSTRAINT [FK_tblGiaoVien_tblMonHoc] FOREIGN KEY([MaMon])
@@ -1681,7 +1683,7 @@ ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[tblLop] CHECK CONSTRAINT [FK_tblLop_tblGiaoVien]
 GO
-/****** Object:  StoredProcedure [dbo].[DANGNHAP1]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[DANGNHAP1]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1693,7 +1695,7 @@ CREATE PROC [dbo].[DANGNHAP1]
  SELECT MaGV,SDT FROM tblGiaoVien
  END
 GO
-/****** Object:  StoredProcedure [dbo].[DANGNHAP2]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[DANGNHAP2]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1704,7 +1706,7 @@ GO
  SELECT MaHS FROM tblHocSinh
  END
 GO
-/****** Object:  StoredProcedure [dbo].[QLHS_ADMIN]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[QLHS_ADMIN]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1717,7 +1719,7 @@ BEGIN
    WHERE HS.MaLop = LOP.MaLop
 END
 GO
-/****** Object:  StoredProcedure [dbo].[QLHS_HOCSINH]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[QLHS_HOCSINH]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1733,7 +1735,7 @@ BEGIN
    AND HS.MaHS = @MaHS
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SUA_HS_ADMIN]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[SUA_HS_ADMIN]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1756,7 +1758,7 @@ BEGIN
    WHERE MaHS = @MaHS
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SUAGIAOVIEN_ADMIN]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[SUAGIAOVIEN_ADMIN]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1779,7 +1781,7 @@ GO
  UPDATE tblGiaoVien SET MaGV = @MAGV,HoTen = @Hoten , GT = @GT,NgaySinh = @NgaySinh, DiaChi = @DiaChi, SDT = @SDT,LuongCung = @Luong,MaTrinhDo = @TrinhDo,MaMon = @MaMon WHERE MaGV = @MAGV
  END
 GO
-/****** Object:  StoredProcedure [dbo].[SuaTTGD_Admin]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[SuaTTGD_Admin]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1801,7 +1803,7 @@ begin
 	where MaLop = @MaLop and MaGV = @MaGV and NgayDay = @NgayDay1 and SoTiet = @SoTiet1 and SoTienMotTiet = @SoTienMotTiet1
 end
 GO
-/****** Object:  StoredProcedure [dbo].[THEM_HS_ADMIN]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[THEM_HS_ADMIN]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1823,7 +1825,7 @@ BEGIN
    INSERT INTO tblHocSinh VALUES (@MaHS, @HoTen, @GT, @NgaySinh, @DiaChi, @PhuHuynh, @DinhMucHocPhi, @MaLop)
 END
 GO
-/****** Object:  StoredProcedure [dbo].[THEMGIAOVIEN_ADMIN]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[THEMGIAOVIEN_ADMIN]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1847,7 +1849,7 @@ CREATE PROC [dbo].[THEMGIAOVIEN_ADMIN]
  insert into tblGiaoVien values (@MAGV,@Hoten,@GT,@NgaySinh,@DiaChi,@SDT,@Luong,@TrinhDo,@MaMon)
  end
 GO
-/****** Object:  StoredProcedure [dbo].[ThemTTGD_Admin]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[ThemTTGD_Admin]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1864,7 +1866,7 @@ begin
 	values (@MaLop, @MaGV, @NgayDay, @SoTiet, @SoTienMotTiet)
 end
 GO
-/****** Object:  StoredProcedure [dbo].[THONGTIN_GIAOVIEN]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[THONGTIN_GIAOVIEN]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1876,7 +1878,7 @@ GO
  SELECT * FROM tblGiaoVien WHERE MaGV = @MAGV
  END
 GO
-/****** Object:  StoredProcedure [dbo].[TIMGIAOVIEN_ADMIN]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[TIMGIAOVIEN_ADMIN]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1897,7 +1899,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[TIMHS_ADMIN]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[TIMHS_ADMIN]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1914,7 +1916,7 @@ BEGIN
 			DiaChi LIKE @pattern OR PhuHuynh LIKE @pattern OR DinhMucHocPhi LIKE @pattern OR MaLop LIKE @pattern
 END
 GO
-/****** Object:  StoredProcedure [dbo].[TimTTGD_Admin]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[TimTTGD_Admin]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1929,7 +1931,7 @@ begin
 	or SoTiet like @pattern or SoTienMotTiet like @pattern
 end
 GO
-/****** Object:  StoredProcedure [dbo].[TimTTGD_GiaoVien]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[TimTTGD_GiaoVien]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1944,7 +1946,7 @@ begin
 	or SoTiet like @pattern or SoTienMotTiet like @pattern
 end
 GO
-/****** Object:  StoredProcedure [dbo].[TK_TIEN]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[TK_TIEN]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1968,7 +1970,7 @@ ON [@BANGCHI].THANG = [@BANGTHU].THANG
 RETURN
 END
 GO
-/****** Object:  StoredProcedure [dbo].[TK_TIEN_THEOTHANG]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[TK_TIEN_THEOTHANG]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1993,7 +1995,7 @@ ON [@BANGCHI].THANG = [@BANGTHU].THANG
 RETURN
 END
 GO
-/****** Object:  StoredProcedure [dbo].[UPDATEHOCPHI]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[UPDATEHOCPHI]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2007,7 +2009,7 @@ FROM XEM_HOCPHI_THANG
 WHERE HOCPHI.MAHS = XEM_HOCPHI_THANG.MaHS
 AND HOCPHI.THANGNOP = THANG
 GO
-/****** Object:  StoredProcedure [dbo].[UPDATELUONG]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[UPDATELUONG]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2020,7 +2022,7 @@ FROM XEM_TIEN_THANG
 WHERE LUONG.MAGV = XEM_TIEN_THANG.MAGV
 AND LUONG.THANGNHAN = THANG
 GO
-/****** Object:  StoredProcedure [dbo].[XEM_GIAOVIEN_THEOMONHOC]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XEM_GIAOVIEN_THEOMONHOC]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2033,7 +2035,7 @@ SELECT tblGiaoVien.MaGV, HoTen, NgaySinh, TenMon
 from tblGiaoVien inner join tblMonHoc
 on tblGiaoVien.MaMon = tblMonHoc.MaMon
 GO
-/****** Object:  StoredProcedure [dbo].[XEM_GIAOVIEN_THEOMONHOC_BIEUDO]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XEM_GIAOVIEN_THEOMONHOC_BIEUDO]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2046,7 +2048,7 @@ from tblGiaoVien inner join tblMonHoc
 on tblGiaoVien.MaMon = tblMonHoc.MaMon
 GROUP BY TenMon
 GO
-/****** Object:  StoredProcedure [dbo].[XEM_HOCSINH_BAOCAO]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XEM_HOCSINH_BAOCAO]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2059,7 +2061,7 @@ SELECT *
 FROM tblHocSinh
 WHERE MaLop = @MALOP
 GO
-/****** Object:  StoredProcedure [dbo].[XEM_HOCSINH_DINHMUC]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XEM_HOCSINH_DINHMUC]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2072,7 +2074,7 @@ AS
 SELECT MaHS, HoTen, NgaySinh, DinhMucHocPhi
 from tblHocSinh
 GO
-/****** Object:  StoredProcedure [dbo].[XEM_HOCSINH_DINHMUC_BIEUDO]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XEM_HOCSINH_DINHMUC_BIEUDO]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2084,7 +2086,7 @@ SELECT COUNT(MaHS) AS TONG, DinhMucHocPhi
 from tblHocSinh
 GROUP BY DinhMucHocPhi
 GO
-/****** Object:  StoredProcedure [dbo].[XEM_LICHDAY_BAOCAO]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XEM_LICHDAY_BAOCAO]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2097,7 +2099,7 @@ FROM tblCTGD INNER JOIN tblLop ON tblCTGD.MaLop = tblLop.MaLop
 inner join tblGiaoVien on tblGiaoVien.MaGV = tblCTGD.MaGV
 WHERE tblgiaovien.MaGV = @MAGV
 GO
-/****** Object:  StoredProcedure [dbo].[XEM_TRINHDO]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XEM_TRINHDO]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2108,7 +2110,7 @@ SELECT tblGiaoVien.MaGV, HoTen, NgaySinh, TrinhDo
 from tblGiaoVien inner join tblTrinhDo
 on tblGiaoVien.MaTrinhDo = tblTrinhDo.MaTrinhDo
 GO
-/****** Object:  StoredProcedure [dbo].[XEM_TRINHDO_BieuDo]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XEM_TRINHDO_BieuDo]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2123,7 +2125,7 @@ from tblGiaoVien inner join tblTrinhDo
 on tblGiaoVien.MaTrinhDo = tblTrinhDo.MaTrinhDo
 group by TrinhDo
 GO
-/****** Object:  StoredProcedure [dbo].[XEMGIAOVIEN_ADMIN]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XEMGIAOVIEN_ADMIN]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2135,7 +2137,7 @@ BEGIN
 SELECT * FROM tblGiaoVien
 END
 GO
-/****** Object:  StoredProcedure [dbo].[XEMLICHHOC_HOCSINH]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XEMLICHHOC_HOCSINH]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2152,7 +2154,7 @@ BEGIN
   AND CTGD.MaLop = LOP.MaLop
 END
 GO
-/****** Object:  StoredProcedure [dbo].[XEMMALOP]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XEMMALOP]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2163,7 +2165,7 @@ AS
 SELECT MALOP
 FROM tblLop
 GO
-/****** Object:  StoredProcedure [dbo].[XemTTGD_Admin]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XemTTGD_Admin]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2179,7 +2181,7 @@ BEGIN
 	SELECT * from tblCTGD
 END
 GO
-/****** Object:  StoredProcedure [dbo].[XemTTGD_GiaoVien]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XemTTGD_GiaoVien]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2195,7 +2197,7 @@ BEGIN
 	SELECT * from tblCTGD where MaGV = @MaGV
 END
 GO
-/****** Object:  StoredProcedure [dbo].[XOA_HS_ADMIN]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XOA_HS_ADMIN]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2207,7 +2209,7 @@ BEGIN
   DELETE tblHocSinh WHERE MaHS = @MaHS
 END
 GO
-/****** Object:  StoredProcedure [dbo].[XOAGIAOVIEN_ADMIN]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XOAGIAOVIEN_ADMIN]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2220,7 +2222,7 @@ GO
  DELETE tblCTGD WHERE MaGV = @MAGV
  END
 GO
-/****** Object:  StoredProcedure [dbo].[XoaTTGD_Admin]    Script Date: 9/14/2021 3:55:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[XoaTTGD_Admin]    Script Date: 9/14/2021 8:39:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

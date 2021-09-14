@@ -116,7 +116,7 @@ namespace QLTH.GUI
                this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
                this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-               this.xrTable1.SizeF = new System.Drawing.SizeF(765.9998F, 40F);
+               this.xrTable1.SizeF = new System.Drawing.SizeF(755.9997F, 40F);
                // 
                // xrTableRow1
                // 
@@ -248,7 +248,7 @@ namespace QLTH.GUI
                this.xrTableCell7.StylePriority.UseTextAlignment = false;
                this.xrTableCell7.Text = "xrTableCell15";
                this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-               this.xrTableCell7.Weight = 1.2218798915052096D;
+               this.xrTableCell7.Weight = 1.1174399553581946D;
                // 
                // ReportHeader
                // 
@@ -260,7 +260,7 @@ namespace QLTH.GUI
             this.xrTable3,
             this.xrLabel12,
             this.xrLabel11});
-               this.ReportHeader.HeightF = 465.8334F;
+               this.ReportHeader.HeightF = 480.0001F;
                this.ReportHeader.Name = "ReportHeader";
                // 
                // xrLabel10
@@ -304,7 +304,7 @@ namespace QLTH.GUI
                this.xrLabel1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\'Mã lớp: \' + [MaLop]")});
                this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-               this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(26.38418F, 341.6666F);
+               this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(22.21751F, 359.1666F);
                this.xrLabel1.Multiline = true;
                this.xrLabel1.Name = "xrLabel1";
                this.xrLabel1.SizeF = new System.Drawing.SizeF(336.0529F, 24.19433F);
@@ -315,12 +315,12 @@ namespace QLTH.GUI
                // 
                // xrTable3
                // 
-               this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(0.8743795F, 402.5001F);
+               this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 416.6668F);
                this.xrTable3.Name = "xrTable3";
                this.xrTable3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
                this.xrTable3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow3});
-               this.xrTable3.SizeF = new System.Drawing.SizeF(766.0001F, 63.33333F);
+               this.xrTable3.SizeF = new System.Drawing.SizeF(755.9999F, 63.33333F);
                // 
                // xrTableRow3
                // 
@@ -438,7 +438,7 @@ namespace QLTH.GUI
                this.xrTableCell23.StylePriority.UseTextAlignment = false;
                this.xrTableCell23.Text = "Định Mức";
                this.xrTableCell23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-               this.xrTableCell23.Weight = 0.78487889943173794D;
+               this.xrTableCell23.Weight = 0.71779086472646558D;
                // 
                // xrLabel12
                // 

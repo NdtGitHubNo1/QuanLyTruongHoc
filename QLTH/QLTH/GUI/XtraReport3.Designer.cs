@@ -103,12 +103,12 @@ namespace QLTH.GUI
                // 
                // xrTable1
                // 
-               this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+               this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(70.00009F, 0F);
                this.xrTable1.Name = "xrTable1";
                this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
                this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-               this.xrTable1.SizeF = new System.Drawing.SizeF(775.0001F, 33.33333F);
+               this.xrTable1.SizeF = new System.Drawing.SizeF(651.053F, 33.33333F);
                // 
                // xrTableRow1
                // 
@@ -133,7 +133,7 @@ namespace QLTH.GUI
                this.xrTableCell1.StylePriority.UseTextAlignment = false;
                this.xrTableCell1.Text = "xrTableCell1";
                this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-               this.xrTableCell1.Weight = 2.8695671296368372D;
+               this.xrTableCell1.Weight = 2.3478273532383738D;
                // 
                // xrTableCell2
                // 
@@ -141,7 +141,7 @@ namespace QLTH.GUI
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
                this.xrTableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NgayDay]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "GetDay([NgayDay]) + \'/\' + GetMonth([NgayDay]) + \'/\' + GetYear([NgayDay])")});
                this.xrTableCell2.Font = new System.Drawing.Font("Times New Roman", 12F);
                this.xrTableCell2.Multiline = true;
                this.xrTableCell2.Name = "xrTableCell2";
@@ -150,7 +150,7 @@ namespace QLTH.GUI
                this.xrTableCell2.StylePriority.UseTextAlignment = false;
                this.xrTableCell2.Text = "xrTableCell2";
                this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-               this.xrTableCell2.Weight = 2.9068308925447761D;
+               this.xrTableCell2.Weight = 2.5047417569994925D;
                // 
                // ReportHeader
                // 
@@ -168,12 +168,12 @@ namespace QLTH.GUI
                // 
                // xrTable3
                // 
-               this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 425F);
+               this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(70.00003F, 425F);
                this.xrTable3.Name = "xrTable3";
                this.xrTable3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
                this.xrTable3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow3});
-               this.xrTable3.SizeF = new System.Drawing.SizeF(775.0001F, 43.33334F);
+               this.xrTable3.SizeF = new System.Drawing.SizeF(651.0531F, 43.33334F);
                // 
                // xrTableRow3
                // 
@@ -199,7 +199,7 @@ namespace QLTH.GUI
                this.xrTableCell4.StylePriority.UseTextAlignment = false;
                this.xrTableCell4.Text = "Tên Lớp";
                this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-               this.xrTableCell4.Weight = 2.582827851717131D;
+               this.xrTableCell4.Weight = 2.1132229130408953D;
                // 
                // xrTableCell5
                // 
@@ -213,35 +213,35 @@ namespace QLTH.GUI
                this.xrTableCell5.StylePriority.UseTextAlignment = false;
                this.xrTableCell5.Text = "Ngày Dạy";
                this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-               this.xrTableCell5.Weight = 2.6163682358833191D;
+               this.xrTableCell5.Weight = 2.25445715624541D;
                // 
                // xrLabel16
                // 
                this.xrLabel16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\'Tên giáo viên: \' + [TenGV]")});
                this.xrLabel16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-               this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(10F, 374.1666F);
+               this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(70.00005F, 374.1666F);
                this.xrLabel16.Multiline = true;
                this.xrLabel16.Name = "xrLabel16";
-               this.xrLabel16.SizeF = new System.Drawing.SizeF(336.0529F, 24.19433F);
+               this.xrLabel16.SizeF = new System.Drawing.SizeF(276.0529F, 24.19434F);
                this.xrLabel16.StylePriority.UseFont = false;
                this.xrLabel16.StylePriority.UseTextAlignment = false;
                this.xrLabel16.Text = "LỊCH DẠY";
-               this.xrLabel16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+               this.xrLabel16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
                // 
                // xrLabel15
                // 
                this.xrLabel15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\'Mã giáo viên: \' + [MAGV]")});
                this.xrLabel15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-               this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(10F, 349.9723F);
+               this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(70.00005F, 349.9723F);
                this.xrLabel15.Multiline = true;
                this.xrLabel15.Name = "xrLabel15";
-               this.xrLabel15.SizeF = new System.Drawing.SizeF(336.0529F, 24.19433F);
+               this.xrLabel15.SizeF = new System.Drawing.SizeF(276.0529F, 24.19434F);
                this.xrLabel15.StylePriority.UseFont = false;
                this.xrLabel15.StylePriority.UseTextAlignment = false;
                this.xrLabel15.Text = "LỊCH DẠY";
-               this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+               this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
                // 
                // xrLabel14
                // 

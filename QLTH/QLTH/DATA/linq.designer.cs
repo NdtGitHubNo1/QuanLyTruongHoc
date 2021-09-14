@@ -48,19 +48,16 @@ namespace QLTH.DATA
     partial void InserttblLop(tblLop instance);
     partial void UpdatetblLop(tblLop instance);
     partial void DeletetblLop(tblLop instance);
-    partial void InserttblTrinhDo(tblTrinhDo instance);
-    partial void UpdatetblTrinhDo(tblTrinhDo instance);
-    partial void DeletetblTrinhDo(tblTrinhDo instance);
-    partial void InserttblUser(tblUser instance);
-    partial void UpdatetblUser(tblUser instance);
-    partial void DeletetblUser(tblUser instance);
     partial void InserttblMonHoc(tblMonHoc instance);
     partial void UpdatetblMonHoc(tblMonHoc instance);
     partial void DeletetblMonHoc(tblMonHoc instance);
+    partial void InserttblTrinhDo(tblTrinhDo instance);
+    partial void UpdatetblTrinhDo(tblTrinhDo instance);
+    partial void DeletetblTrinhDo(tblTrinhDo instance);
     #endregion
 		
 		public linqDataContext() : 
-				base(global::QLTH.Properties.Settings.Default.QUANLYTRUONGHOCConnectionString4, mappingSource)
+				base(global::QLTH.Properties.Settings.Default.QUANLYTRUONGHOCConnectionString3, mappingSource)
 		{
 			OnCreated();
 		}
@@ -137,27 +134,19 @@ namespace QLTH.DATA
 			}
 		}
 		
-		public System.Data.Linq.Table<tblTrinhDo> tblTrinhDos
-		{
-			get
-			{
-				return this.GetTable<tblTrinhDo>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tblUser> tblUsers
-		{
-			get
-			{
-				return this.GetTable<tblUser>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tblMonHoc> tblMonHocs
 		{
 			get
 			{
 				return this.GetTable<tblMonHoc>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblTrinhDo> tblTrinhDos
+		{
+			get
+			{
+				return this.GetTable<tblTrinhDo>();
 			}
 		}
 		
@@ -322,13 +311,6 @@ namespace QLTH.DATA
 			return ((ISingleResult<XEM_HOCSINH_DINHMUCResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XEM_LICHDAY_BAOCAO")]
-		public ISingleResult<XEM_LICHDAY_BAOCAOResult> XEM_LICHDAY_BAOCAO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MAGV", DbType="NChar(10)")] string mAGV)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mAGV);
-			return ((ISingleResult<XEM_LICHDAY_BAOCAOResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XEM_HOCSINH_DINHMUC_BIEUDO")]
 		public ISingleResult<XEM_HOCSINH_DINHMUC_BIEUDOResult> XEM_HOCSINH_DINHMUC_BIEUDO()
 		{
@@ -336,11 +318,11 @@ namespace QLTH.DATA
 			return ((ISingleResult<XEM_HOCSINH_DINHMUC_BIEUDOResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XEM_TRINHDO_BieuDo")]
-		public ISingleResult<XEM_TRINHDO_BieuDoResult> XEM_TRINHDO_BieuDo()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XEM_LICHDAY_BAOCAO")]
+		public ISingleResult<XEM_LICHDAY_BAOCAOResult> XEM_LICHDAY_BAOCAO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MAGV", DbType="NChar(10)")] string mAGV)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<XEM_TRINHDO_BieuDoResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mAGV);
+			return ((ISingleResult<XEM_LICHDAY_BAOCAOResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XEM_TRINHDO")]
@@ -348,6 +330,13 @@ namespace QLTH.DATA
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<XEM_TRINHDOResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XEM_TRINHDO_BieuDo")]
+		public ISingleResult<XEM_TRINHDO_BieuDoResult> XEM_TRINHDO_BieuDo()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<XEM_TRINHDO_BieuDoResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XEMGIAOVIEN_ADMIN")]
@@ -859,9 +848,9 @@ namespace QLTH.DATA
 		
 		private EntitySet<tblLop> _tblLops;
 		
-		private EntityRef<tblTrinhDo> _tblTrinhDo;
-		
 		private EntityRef<tblMonHoc> _tblMonHoc;
+		
+		private EntityRef<tblTrinhDo> _tblTrinhDo;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -890,8 +879,8 @@ namespace QLTH.DATA
 		public tblGiaoVien()
 		{
 			this._tblLops = new EntitySet<tblLop>(new Action<tblLop>(this.attach_tblLops), new Action<tblLop>(this.detach_tblLops));
-			this._tblTrinhDo = default(EntityRef<tblTrinhDo>);
 			this._tblMonHoc = default(EntityRef<tblMonHoc>);
+			this._tblTrinhDo = default(EntityRef<tblTrinhDo>);
 			OnCreated();
 		}
 		
@@ -1096,40 +1085,6 @@ namespace QLTH.DATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblTrinhDo_tblGiaoVien", Storage="_tblTrinhDo", ThisKey="MaTrinhDo", OtherKey="MaTrinhDo", IsForeignKey=true, DeleteRule="CASCADE")]
-		public tblTrinhDo tblTrinhDo
-		{
-			get
-			{
-				return this._tblTrinhDo.Entity;
-			}
-			set
-			{
-				tblTrinhDo previousValue = this._tblTrinhDo.Entity;
-				if (((previousValue != value) 
-							|| (this._tblTrinhDo.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblTrinhDo.Entity = null;
-						previousValue.tblGiaoViens.Remove(this);
-					}
-					this._tblTrinhDo.Entity = value;
-					if ((value != null))
-					{
-						value.tblGiaoViens.Add(this);
-						this._MaTrinhDo = value.MaTrinhDo;
-					}
-					else
-					{
-						this._MaTrinhDo = default(string);
-					}
-					this.SendPropertyChanged("tblTrinhDo");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblMonHoc_tblGiaoVien", Storage="_tblMonHoc", ThisKey="MaMon", OtherKey="MaMon", IsForeignKey=true, DeleteRule="CASCADE")]
 		public tblMonHoc tblMonHoc
 		{
@@ -1160,6 +1115,40 @@ namespace QLTH.DATA
 						this._MaMon = default(string);
 					}
 					this.SendPropertyChanged("tblMonHoc");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblTrinhDo_tblGiaoVien", Storage="_tblTrinhDo", ThisKey="MaTrinhDo", OtherKey="MaTrinhDo", IsForeignKey=true, DeleteRule="CASCADE")]
+		public tblTrinhDo tblTrinhDo
+		{
+			get
+			{
+				return this._tblTrinhDo.Entity;
+			}
+			set
+			{
+				tblTrinhDo previousValue = this._tblTrinhDo.Entity;
+				if (((previousValue != value) 
+							|| (this._tblTrinhDo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblTrinhDo.Entity = null;
+						previousValue.tblGiaoViens.Remove(this);
+					}
+					this._tblTrinhDo.Entity = value;
+					if ((value != null))
+					{
+						value.tblGiaoViens.Add(this);
+						this._MaTrinhDo = value.MaTrinhDo;
+					}
+					else
+					{
+						this._MaTrinhDo = default(string);
+					}
+					this.SendPropertyChanged("tblTrinhDo");
 				}
 			}
 		}
@@ -1647,6 +1636,120 @@ namespace QLTH.DATA
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblMonHoc")]
+	public partial class tblMonHoc : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaMon;
+		
+		private string _TenMon;
+		
+		private EntitySet<tblGiaoVien> _tblGiaoViens;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaMonChanging(string value);
+    partial void OnMaMonChanged();
+    partial void OnTenMonChanging(string value);
+    partial void OnTenMonChanged();
+    #endregion
+		
+		public tblMonHoc()
+		{
+			this._tblGiaoViens = new EntitySet<tblGiaoVien>(new Action<tblGiaoVien>(this.attach_tblGiaoViens), new Action<tblGiaoVien>(this.detach_tblGiaoViens));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaMon", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaMon
+		{
+			get
+			{
+				return this._MaMon;
+			}
+			set
+			{
+				if ((this._MaMon != value))
+				{
+					this.OnMaMonChanging(value);
+					this.SendPropertyChanging();
+					this._MaMon = value;
+					this.SendPropertyChanged("MaMon");
+					this.OnMaMonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMon", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string TenMon
+		{
+			get
+			{
+				return this._TenMon;
+			}
+			set
+			{
+				if ((this._TenMon != value))
+				{
+					this.OnTenMonChanging(value);
+					this.SendPropertyChanging();
+					this._TenMon = value;
+					this.SendPropertyChanged("TenMon");
+					this.OnTenMonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblMonHoc_tblGiaoVien", Storage="_tblGiaoViens", ThisKey="MaMon", OtherKey="MaMon")]
+		public EntitySet<tblGiaoVien> tblGiaoViens
+		{
+			get
+			{
+				return this._tblGiaoViens;
+			}
+			set
+			{
+				this._tblGiaoViens.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblGiaoViens(tblGiaoVien entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblMonHoc = this;
+		}
+		
+		private void detach_tblGiaoViens(tblGiaoVien entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblMonHoc = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblTrinhDo")]
 	public partial class tblTrinhDo : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1782,206 +1885,6 @@ namespace QLTH.DATA
 		{
 			this.SendPropertyChanging();
 			entity.tblTrinhDo = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUser")]
-	public partial class tblUser : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Username;
-		
-		private string _Password;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUsernameChanging(string value);
-    partial void OnUsernameChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    #endregion
-		
-		public tblUser()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Username
-		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this.OnUsernameChanging(value);
-					this.SendPropertyChanging();
-					this._Username = value;
-					this.SendPropertyChanged("Username");
-					this.OnUsernameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblMonHoc")]
-	public partial class tblMonHoc : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _MaMon;
-		
-		private string _TenMon;
-		
-		private EntitySet<tblGiaoVien> _tblGiaoViens;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaMonChanging(string value);
-    partial void OnMaMonChanged();
-    partial void OnTenMonChanging(string value);
-    partial void OnTenMonChanged();
-    #endregion
-		
-		public tblMonHoc()
-		{
-			this._tblGiaoViens = new EntitySet<tblGiaoVien>(new Action<tblGiaoVien>(this.attach_tblGiaoViens), new Action<tblGiaoVien>(this.detach_tblGiaoViens));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaMon", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaMon
-		{
-			get
-			{
-				return this._MaMon;
-			}
-			set
-			{
-				if ((this._MaMon != value))
-				{
-					this.OnMaMonChanging(value);
-					this.SendPropertyChanging();
-					this._MaMon = value;
-					this.SendPropertyChanged("MaMon");
-					this.OnMaMonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMon", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string TenMon
-		{
-			get
-			{
-				return this._TenMon;
-			}
-			set
-			{
-				if ((this._TenMon != value))
-				{
-					this.OnTenMonChanging(value);
-					this.SendPropertyChanging();
-					this._TenMon = value;
-					this.SendPropertyChanged("TenMon");
-					this.OnTenMonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblMonHoc_tblGiaoVien", Storage="_tblGiaoViens", ThisKey="MaMon", OtherKey="MaMon")]
-		public EntitySet<tblGiaoVien> tblGiaoViens
-		{
-			get
-			{
-				return this._tblGiaoViens;
-			}
-			set
-			{
-				this._tblGiaoViens.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tblGiaoViens(tblGiaoVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblMonHoc = this;
-		}
-		
-		private void detach_tblGiaoViens(tblGiaoVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblMonHoc = null;
 		}
 	}
 	
@@ -3509,6 +3412,50 @@ namespace QLTH.DATA
 		}
 	}
 	
+	public partial class XEM_HOCSINH_DINHMUC_BIEUDOResult
+	{
+		
+		private System.Nullable<int> _TONG;
+		
+		private System.Nullable<double> _DinhMucHocPhi;
+		
+		public XEM_HOCSINH_DINHMUC_BIEUDOResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TONG", DbType="Int")]
+		public System.Nullable<int> TONG
+		{
+			get
+			{
+				return this._TONG;
+			}
+			set
+			{
+				if ((this._TONG != value))
+				{
+					this._TONG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DinhMucHocPhi", DbType="Float")]
+		public System.Nullable<double> DinhMucHocPhi
+		{
+			get
+			{
+				return this._DinhMucHocPhi;
+			}
+			set
+			{
+				if ((this._DinhMucHocPhi != value))
+				{
+					this._DinhMucHocPhi = value;
+				}
+			}
+		}
+	}
+	
 	public partial class XEM_LICHDAY_BAOCAOResult
 	{
 		
@@ -3589,94 +3536,6 @@ namespace QLTH.DATA
 		}
 	}
 	
-	public partial class XEM_HOCSINH_DINHMUC_BIEUDOResult
-	{
-		
-		private System.Nullable<int> _TONG;
-		
-		private System.Nullable<double> _DinhMucHocPhi;
-		
-		public XEM_HOCSINH_DINHMUC_BIEUDOResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TONG", DbType="Int")]
-		public System.Nullable<int> TONG
-		{
-			get
-			{
-				return this._TONG;
-			}
-			set
-			{
-				if ((this._TONG != value))
-				{
-					this._TONG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DinhMucHocPhi", DbType="Float")]
-		public System.Nullable<double> DinhMucHocPhi
-		{
-			get
-			{
-				return this._DinhMucHocPhi;
-			}
-			set
-			{
-				if ((this._DinhMucHocPhi != value))
-				{
-					this._DinhMucHocPhi = value;
-				}
-			}
-		}
-	}
-	
-	public partial class XEM_TRINHDO_BieuDoResult
-	{
-		
-		private string _TrinhDo;
-		
-		private System.Nullable<int> _Tong;
-		
-		public XEM_TRINHDO_BieuDoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrinhDo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string TrinhDo
-		{
-			get
-			{
-				return this._TrinhDo;
-			}
-			set
-			{
-				if ((this._TrinhDo != value))
-				{
-					this._TrinhDo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tong", DbType="Int")]
-		public System.Nullable<int> Tong
-		{
-			get
-			{
-				return this._Tong;
-			}
-			set
-			{
-				if ((this._Tong != value))
-				{
-					this._Tong = value;
-				}
-			}
-		}
-	}
-	
 	public partial class XEM_TRINHDOResult
 	{
 		
@@ -3752,6 +3611,50 @@ namespace QLTH.DATA
 				if ((this._TrinhDo != value))
 				{
 					this._TrinhDo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class XEM_TRINHDO_BieuDoResult
+	{
+		
+		private string _TrinhDo;
+		
+		private System.Nullable<int> _Tong;
+		
+		public XEM_TRINHDO_BieuDoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrinhDo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string TrinhDo
+		{
+			get
+			{
+				return this._TrinhDo;
+			}
+			set
+			{
+				if ((this._TrinhDo != value))
+				{
+					this._TrinhDo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tong", DbType="Int")]
+		public System.Nullable<int> Tong
+		{
+			get
+			{
+				return this._Tong;
+			}
+			set
+			{
+				if ((this._Tong != value))
+				{
+					this._Tong = value;
 				}
 			}
 		}
