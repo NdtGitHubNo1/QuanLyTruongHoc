@@ -41,7 +41,7 @@ namespace QLTH.GUI
                // 
                // btnTK
                // 
-               this.btnTK.Location = new System.Drawing.Point(922, 44);
+               this.btnTK.Location = new System.Drawing.Point(913, 49);
                this.btnTK.Name = "btnTK";
                this.btnTK.Size = new System.Drawing.Size(94, 29);
                this.btnTK.TabIndex = 8;
@@ -64,7 +64,7 @@ namespace QLTH.GUI
                // 
                // labelControl1
                // 
-               this.labelControl1.Location = new System.Drawing.Point(671, 56);
+               this.labelControl1.Location = new System.Drawing.Point(686, 56);
                this.labelControl1.Name = "labelControl1";
                this.labelControl1.Size = new System.Drawing.Size(90, 17);
                this.labelControl1.TabIndex = 6;
@@ -73,20 +73,20 @@ namespace QLTH.GUI
                // dgvTK
                // 
                this.dgvTK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-               this.dgvTK.Location = new System.Drawing.Point(98, 100);
+               this.dgvTK.Location = new System.Drawing.Point(101, 103);
                this.dgvTK.Name = "dgvTK";
                this.dgvTK.RowHeadersWidth = 51;
                this.dgvTK.RowTemplate.Height = 24;
-               this.dgvTK.Size = new System.Drawing.Size(710, 494);
+               this.dgvTK.Size = new System.Drawing.Size(728, 537);
                this.dgvTK.TabIndex = 5;
                // 
                // chartTK
                // 
                this.chartTK.Legend.Name = "Default Legend";
-               this.chartTK.Location = new System.Drawing.Point(821, 102);
+               this.chartTK.Location = new System.Drawing.Point(836, 103);
                this.chartTK.Name = "chartTK";
                this.chartTK.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-               this.chartTK.Size = new System.Drawing.Size(756, 491);
+               this.chartTK.Size = new System.Drawing.Size(711, 537);
                this.chartTK.TabIndex = 9;
                // 
                // ThongKe
