@@ -59,7 +59,14 @@ namespace QLTH
 
         private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
-            viewSitePanel.Controls.Clear();
+            Form f = new FormDangNhap();
+            f.Show();
+            this.Hide();
+        }
+
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

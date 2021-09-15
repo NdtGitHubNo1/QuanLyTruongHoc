@@ -47,6 +47,8 @@ namespace QLTH
             this.viewSitePanel = new DevExpress.XtraEditors.PanelControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewSitePanel)).BeginInit();
             this.SuspendLayout();
@@ -62,10 +64,11 @@ namespace QLTH
             this.barButtonItem5,
             this.barButtonItem6,
             this.barButtonItem7,
-            this.skinRibbon});
+            this.skinRibbon,
+            this.barButtonItem8});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ribbon.MaxItemId = 7;
+            this.ribbon.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.ribbon.MaxItemId = 8;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -104,7 +107,7 @@ namespace QLTH
             // 
             // barButtonItem6
             // 
-            this.barButtonItem6.Caption = "Thoát";
+            this.barButtonItem6.Caption = "Đăng Xuất";
             this.barButtonItem6.Id = 4;
             this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
             this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
@@ -137,7 +140,8 @@ namespace QLTH
             this.ribbonPageGroup2,
             this.ribbonPageGroup3,
             this.ribbonPageGroup5,
-            this.ribbonPageGroup4});
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup6});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Admin";
             // 
@@ -170,7 +174,7 @@ namespace QLTH
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.skinRibbon);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 874);
-            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1547, 30);
@@ -181,7 +185,7 @@ namespace QLTH
             this.viewSitePanel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.viewSitePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewSitePanel.Location = new System.Drawing.Point(0, 198);
-            this.viewSitePanel.Margin = new System.Windows.Forms.Padding(15, 19, 15, 19);
+            this.viewSitePanel.Margin = new System.Windows.Forms.Padding(19, 24, 19, 24);
             this.viewSitePanel.Name = "viewSitePanel";
             this.viewSitePanel.Size = new System.Drawing.Size(1547, 676);
             this.viewSitePanel.TabIndex = 2;
@@ -203,6 +207,21 @@ namespace QLTH
             this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
             this.barButtonItem2.LargeWidth = 80;
             this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Thoát";
+            this.barButtonItem8.Id = 7;
+            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.barButtonItem8.LargeWidth = 80;
+            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
             // QLTH_Admin
             // 
@@ -242,5 +261,7 @@ namespace QLTH
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
           private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbon;
-     }
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+    }
 }

@@ -111,22 +111,22 @@ namespace QLTH.GUI
             if (quyen == "admin")
             {
                 QLTH_Admin admin = new QLTH_Admin();
-                admin.ShowDialog();
-                this.Close();
+                admin.Show();
+                this.Hide();
             }
             if (quyen == "GiaoVien")
             {
                 GUI.QLTH_GiaoVien giaovien = new GUI.QLTH_GiaoVien();
                 GUI.QLTH_GiaoVien.magv = txtTK.Text;
-                giaovien.ShowDialog();
-                this.Close();
+                giaovien.Show();
+                this.Hide();
             }
             if (quyen == "HocSinh")
             {
                 GUI.QLTH_HocSinh hocsinh = new GUI.QLTH_HocSinh();
                 GUI.QLTH_HocSinh.mahs = txtTK.Text;
-                hocsinh.ShowDialog();
-                this.Close();
+                hocsinh.Show();
+                this.Hide();
             }
         }
  
