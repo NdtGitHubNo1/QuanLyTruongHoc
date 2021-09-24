@@ -104,31 +104,34 @@ namespace QLTH.GUI
         }
         private string SinhMa()
         {
-            string magv = "";
-            int ma = 1;
+               string MaGV = "";
             DataTable gv = new DataTable();
             gv = linq.DANGNHAP1().ToDataTable();
-            for (int i = 0; i < gv.Rows.Count; i++)
-            {
-                gv.Rows[i]["MaGV"] = gv.Rows[i]["MaGV"].ToString().Substring(8, 2);
-            }
-            for (int i = 0; i < gv.Rows.Count; i++)
-            {
-                if (ma != Int32.Parse(gv.Rows[i]["MaGV"].ToString())) break;
-                else ma++;
-            }
-            if (ma >= 10)
-            {
-                magv = String.Concat("GV000000", ma.ToString());
-            }
-            if (ma < 10)
-            {
-                magv = String.Concat("GV0000000", ma.ToString());
-            }
-            return magv;
-
-
-        }
+            int count = gv.Rows.Count;
+               string s1 = "";
+               int s2 = 0;
+               s1 = Convert.ToString(gv.Rows[count - 1][0].ToString());
+               s2 = Convert.ToInt32((s1.Remove(0, 2)));
+               if (s2 + 1 < 10)
+                    MaGV = "GV0000000" + (s2 + 1).ToString();
+               else if (s2 + 1 < 100)
+                    MaGV = "GV000000" + (s2 + 1).ToString();
+               else if (s2 + 1 < 1000)
+                    MaGV = "GV00000" + (s2 + 1).ToString();
+               else if (s2 + 1 < 10000)
+                    MaGV = "GV0000" + (s2 + 1).ToString();
+               else if (s2 + 1 < 100000)
+                    MaGV = "GV000" + (s2 + 1).ToString();
+               else if (s2 + 1 < 1000000)
+                    MaGV = "GV00" + (s2 + 1).ToString();
+               else if (s2 + 1 < 10000000)
+                    MaGV = "GV0" + (s2 + 1).ToString();
+               else if (s2 + 1 < 100000000)
+                    MaGV = "GV" + (s2 + 1).ToString();
+               else
+                    MaGV = "";
+               return MaGV;
+          }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
