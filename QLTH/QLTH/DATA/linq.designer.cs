@@ -45,19 +45,22 @@ namespace QLTH.DATA
     partial void InserttblHocSinh(tblHocSinh instance);
     partial void UpdatetblHocSinh(tblHocSinh instance);
     partial void DeletetblHocSinh(tblHocSinh instance);
-    partial void InserttblLop(tblLop instance);
-    partial void UpdatetblLop(tblLop instance);
-    partial void DeletetblLop(tblLop instance);
-    partial void InserttblMonHoc(tblMonHoc instance);
-    partial void UpdatetblMonHoc(tblMonHoc instance);
-    partial void DeletetblMonHoc(tblMonHoc instance);
     partial void InserttblTrinhDo(tblTrinhDo instance);
     partial void UpdatetblTrinhDo(tblTrinhDo instance);
     partial void DeletetblTrinhDo(tblTrinhDo instance);
+    partial void InserttblMonHoc(tblMonHoc instance);
+    partial void UpdatetblMonHoc(tblMonHoc instance);
+    partial void DeletetblMonHoc(tblMonHoc instance);
+    partial void InserttblLop(tblLop instance);
+    partial void UpdatetblLop(tblLop instance);
+    partial void DeletetblLop(tblLop instance);
+    partial void InserttblUser(tblUser instance);
+    partial void UpdatetblUser(tblUser instance);
+    partial void DeletetblUser(tblUser instance);
     #endregion
 		
 		public linqDataContext() : 
-				base(global::QLTH.Properties.Settings.Default.QUANLYTRUONGHOCConnectionString3, mappingSource)
+				base(global::QLTH.Properties.Settings.Default.QUANLYTRUONGHOCConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -126,11 +129,11 @@ namespace QLTH.DATA
 			}
 		}
 		
-		public System.Data.Linq.Table<tblLop> tblLops
+		public System.Data.Linq.Table<tblTrinhDo> tblTrinhDos
 		{
 			get
 			{
-				return this.GetTable<tblLop>();
+				return this.GetTable<tblTrinhDo>();
 			}
 		}
 		
@@ -142,11 +145,19 @@ namespace QLTH.DATA
 			}
 		}
 		
-		public System.Data.Linq.Table<tblTrinhDo> tblTrinhDos
+		public System.Data.Linq.Table<tblLop> tblLops
 		{
 			get
 			{
-				return this.GetTable<tblTrinhDo>();
+				return this.GetTable<tblLop>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblUser> tblUsers
+		{
+			get
+			{
+				return this.GetTable<tblUser>();
 			}
 		}
 		
@@ -192,17 +203,17 @@ namespace QLTH.DATA
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SuaTTGD_Admin")]
-		public int SuaTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay1", DbType="Date")] System.Nullable<System.DateTime> ngayDay1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet1", DbType="Int")] System.Nullable<int> soTiet1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet1", DbType="Int")] System.Nullable<int> soTienMotTiet1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay2", DbType="Date")] System.Nullable<System.DateTime> ngayDay2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet2", DbType="Int")] System.Nullable<int> soTiet2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet2", DbType="Int")] System.Nullable<int> soTienMotTiet2)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV, ngayDay1, soTiet1, soTienMotTiet1, ngayDay2, soTiet2, soTienMotTiet2);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.THEM_HS_ADMIN")]
 		public int THEM_HS_ADMIN([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHS", DbType="NChar(10)")] string maHS, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="HoTen", DbType="NVarChar(50)")] string hoTen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GT", DbType="NChar(3)")] string gT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgaySinh", DbType="Date")] System.Nullable<System.DateTime> ngaySinh, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DiaChi", DbType="NVarChar(50)")] string diaChi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhuHuynh", DbType="NVarChar(50)")] string phuHuynh, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DinhMucHocPhi", DbType="Float")] System.Nullable<double> dinhMucHocPhi, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHS, hoTen, gT, ngaySinh, diaChi, phuHuynh, dinhMucHocPhi, maLop);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SuaTTGD_Admin")]
+		public int SuaTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay1", DbType="Date")] System.Nullable<System.DateTime> ngayDay1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet1", DbType="Int")] System.Nullable<int> soTiet1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet1", DbType="Int")] System.Nullable<int> soTienMotTiet1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay2", DbType="Date")] System.Nullable<System.DateTime> ngayDay2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet2", DbType="Int")] System.Nullable<int> soTiet2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet2", DbType="Int")] System.Nullable<int> soTienMotTiet2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV, ngayDay1, soTiet1, soTienMotTiet1, ngayDay2, soTiet2, soTienMotTiet2);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -213,18 +224,18 @@ namespace QLTH.DATA
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ThemTTGD_Admin")]
-		public int ThemTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay", DbType="Date")] System.Nullable<System.DateTime> ngayDay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet", DbType="Int")] System.Nullable<int> soTiet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet", DbType="Int")] System.Nullable<int> soTienMotTiet)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV, ngayDay, soTiet, soTienMotTiet);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.THONGTIN_GIAOVIEN")]
 		public ISingleResult<THONGTIN_GIAOVIENResult> THONGTIN_GIAOVIEN([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MAGV", DbType="NChar(10)")] string mAGV)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mAGV);
 			return ((ISingleResult<THONGTIN_GIAOVIENResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ThemTTGD_Admin")]
+		public int ThemTTGD_Admin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaLop", DbType="NChar(10)")] string maLop, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGV", DbType="NChar(10)")] string maGV, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDay", DbType="Date")] System.Nullable<System.DateTime> ngayDay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTiet", DbType="Int")] System.Nullable<int> soTiet, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoTienMotTiet", DbType="Int")] System.Nullable<int> soTienMotTiet)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maLop, maGV, ngayDay, soTiet, soTienMotTiet);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TIMGIAOVIEN_ADMIN")]
@@ -255,13 +266,6 @@ namespace QLTH.DATA
 			return ((ISingleResult<TimTTGD_GiaoVienResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TK_TIEN")]
-		public ISingleResult<TK_TIENResult> TK_TIEN()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<TK_TIENResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TK_TIEN_THEOTHANG")]
 		public ISingleResult<TK_TIEN_THEOTHANGResult> TK_TIEN_THEOTHANG()
 		{
@@ -269,15 +273,22 @@ namespace QLTH.DATA
 			return ((ISingleResult<TK_TIEN_THEOTHANGResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UPDATEHOCPHI")]
-		public int UPDATEHOCPHI()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TK_TIEN")]
+		public ISingleResult<TK_TIENResult> TK_TIEN()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<TK_TIENResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UPDATELUONG")]
+		public int UPDATELUONG()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UPDATELUONG")]
-		public int UPDATELUONG()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UPDATEHOCPHI")]
+		public int UPDATEHOCPHI()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((int)(result.ReturnValue));
@@ -848,9 +859,9 @@ namespace QLTH.DATA
 		
 		private EntitySet<tblLop> _tblLops;
 		
-		private EntityRef<tblMonHoc> _tblMonHoc;
-		
 		private EntityRef<tblTrinhDo> _tblTrinhDo;
+		
+		private EntityRef<tblMonHoc> _tblMonHoc;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -879,8 +890,8 @@ namespace QLTH.DATA
 		public tblGiaoVien()
 		{
 			this._tblLops = new EntitySet<tblLop>(new Action<tblLop>(this.attach_tblLops), new Action<tblLop>(this.detach_tblLops));
-			this._tblMonHoc = default(EntityRef<tblMonHoc>);
 			this._tblTrinhDo = default(EntityRef<tblTrinhDo>);
+			this._tblMonHoc = default(EntityRef<tblMonHoc>);
 			OnCreated();
 		}
 		
@@ -1085,40 +1096,6 @@ namespace QLTH.DATA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblMonHoc_tblGiaoVien", Storage="_tblMonHoc", ThisKey="MaMon", OtherKey="MaMon", IsForeignKey=true, DeleteRule="CASCADE")]
-		public tblMonHoc tblMonHoc
-		{
-			get
-			{
-				return this._tblMonHoc.Entity;
-			}
-			set
-			{
-				tblMonHoc previousValue = this._tblMonHoc.Entity;
-				if (((previousValue != value) 
-							|| (this._tblMonHoc.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblMonHoc.Entity = null;
-						previousValue.tblGiaoViens.Remove(this);
-					}
-					this._tblMonHoc.Entity = value;
-					if ((value != null))
-					{
-						value.tblGiaoViens.Add(this);
-						this._MaMon = value.MaMon;
-					}
-					else
-					{
-						this._MaMon = default(string);
-					}
-					this.SendPropertyChanged("tblMonHoc");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblTrinhDo_tblGiaoVien", Storage="_tblTrinhDo", ThisKey="MaTrinhDo", OtherKey="MaTrinhDo", IsForeignKey=true, DeleteRule="CASCADE")]
 		public tblTrinhDo tblTrinhDo
 		{
@@ -1149,6 +1126,40 @@ namespace QLTH.DATA
 						this._MaTrinhDo = default(string);
 					}
 					this.SendPropertyChanged("tblTrinhDo");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblMonHoc_tblGiaoVien", Storage="_tblMonHoc", ThisKey="MaMon", OtherKey="MaMon", IsForeignKey=true, DeleteRule="CASCADE")]
+		public tblMonHoc tblMonHoc
+		{
+			get
+			{
+				return this._tblMonHoc.Entity;
+			}
+			set
+			{
+				tblMonHoc previousValue = this._tblMonHoc.Entity;
+				if (((previousValue != value) 
+							|| (this._tblMonHoc.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblMonHoc.Entity = null;
+						previousValue.tblGiaoViens.Remove(this);
+					}
+					this._tblMonHoc.Entity = value;
+					if ((value != null))
+					{
+						value.tblGiaoViens.Add(this);
+						this._MaMon = value.MaMon;
+					}
+					else
+					{
+						this._MaMon = default(string);
+					}
+					this.SendPropertyChanged("tblMonHoc");
 				}
 			}
 		}
@@ -1457,6 +1468,258 @@ namespace QLTH.DATA
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblTrinhDo")]
+	public partial class tblTrinhDo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaTrinhDo;
+		
+		private string _TrinhDo;
+		
+		private double _DinhMuc;
+		
+		private EntitySet<tblGiaoVien> _tblGiaoViens;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaTrinhDoChanging(string value);
+    partial void OnMaTrinhDoChanged();
+    partial void OnTrinhDoChanging(string value);
+    partial void OnTrinhDoChanged();
+    partial void OnDinhMucChanging(double value);
+    partial void OnDinhMucChanged();
+    #endregion
+		
+		public tblTrinhDo()
+		{
+			this._tblGiaoViens = new EntitySet<tblGiaoVien>(new Action<tblGiaoVien>(this.attach_tblGiaoViens), new Action<tblGiaoVien>(this.detach_tblGiaoViens));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTrinhDo", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaTrinhDo
+		{
+			get
+			{
+				return this._MaTrinhDo;
+			}
+			set
+			{
+				if ((this._MaTrinhDo != value))
+				{
+					this.OnMaTrinhDoChanging(value);
+					this.SendPropertyChanging();
+					this._MaTrinhDo = value;
+					this.SendPropertyChanged("MaTrinhDo");
+					this.OnMaTrinhDoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrinhDo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string TrinhDo
+		{
+			get
+			{
+				return this._TrinhDo;
+			}
+			set
+			{
+				if ((this._TrinhDo != value))
+				{
+					this.OnTrinhDoChanging(value);
+					this.SendPropertyChanging();
+					this._TrinhDo = value;
+					this.SendPropertyChanged("TrinhDo");
+					this.OnTrinhDoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DinhMuc", DbType="Float NOT NULL")]
+		public double DinhMuc
+		{
+			get
+			{
+				return this._DinhMuc;
+			}
+			set
+			{
+				if ((this._DinhMuc != value))
+				{
+					this.OnDinhMucChanging(value);
+					this.SendPropertyChanging();
+					this._DinhMuc = value;
+					this.SendPropertyChanged("DinhMuc");
+					this.OnDinhMucChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblTrinhDo_tblGiaoVien", Storage="_tblGiaoViens", ThisKey="MaTrinhDo", OtherKey="MaTrinhDo")]
+		public EntitySet<tblGiaoVien> tblGiaoViens
+		{
+			get
+			{
+				return this._tblGiaoViens;
+			}
+			set
+			{
+				this._tblGiaoViens.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblGiaoViens(tblGiaoVien entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblTrinhDo = this;
+		}
+		
+		private void detach_tblGiaoViens(tblGiaoVien entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblTrinhDo = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblMonHoc")]
+	public partial class tblMonHoc : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaMon;
+		
+		private string _TenMon;
+		
+		private EntitySet<tblGiaoVien> _tblGiaoViens;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaMonChanging(string value);
+    partial void OnMaMonChanged();
+    partial void OnTenMonChanging(string value);
+    partial void OnTenMonChanged();
+    #endregion
+		
+		public tblMonHoc()
+		{
+			this._tblGiaoViens = new EntitySet<tblGiaoVien>(new Action<tblGiaoVien>(this.attach_tblGiaoViens), new Action<tblGiaoVien>(this.detach_tblGiaoViens));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaMon", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaMon
+		{
+			get
+			{
+				return this._MaMon;
+			}
+			set
+			{
+				if ((this._MaMon != value))
+				{
+					this.OnMaMonChanging(value);
+					this.SendPropertyChanging();
+					this._MaMon = value;
+					this.SendPropertyChanged("MaMon");
+					this.OnMaMonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMon", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string TenMon
+		{
+			get
+			{
+				return this._TenMon;
+			}
+			set
+			{
+				if ((this._TenMon != value))
+				{
+					this.OnTenMonChanging(value);
+					this.SendPropertyChanging();
+					this._TenMon = value;
+					this.SendPropertyChanged("TenMon");
+					this.OnTenMonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblMonHoc_tblGiaoVien", Storage="_tblGiaoViens", ThisKey="MaMon", OtherKey="MaMon")]
+		public EntitySet<tblGiaoVien> tblGiaoViens
+		{
+			get
+			{
+				return this._tblGiaoViens;
+			}
+			set
+			{
+				this._tblGiaoViens.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblGiaoViens(tblGiaoVien entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblMonHoc = this;
+		}
+		
+		private void detach_tblGiaoViens(tblGiaoVien entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblMonHoc = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblLop")]
 	public partial class tblLop : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1636,84 +1899,68 @@ namespace QLTH.DATA
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblMonHoc")]
-	public partial class tblMonHoc : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUser")]
+	public partial class tblUser : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MaMon;
+		private string _Username;
 		
-		private string _TenMon;
-		
-		private EntitySet<tblGiaoVien> _tblGiaoViens;
+		private string _Password;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaMonChanging(string value);
-    partial void OnMaMonChanged();
-    partial void OnTenMonChanging(string value);
-    partial void OnTenMonChanged();
+    partial void OnUsernameChanging(string value);
+    partial void OnUsernameChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
     #endregion
 		
-		public tblMonHoc()
+		public tblUser()
 		{
-			this._tblGiaoViens = new EntitySet<tblGiaoVien>(new Action<tblGiaoVien>(this.attach_tblGiaoViens), new Action<tblGiaoVien>(this.detach_tblGiaoViens));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaMon", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaMon
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Username
 		{
 			get
 			{
-				return this._MaMon;
+				return this._Username;
 			}
 			set
 			{
-				if ((this._MaMon != value))
+				if ((this._Username != value))
 				{
-					this.OnMaMonChanging(value);
+					this.OnUsernameChanging(value);
 					this.SendPropertyChanging();
-					this._MaMon = value;
-					this.SendPropertyChanged("MaMon");
-					this.OnMaMonChanged();
+					this._Username = value;
+					this.SendPropertyChanged("Username");
+					this.OnUsernameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenMon", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string TenMon
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Password
 		{
 			get
 			{
-				return this._TenMon;
+				return this._Password;
 			}
 			set
 			{
-				if ((this._TenMon != value))
+				if ((this._Password != value))
 				{
-					this.OnTenMonChanging(value);
+					this.OnPasswordChanging(value);
 					this.SendPropertyChanging();
-					this._TenMon = value;
-					this.SendPropertyChanged("TenMon");
-					this.OnTenMonChanged();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblMonHoc_tblGiaoVien", Storage="_tblGiaoViens", ThisKey="MaMon", OtherKey="MaMon")]
-		public EntitySet<tblGiaoVien> tblGiaoViens
-		{
-			get
-			{
-				return this._tblGiaoViens;
-			}
-			set
-			{
-				this._tblGiaoViens.Assign(value);
 			}
 		}
 		
@@ -1735,156 +1982,6 @@ namespace QLTH.DATA
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_tblGiaoViens(tblGiaoVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblMonHoc = this;
-		}
-		
-		private void detach_tblGiaoViens(tblGiaoVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblMonHoc = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblTrinhDo")]
-	public partial class tblTrinhDo : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _MaTrinhDo;
-		
-		private string _TrinhDo;
-		
-		private double _DinhMuc;
-		
-		private EntitySet<tblGiaoVien> _tblGiaoViens;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaTrinhDoChanging(string value);
-    partial void OnMaTrinhDoChanged();
-    partial void OnTrinhDoChanging(string value);
-    partial void OnTrinhDoChanged();
-    partial void OnDinhMucChanging(double value);
-    partial void OnDinhMucChanged();
-    #endregion
-		
-		public tblTrinhDo()
-		{
-			this._tblGiaoViens = new EntitySet<tblGiaoVien>(new Action<tblGiaoVien>(this.attach_tblGiaoViens), new Action<tblGiaoVien>(this.detach_tblGiaoViens));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTrinhDo", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaTrinhDo
-		{
-			get
-			{
-				return this._MaTrinhDo;
-			}
-			set
-			{
-				if ((this._MaTrinhDo != value))
-				{
-					this.OnMaTrinhDoChanging(value);
-					this.SendPropertyChanging();
-					this._MaTrinhDo = value;
-					this.SendPropertyChanged("MaTrinhDo");
-					this.OnMaTrinhDoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrinhDo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string TrinhDo
-		{
-			get
-			{
-				return this._TrinhDo;
-			}
-			set
-			{
-				if ((this._TrinhDo != value))
-				{
-					this.OnTrinhDoChanging(value);
-					this.SendPropertyChanging();
-					this._TrinhDo = value;
-					this.SendPropertyChanged("TrinhDo");
-					this.OnTrinhDoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DinhMuc", DbType="Float NOT NULL")]
-		public double DinhMuc
-		{
-			get
-			{
-				return this._DinhMuc;
-			}
-			set
-			{
-				if ((this._DinhMuc != value))
-				{
-					this.OnDinhMucChanging(value);
-					this.SendPropertyChanging();
-					this._DinhMuc = value;
-					this.SendPropertyChanged("DinhMuc");
-					this.OnDinhMucChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblTrinhDo_tblGiaoVien", Storage="_tblGiaoViens", ThisKey="MaTrinhDo", OtherKey="MaTrinhDo")]
-		public EntitySet<tblGiaoVien> tblGiaoViens
-		{
-			get
-			{
-				return this._tblGiaoViens;
-			}
-			set
-			{
-				this._tblGiaoViens.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tblGiaoViens(tblGiaoVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblTrinhDo = this;
-		}
-		
-		private void detach_tblGiaoViens(tblGiaoVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblTrinhDo = null;
 		}
 	}
 	
@@ -2950,50 +3047,6 @@ namespace QLTH.DATA
 		}
 	}
 	
-	public partial class TK_TIENResult
-	{
-		
-		private System.Nullable<long> _HocPhi;
-		
-		private System.Nullable<long> _Luong;
-		
-		public TK_TIENResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HocPhi", DbType="BigInt")]
-		public System.Nullable<long> HocPhi
-		{
-			get
-			{
-				return this._HocPhi;
-			}
-			set
-			{
-				if ((this._HocPhi != value))
-				{
-					this._HocPhi = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Luong", DbType="BigInt")]
-		public System.Nullable<long> Luong
-		{
-			get
-			{
-				return this._Luong;
-			}
-			set
-			{
-				if ((this._Luong != value))
-				{
-					this._Luong = value;
-				}
-			}
-		}
-	}
-	
 	public partial class TK_TIEN_THEOTHANGResult
 	{
 		
@@ -3051,6 +3104,50 @@ namespace QLTH.DATA
 				if ((this._CHI != value))
 				{
 					this._CHI = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TK_TIENResult
+	{
+		
+		private System.Nullable<long> _HocPhi;
+		
+		private System.Nullable<long> _Luong;
+		
+		public TK_TIENResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HocPhi", DbType="BigInt")]
+		public System.Nullable<long> HocPhi
+		{
+			get
+			{
+				return this._HocPhi;
+			}
+			set
+			{
+				if ((this._HocPhi != value))
+				{
+					this._HocPhi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Luong", DbType="BigInt")]
+		public System.Nullable<long> Luong
+		{
+			get
+			{
+				return this._Luong;
+			}
+			set
+			{
+				if ((this._Luong != value))
+				{
+					this._Luong = value;
 				}
 			}
 		}

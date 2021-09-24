@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYTRUONGHOC" Class="linqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-3PM2V18\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="QLTH.Properties.Settings" SettingsPropertyName="QUANLYTRUONGHOCConnectionString3" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-KPC8BMG\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True" SettingsObjectName="QLTH.Properties.Settings" SettingsPropertyName="QUANLYTRUONGHOCConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.HOCPHI" Member="HOCPHIs">
     <Type Name="HOCPHI">
       <Column Name="MAHS" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
@@ -37,8 +37,8 @@
       <Column Name="MaTrinhDo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="MaMon" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Association Name="tblGiaoVien_tblLop" Member="tblLops" ThisKey="MaGV" OtherKey="GVCN" Type="tblLop" />
-      <Association Name="tblMonHoc_tblGiaoVien" Member="tblMonHoc" ThisKey="MaMon" OtherKey="MaMon" Type="tblMonHoc" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="tblTrinhDo_tblGiaoVien" Member="tblTrinhDo" ThisKey="MaTrinhDo" OtherKey="MaTrinhDo" Type="tblTrinhDo" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="tblMonHoc_tblGiaoVien" Member="tblMonHoc" ThisKey="MaMon" OtherKey="MaMon" Type="tblMonHoc" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.tblHocSinh" Member="tblHocSinhs">
@@ -54,13 +54,12 @@
       <Association Name="tblLop_tblHocSinh" Member="tblLop" ThisKey="MaLop" OtherKey="MaLop" Type="tblLop" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
-  <Table Name="dbo.tblLop" Member="tblLops">
-    <Type Name="tblLop">
-      <Column Name="MaLop" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenLop" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="GVCN" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="tblLop_tblHocSinh" Member="tblHocSinhs" ThisKey="MaLop" OtherKey="MaLop" Type="tblHocSinh" />
-      <Association Name="tblGiaoVien_tblLop" Member="tblGiaoVien" ThisKey="GVCN" OtherKey="MaGV" Type="tblGiaoVien" IsForeignKey="true" DeleteRule="CASCADE" />
+  <Table Name="dbo.tblTrinhDo" Member="tblTrinhDos">
+    <Type Name="tblTrinhDo">
+      <Column Name="MaTrinhDo" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DinhMuc" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="tblTrinhDo_tblGiaoVien" Member="tblGiaoViens" ThisKey="MaTrinhDo" OtherKey="MaTrinhDo" Type="tblGiaoVien" />
     </Type>
   </Table>
   <Table Name="dbo.tblMonHoc" Member="tblMonHocs">
@@ -70,12 +69,19 @@
       <Association Name="tblMonHoc_tblGiaoVien" Member="tblGiaoViens" ThisKey="MaMon" OtherKey="MaMon" Type="tblGiaoVien" />
     </Type>
   </Table>
-  <Table Name="dbo.tblTrinhDo" Member="tblTrinhDos">
-    <Type Name="tblTrinhDo">
-      <Column Name="MaTrinhDo" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TrinhDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DinhMuc" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Association Name="tblTrinhDo_tblGiaoVien" Member="tblGiaoViens" ThisKey="MaTrinhDo" OtherKey="MaTrinhDo" Type="tblGiaoVien" />
+  <Table Name="dbo.tblLop" Member="tblLops">
+    <Type Name="tblLop">
+      <Column Name="MaLop" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLop" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GVCN" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="tblLop_tblHocSinh" Member="tblHocSinhs" ThisKey="MaLop" OtherKey="MaLop" Type="tblHocSinh" />
+      <Association Name="tblGiaoVien_tblLop" Member="tblGiaoVien" ThisKey="GVCN" OtherKey="MaGV" Type="tblGiaoVien" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUser" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.DANGNHAP1" Method="DANGNHAP1">
@@ -137,17 +143,6 @@
     <Parameter Name="MaMon" Parameter="maMon" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SuaTTGD_Admin" Method="SuaTTGD_Admin">
-    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
-    <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
-    <Parameter Name="NgayDay1" Parameter="ngayDay1" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="SoTiet1" Parameter="soTiet1" Type="System.Int32" DbType="Int" />
-    <Parameter Name="SoTienMotTiet1" Parameter="soTienMotTiet1" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NgayDay2" Parameter="ngayDay2" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="SoTiet2" Parameter="soTiet2" Type="System.Int32" DbType="Int" />
-    <Parameter Name="SoTienMotTiet2" Parameter="soTienMotTiet2" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.THEM_HS_ADMIN" Method="THEM_HS_ADMIN">
     <Parameter Name="MaHS" Parameter="maHS" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="HoTen" Parameter="hoTen" Type="System.String" DbType="NVarChar(50)" />
@@ -157,6 +152,17 @@
     <Parameter Name="PhuHuynh" Parameter="phuHuynh" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="DinhMucHocPhi" Parameter="dinhMucHocPhi" Type="System.Double" DbType="Float" />
     <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SuaTTGD_Admin" Method="SuaTTGD_Admin">
+    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="NgayDay1" Parameter="ngayDay1" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoTiet1" Parameter="soTiet1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoTienMotTiet1" Parameter="soTienMotTiet1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NgayDay2" Parameter="ngayDay2" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoTiet2" Parameter="soTiet2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoTienMotTiet2" Parameter="soTienMotTiet2" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.THEMGIAOVIEN_ADMIN" Method="THEMGIAOVIEN_ADMIN">
@@ -169,14 +175,6 @@
     <Parameter Name="Luong" Parameter="luong" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="TrinhDo" Parameter="trinhDo" Type="System.String" DbType="NVarChar(10)" />
     <Parameter Name="MaMon" Parameter="maMon" Type="System.String" DbType="NChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.ThemTTGD_Admin" Method="ThemTTGD_Admin">
-    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
-    <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
-    <Parameter Name="NgayDay" Parameter="ngayDay" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="SoTiet" Parameter="soTiet" Type="System.Int32" DbType="Int" />
-    <Parameter Name="SoTienMotTiet" Parameter="soTienMotTiet" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.THONGTIN_GIAOVIEN" Method="THONGTIN_GIAOVIEN">
@@ -192,6 +190,14 @@
       <Column Name="MaTrinhDo" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="MaMon" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.ThemTTGD_Admin" Method="ThemTTGD_Admin">
+    <Parameter Name="MaLop" Parameter="maLop" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="MaGV" Parameter="maGV" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="NgayDay" Parameter="ngayDay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SoTiet" Parameter="soTiet" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SoTienMotTiet" Parameter="soTienMotTiet" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.TIMGIAOVIEN_ADMIN" Method="TIMGIAOVIEN_ADMIN">
     <Parameter Name="text" Type="System.String" DbType="NVarChar(100)" />
@@ -240,12 +246,6 @@
       <Column Name="SoTienMotTiet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.TK_TIEN" Method="TK_TIEN">
-    <ElementType Name="TK_TIENResult">
-      <Column Name="HocPhi" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Luong" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.TK_TIEN_THEOTHANG" Method="TK_TIEN_THEOTHANG">
     <ElementType Name="TK_TIEN_THEOTHANGResult">
       <Column Name="THANG" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
@@ -253,10 +253,16 @@
       <Column Name="CHI" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.UPDATEHOCPHI" Method="UPDATEHOCPHI">
-    <Return Type="System.Int32" />
+  <Function Name="dbo.TK_TIEN" Method="TK_TIEN">
+    <ElementType Name="TK_TIENResult">
+      <Column Name="HocPhi" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Luong" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
   </Function>
   <Function Name="dbo.UPDATELUONG" Method="UPDATELUONG">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UPDATEHOCPHI" Method="UPDATEHOCPHI">
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.XEM_GIAOVIEN_THEOMONHOC" Method="XEM_GIAOVIEN_THEOMONHOC">

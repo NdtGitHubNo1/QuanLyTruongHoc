@@ -1649,7 +1649,7 @@ INSERT [dbo].[tblTrinhDo] ([MaTrinhDo], [TrinhDo], [DinhMuc]) VALUES (N'Ths', N'
 GO
 INSERT [dbo].[tblTrinhDo] ([MaTrinhDo], [TrinhDo], [DinhMuc]) VALUES (N'TS', N'Tiến sĩ', 0.45)
 GO
-INSERT [dbo].[tblUser] ([Username], [Password]) VALUES (N'[MaGV]', N'SDT')
+INSERT [dbo].[tblUser] ([Username], [Password]) VALUES (N'[MaGV]', N'[SDT]')
 GO
 INSERT [dbo].[tblUser] ([Username], [Password]) VALUES (N'[MaHS]', N'[MaHS]')
 GO
