@@ -1,8 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
+    "\\DATA",
     "\\GUI"
   ],
-  "SelectedNode": "\\GUI\\FormDangNhap.Designer.cs",
   "PreviewInSolutionExplorer": false
 }
