@@ -35,18 +35,18 @@ namespace QLTH.GUI
 
         }
 
-        private void GIAOVIEN_Load(object sender, EventArgs e)
-        {
-            db = linq.THONGTIN_GIAOVIEN(GUI.QLTH_GiaoVien.magv).ToDataTable();
-            txtMaGV.Text = db.Rows[0]["MaGV"].ToString();
-            txtHoten.Text = db.Rows[0]["HoTen"].ToString();
-            txtGioitinh.Text = db.Rows[0]["GT"].ToString();
-            txtNgaySinh.Text = db.Rows[0]["NgaySinh"].ToString();
-            txtDiachi.Text = db.Rows[0]["DiaChi"].ToString();
-            txtSdt.Text = db.Rows[0]["SDT"].ToString();
-            txtluong.Text = db.Rows[0]["LuongCung"].ToString();
-            txttrinhdo.Text = db.Rows[0]["MaTrinhDo"].ToString();
-            txtmamon.Text = db.Rows[0]["MaMon"].ToString();
-        }
-    }
+          private void GIAOVIEN_Load(object sender, EventArgs e)
+          {
+               db = linq.THONGTIN_GIAOVIEN(GUI.QLTH_GiaoVien.magv).ToDataTable();
+               txtMaGV.Text = db.Rows[0]["MaGV"].ToString();
+               txtHoten.Text = db.Rows[0]["HoTen"].ToString();
+               txtGioitinh.Text = db.Rows[0]["GT"].ToString();
+               txtNgaySinh.Text = db.Rows[0]["NgaySinh"].ToString();
+               txtDiachi.Text = db.Rows[0]["DiaChi"].ToString();
+               txtSdt.Text = db.Rows[0]["SDT"].ToString();
+               txtluong.Text = db.Rows[0]["LuongCung"].ToString();
+               txttrinhdo.Text = db.Rows[0]["MaTrinhDo"].ToString();
+               txtmamon.Text = db.Rows[0]["MaMon"].ToString();
+          }
+     }
 }
