@@ -60,7 +60,7 @@ namespace QLTH
         private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
                Application.Exit();
-          }
+        }
 
           private void barDangXuat_ItemClick(object sender, ItemClickEventArgs e)
           {
