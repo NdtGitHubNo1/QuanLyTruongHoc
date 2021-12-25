@@ -34,6 +34,20 @@ namespace QLTH.GUI
         {
 
         }
+         
+         void ReadOnly()
+        {
+            txtMaGV.ReadOnly = true;
+            txtHoten.ReadOnly = true;
+            txtGioitinh.ReadOnly = true;
+            txtNgaySinh.ReadOnly = true;
+            txtDiachi.ReadOnly = true;
+            txtSdt.ReadOnly = true;
+            txtluong.ReadOnly = true;
+            txttrinhdo.ReadOnly = true;
+            txtmamon.ReadOnly = true;      
+
+        }
 
           private void GIAOVIEN_Load(object sender, EventArgs e)
           {
@@ -47,6 +61,8 @@ namespace QLTH.GUI
                txtluong.Text = db.Rows[0]["LuongCung"].ToString();
                txttrinhdo.Text = db.Rows[0]["MaTrinhDo"].ToString();
                txtmamon.Text = db.Rows[0]["MaMon"].ToString();
+
+            ReadOnly();
           }
      }
 }

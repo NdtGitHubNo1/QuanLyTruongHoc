@@ -140,7 +140,7 @@ namespace QLTH
                 {
                     try
                     {
-                        linq.THEM_HS_ADMIN(txtMaHS.Text, txtHoTen.Text, txtGT.Text, dateTimePicker1.Value, txtDiaChi.Text, txtPhuHuynh.Text, Math.Round(float.Parse(txtDMHocPhi.Text),2), txtMaLop.Text);
+                        linq.THEM_HS_ADMIN(txtMaHS.Text, txtHoTen.Text, txtGT.Text, dateTimePicker1.Value, txtDiaChi.Text, txtPhuHuynh.Text, Math.Round(float.Parse(txtDMHocPhi.Text),2), txtMaLop.Text, "HocSinh", txtMaHS.Text);
                     }
                     catch (Exception ex)
                     {
@@ -151,7 +151,7 @@ namespace QLTH
                 {
                     try
                     {
-                        linq.SUA_HS_ADMIN(txtMaHS.Text, txtHoTen.Text, txtGT.Text, dateTimePicker1.Value, txtDiaChi.Text, txtPhuHuynh.Text, Math.Round(float.Parse(txtDMHocPhi.Text), 2), txtMaLop.Text);
+                        linq.SUA_HS_ADMIN(txtMaHS.Text, txtHoTen.Text, txtGT.Text, dateTimePicker1.Value, txtDiaChi.Text, txtPhuHuynh.Text, Math.Round(float.Parse(txtDMHocPhi.Text), 2), txtMaLop.Text, txtMaHS.Text);
                     }
                     catch (Exception ex)
                     {
@@ -235,6 +235,42 @@ namespace QLTH
             public string PhuHuynh { set; get; }
             public double DinhMuc { set; get; }
             public string MaLop { set; get; }
+        }
+
+        private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Họ tên phải là các chữ cái");
+            }
+        }
+
+        private void txtGT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Giới tính phải là các chữ cái");
+            }
+        }
+
+        private void txtDiaChi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Địa chỉ phải là các chữ cái");
+            }
+        }
+
+        private void txtPhuHuynh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Họ tên phụ huynh phải là các chữ cái");
+            }
         }
     }
 }

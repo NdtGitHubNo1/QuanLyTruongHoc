@@ -14,12 +14,11 @@ namespace QLTH.GUI
 {
     public partial class FormDangNhap : Form
     {
-        linqDataContext linq = new linqDataContext();
+        linqDataContext db = new linqDataContext();
         DataTable dt = new DataTable();
         public FormDangNhap()
         {
-            InitializeComponent();
-            dt = Bang();
+            InitializeComponent();         
         }
 
 
@@ -39,39 +38,9 @@ namespace QLTH.GUI
                 txtMK.UseSystemPasswordChar = true;
             }
         }
-        public DataTable Bang()
-        {
-            DataTable data1 = new DataTable();
-            DataTable data2 = new DataTable();
-            data1 = linq.DANGNHAP1().ToDataTable();
-            data2 = linq.DANGNHAP2().ToDataTable();
-            DataTable danhsach = new DataTable();
-            danhsach.Columns.Add("TenDangNhap");
-            danhsach.Columns.Add("MatKhau");
-            danhsach.Columns.Add("Quyen");
-            DataRow admin = danhsach.NewRow();
-            admin["TenDangNhap"] = admin["MatKhau"] = admin["Quyen"] = "admin";
-            danhsach.Rows.Add(admin);
-            for (int i = 0; i < data1.Rows.Count; i++)
-            {
-                DataRow row = danhsach.NewRow();
-                row["TenDangNhap"] = data1.Rows[i]["MaGV"].ToString();
-                row["MatKhau"] = data1.Rows[i]["SDT"].ToString();
-                row["Quyen"] = "GiaoVien";
-                danhsach.Rows.Add(row);
-            }
-            for (int i = 0; i < data2.Rows.Count; i++)
-            {
-                DataRow row = danhsach.NewRow();
-                row["TenDangNhap"] = data2.Rows[i]["MaHS"].ToString();
-                row["MatKhau"] = data2.Rows[i]["MaHS"].ToString();
-                row["Quyen"] = "HocSinh";
-                danhsach.Rows.Add(row);
-            }
-            return danhsach;
-        }
+       
 
-        public void login()
+public void login()
         {
             string quyen = "";
             string t1 = txtTK.Text;
@@ -89,28 +58,22 @@ namespace QLTH.GUI
             }
             else
             {
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    string s1 = dt.Rows[i]["TenDangNhap"].ToString();
-                    string s2 = dt.Rows[i]["MatKhau"].ToString();
-                    if (t1.Trim() == s1.Trim() && t2.Trim() == s2.Trim())
-                    {
-                        quyen = dt.Rows[i]["Quyen"].ToString();
-                        break;
-                    }
-                    if (i == dt.Rows.Count - 1)
-                    {
-                        MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.txtTK.Focus();
-                        this.txtTK.SelectAll();
-                        break;
-                    }
-                }
+                var quyen1 = from a in db.DANGNHAP1(txtTK.Text, txtMK.Text) select a;
+                   foreach (var item in quyen1)
+                      {
+                        quyen = item.QUYEN;
+                      }
+                var quyen2 = from a in db.DANGNHAP2(txtTK.Text, txtMK.Text) select a;
+                     foreach (var item in quyen2)
+                       {
+                         quyen = item.QUYEN;
+                       }
 
-            }
+              }
             if (quyen == "admin")
             {
                 QLTH_Admin admin = new QLTH_Admin();
+                MessageBox.Show("Thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 admin.Show();
                 this.Hide();
             }
@@ -118,6 +81,7 @@ namespace QLTH.GUI
             {
                 GUI.QLTH_GiaoVien giaovien = new GUI.QLTH_GiaoVien();
                 GUI.QLTH_GiaoVien.magv = txtTK.Text;
+                MessageBox.Show("Thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 giaovien.Show();
                 this.Hide();
             }
@@ -125,13 +89,19 @@ namespace QLTH.GUI
             {
                 GUI.QLTH_HocSinh hocsinh = new GUI.QLTH_HocSinh();
                 GUI.QLTH_HocSinh.mahs = txtTK.Text;
+                MessageBox.Show("Thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 hocsinh.Show();
                 this.Hide();
             }
-        }
- 
+    if (quyen == "")
+    {
+        MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
 
-        private void btnLogin_Click_1(object sender, EventArgs e)
+}
+
+
+private void btnLogin_Click_1(object sender, EventArgs e)
         {
             login();
         }

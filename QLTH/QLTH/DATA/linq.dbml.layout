@@ -2,86 +2,80 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 9.75" name="linq">
   <DataContextMoniker Name="/linqDataContext" />
   <nestedChildShapes>
-    <classShape Id="1a4ff8bb-90bc-4153-a8b7-da1c3b91143d" absoluteBounds="3.75, 4.75, 2, 1.5785953776041666">
+    <classShape Id="be09cc10-80f8-49c8-8b49-f432d7e07c86" absoluteBounds="3.75, 4.75, 2, 1.5785953776041666">
       <DataClassMoniker Name="/linqDataContext/HOCPHI" />
       <nestedChildShapes>
-        <elementListCompartment Id="96ce698e-5d5f-4329-ba6f-94f54df0bebb" absoluteBounds="3.765, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8f0b2b3b-c3ed-416d-9536-5c2465fb15e4" absoluteBounds="3.765, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4178020b-1d88-4306-883b-ea0bfc51e314" absoluteBounds="6.75, 4.75, 2, 1.1939925130208344">
-      <DataClassMoniker Name="/linqDataContext/tblUser" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5f3378f8-c8b0-42e3-aa63-ec26feca13fe" absoluteBounds="6.765, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a081c0a6-6892-45e3-93dd-661e1a39648f" absoluteBounds="6.75, 6.75, 2, 1.5785953776041666">
+    <classShape Id="c60f0169-eaff-4cce-b1b4-6adaebc42908" absoluteBounds="6.75, 4.75, 2, 1.5785953776041666">
       <DataClassMoniker Name="/linqDataContext/LUONG" />
       <nestedChildShapes>
-        <elementListCompartment Id="c06fd8d7-3d87-4f8e-af69-09b674dbcfb2" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ac5cb4ad-6294-45d3-88d8-70d442ace410" absoluteBounds="6.765, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ede72639-ffba-4904-8e23-ea478180eef9" absoluteBounds="0.75, 7.75, 2, 1.7708968098958335">
+    <classShape Id="ce7fdd5c-0f13-41f7-a5c6-01ed9311cb97" absoluteBounds="3.75, 7.75, 2, 1.7708968098958335">
       <DataClassMoniker Name="/linqDataContext/tblCTGD" />
       <nestedChildShapes>
-        <elementListCompartment Id="6c602c53-20a2-4230-9221-07768c819042" absoluteBounds="0.765, 8.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4f14517e-d764-41dc-b494-16276b925a25" absoluteBounds="3.765, 8.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e1c73da8-fd71-48e7-9977-5f59c218891c" absoluteBounds="3.5, 1, 2, 2.5401025390625005">
+    <classShape Id="ccb5e550-452f-418b-855b-737f77a01072" absoluteBounds="3.5, 1, 2, 2.9247054036458326">
       <DataClassMoniker Name="/linqDataContext/tblGiaoVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="7fad7046-a30b-498b-b722-a2d7ec9f248d" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4c5be2a0-e706-4cf7-904f-3838541c7e3f" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f1c9edd9-456f-484f-931d-ee8f2bb1b65f" absoluteBounds="9, 1, 2, 2.3478011067708335">
+    <classShape Id="d10fac67-8f34-4d25-b5e4-ba066b9a0886" absoluteBounds="9, 1.125, 2, 2.7324039713541666">
       <DataClassMoniker Name="/linqDataContext/tblHocSinh" />
       <nestedChildShapes>
-        <elementListCompartment Id="86c7ebc4-30e6-479a-929a-6926b434222a" absoluteBounds="9.015, 1.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d141ea39-3d2d-48c4-b0ec-ced83cbc5dbb" absoluteBounds="9.015, 1.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ae4505c2-bdfe-4ec4-809a-0fdb9018f7cc" absoluteBounds="6.25, 1.5, 2, 1.3862939453125003">
+    <classShape Id="cb65fdf7-5667-4832-a911-22e6a33862ce" absoluteBounds="6.25, 1.75, 2, 1.3862939453125003">
       <DataClassMoniker Name="/linqDataContext/tblLop" />
       <nestedChildShapes>
-        <elementListCompartment Id="f14e988f-3fed-491f-8649-5256910ffbf2" absoluteBounds="6.265, 1.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1e257851-d20a-44a8-bc08-0a7f2c08209d" absoluteBounds="6.265, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c619f10e-9528-4a9e-8f52-6df3bb05108a" absoluteBounds="0.75, 1.625, 2, 1.1939925130208335">
+    <classShape Id="aa6f1323-da18-4844-8d23-49bf00d0593a" absoluteBounds="0.75, 1.875, 2, 1.1939925130208335">
       <DataClassMoniker Name="/linqDataContext/tblMonHoc" />
       <nestedChildShapes>
-        <elementListCompartment Id="cd7e4674-e11c-44e7-8331-ffd859d2a966" absoluteBounds="0.765, 2.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="97ff32a7-3ef0-43c0-ad89-23c256e977bc" absoluteBounds="0.765, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d596aa8f-7e5a-4391-ad81-9e8df9db054f" absoluteBounds="0.75, 5.5, 2, 1.3862939453125005">
+    <classShape Id="e8f18759-0e98-4831-93bc-6697093c125f" absoluteBounds="0.75, 5.75, 2, 1.3862939453125005">
       <DataClassMoniker Name="/linqDataContext/tblTrinhDo" />
       <nestedChildShapes>
-        <elementListCompartment Id="72b64e16-ceba-4459-9744-5a686a3ff681" absoluteBounds="0.765, 5.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="82862741-405e-4ea7-83ed-48500b788d55" absoluteBounds="0.765, 6.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.25 : 2.19314697265625); (9 : 2.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 2.44314697265625); (9 : 2.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/linqDataContext/tblLop/tblLop_tblHocSinh" />
       <nodes>
-        <classShapeMoniker Id="ae4505c2-bdfe-4ec4-809a-0fdb9018f7cc" />
-        <classShapeMoniker Id="f1c9edd9-456f-484f-931d-ee8f2bb1b65f" />
+        <classShapeMoniker Id="cb65fdf7-5667-4832-a911-22e6a33862ce" />
+        <classShapeMoniker Id="d10fac67-8f34-4d25-b5e4-ba066b9a0886" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.19314697265625); (6.25 : 2.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 2.44314697265625); (6.25 : 2.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/linqDataContext/tblGiaoVien/tblGiaoVien_tblLop" />
       <nodes>
-        <classShapeMoniker Id="e1c73da8-fd71-48e7-9977-5f59c218891c" />
-        <classShapeMoniker Id="ae4505c2-bdfe-4ec4-809a-0fdb9018f7cc" />
+        <classShapeMoniker Id="ccb5e550-452f-418b-855b-737f77a01072" />
+        <classShapeMoniker Id="cb65fdf7-5667-4832-a911-22e6a33862ce" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.22199625651042); (3.5 : 2.22199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.47199625651042); (3.5 : 2.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/linqDataContext/tblMonHoc/tblMonHoc_tblGiaoVien" />
       <nodes>
-        <classShapeMoniker Id="c619f10e-9528-4a9e-8f52-6df3bb05108a" />
-        <classShapeMoniker Id="e1c73da8-fd71-48e7-9977-5f59c218891c" />
+        <classShapeMoniker Id="aa6f1323-da18-4844-8d23-49bf00d0593a" />
+        <classShapeMoniker Id="ccb5e550-452f-418b-855b-737f77a01072" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.63869466145833); (3.59375 : 6.63869466145833); (3.59375 : 3.5401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.76369466145833); (3.59375 : 6.76369466145833); (3.59375 : 3.92470540364583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/linqDataContext/tblTrinhDo/tblTrinhDo_tblGiaoVien" />
       <nodes>
-        <classShapeMoniker Id="d596aa8f-7e5a-4391-ad81-9e8df9db054f" />
-        <classShapeMoniker Id="e1c73da8-fd71-48e7-9977-5f59c218891c" />
+        <classShapeMoniker Id="e8f18759-0e98-4831-93bc-6697093c125f" />
+        <classShapeMoniker Id="ccb5e550-452f-418b-855b-737f77a01072" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

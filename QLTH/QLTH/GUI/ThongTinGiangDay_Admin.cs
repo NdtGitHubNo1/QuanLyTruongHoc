@@ -199,5 +199,23 @@ namespace QLTH.GUI
             public string MAGV { set; get; }
             public string TenGV { set; get; }
         }
+
+        private void txtSoTiet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Số tiết phải là các chữ số");
+            }
+        }
+
+        private void txtSoTien1Tiet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Số tiền 1 tiết phải là các chữ số");
+            }
+        }
     }
 }

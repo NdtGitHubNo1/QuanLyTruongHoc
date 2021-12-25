@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>QLTH</RootNamespace>
     <AssemblyName>QLTH</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -215,9 +216,6 @@
     <EmbeddedResource Include="GUI\QLTH_Admin.resx">
       <DependentUpon>QLTH_Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DATA\linq.dbml.layout">
-      <DependentUpon>linq.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="GUI\QLTH_GiaoVien.resx">
       <DependentUpon>QLTH_GiaoVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,11 +231,15 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DATA\linq.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>linq.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DATA\linq.dbml.layout">
+      <DependentUpon>linq.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

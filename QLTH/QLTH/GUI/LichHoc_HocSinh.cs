@@ -38,6 +38,18 @@ namespace QLTH.GUI
 
         }
 
+        void ReadOnly()
+        {
+            txtMaHS.ReadOnly = true;
+            txtHoTen.ReadOnly = true;
+            txtMaLop.ReadOnly = true;
+            txtTenLop.ReadOnly = true;
+            txtTenMon.ReadOnly = true;
+            txtNgayDay.ReadOnly = true;
+            txtSoTiet.ReadOnly = true;
+            txtGVCN.ReadOnly = true;
+
+        }
         private void dataGridViewLichHoc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
@@ -51,6 +63,8 @@ namespace QLTH.GUI
                 txtNgayDay.Text = dataGridViewLichHoc.Rows[index].Cells["NgayDay"].Value.ToString();
                 txtSoTiet.Text = dataGridViewLichHoc.Rows[index].Cells["SoTiet"].Value.ToString();
                 txtGVCN.Text = dataGridViewLichHoc.Rows[index].Cells["GVCN"].Value.ToString();
+
+                ReadOnly();
             }
         }
     }

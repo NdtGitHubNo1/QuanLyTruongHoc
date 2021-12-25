@@ -105,12 +105,10 @@ namespace QLTH.GUI
         private string SinhMa()
         {
                string MaGV = "";
-            DataTable gv = new DataTable();
-            gv = linq.DANGNHAP1().ToDataTable();
-            int count = gv.Rows.Count;
+               int count = dataGridViewGiaoVien.Rows.Count;
                string s1 = "";
                int s2 = 0;
-               s1 = Convert.ToString(gv.Rows[count - 1][0].ToString());
+               s1 = Convert.ToString(dataGridViewGiaoVien.Rows[count - 1].Cells[0].Value.ToString());
                s2 = Convert.ToInt32((s1.Remove(0, 2)));
                if (s2 + 1 < 10)
                     MaGV = "GV0000000" + (s2 + 1).ToString();
@@ -189,7 +187,7 @@ namespace QLTH.GUI
                 {
                     try
                     {
-                        linq.THEMGIAOVIEN_ADMIN(txtMaGV.Text, txtHoten.Text, cbbGioiTinh.Text, dtpNgaysinh.Value, txtDiachi.Text, int.Parse(txtSdt.Text), long.Parse(txtLuong.Text), cbbTrinhdo.Text, cbbMamon.Text);
+                        linq.THEMGIAOVIEN_ADMIN(txtMaGV.Text, txtHoten.Text, cbbGioiTinh.Text, dtpNgaysinh.Value, txtDiachi.Text, int.Parse(txtSdt.Text), long.Parse(txtLuong.Text), cbbTrinhdo.Text, cbbMamon.Text, "NhanVien",txtSdt.Text );
                         MessageBox.Show("Thêm giáo viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
@@ -201,7 +199,7 @@ namespace QLTH.GUI
                 {
                     try
                     {
-                        linq.SUAGIAOVIEN_ADMIN(txtMaGV.Text, txtHoten.Text, cbbGioiTinh.Text, dtpNgaysinh.Value, txtDiachi.Text, int.Parse(txtSdt.Text), long.Parse(txtLuong.Text), cbbTrinhdo.Text, cbbMamon.Text);
+                        linq.SUAGIAOVIEN_ADMIN(txtMaGV.Text, txtHoten.Text, cbbGioiTinh.Text, dtpNgaysinh.Value, txtDiachi.Text, int.Parse(txtSdt.Text), long.Parse(txtLuong.Text), cbbTrinhdo.Text, cbbMamon.Text, txtSdt.Text);
                         MessageBox.Show("Sửa thông tin thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
@@ -254,6 +252,42 @@ namespace QLTH.GUI
             public string HoTen { set; get; }
             public string NgaySinh { set; get; }
             public string TrinhDo { set; get; }
+        }
+
+        private void txtSdt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Số điện thoại phải là các chữ số");
+            }
+        }
+
+        private void txtLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Lương phải là các chữ số");
+            }
+        }
+
+        private void txtHoten_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Họ tên phải là các chữ cái");
+            }
+        }
+
+        private void txtDiachi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Địa chỉ phải là các chữ cái");
+            }
         }
     }
 }

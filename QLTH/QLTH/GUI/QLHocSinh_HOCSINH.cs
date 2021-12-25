@@ -35,6 +35,18 @@ namespace QLTH
 
         }
 
+        void ReadOnly()
+        {
+            txtMaHS.ReadOnly = true;
+            txtHoTen.ReadOnly = true;
+            txtGT.ReadOnly = true;
+            txtNgaySinh.ReadOnly = true;
+            txtDiaChi.ReadOnly = true;
+            txtPhuHuynh.ReadOnly = true;
+            txtDMHocPhi.ReadOnly = true;
+            txtMaLop.ReadOnly = true;
+
+        }
         private void dataGridViewQLHS_HocSinh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
@@ -49,6 +61,7 @@ namespace QLTH
                 txtDMHocPhi.Text = dataGridViewQLHS_HocSinh.Rows[index].Cells["DinhMucHocPhi"].Value.ToString();
                 txtMaLop.Text = dataGridViewQLHS_HocSinh.Rows[index].Cells["MaLop"].Value.ToString();
 
+                ReadOnly();
             }
         }
     }

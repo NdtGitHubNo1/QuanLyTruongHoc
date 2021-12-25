@@ -47,6 +47,15 @@ namespace QLTH.GUI
                }
           }
 
+          void ReadOnly()
+        {
+            txtMaLop.ReadOnly = true;
+            txtMaGV.ReadOnly = true;
+            dtNgayDay.IsInputReadOnly = true;
+            txtSoTiet.ReadOnly = true;
+            txtSoTien1Tiet.ReadOnly = true;
+
+        }
           private void dgvTTGD_CellClick(object sender, DataGridViewCellEventArgs e)
           {
                int index = e.RowIndex;
@@ -57,6 +66,7 @@ namespace QLTH.GUI
                     dtNgayDay.Value = Convert.ToDateTime(dgvTTGD.Rows[index].Cells["NgayDay"].Value.ToString());
                     txtSoTiet.Text = dgvTTGD.Rows[index].Cells["SoTiet"].Value.ToString();
                     txtSoTien1Tiet.Text = dgvTTGD.Rows[index].Cells["SoTienMotTiet"].Value.ToString();
+                ReadOnly();
                }
           }
      }
